@@ -1,0 +1,5 @@
+<%= simple_form_for [broker, review] do |f| %>
+  <%= f.input :content, required: true %>
+  <%= f.input :rating, required: true %>
+  <%= f.submit %>
+<% end %>

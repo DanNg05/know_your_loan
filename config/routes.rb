@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   resources :banks, only: [:index, :show, :update] do
     resources :mortgages, only: [:show, :update]
   end
-  resources :brokers, only: [:index, :new, :create, :edit, :update] do
-    resources :reviews, only: [:new, :create]
-    resources :appointments, only: [:new, :create]
+  resources :brokers, only: [:index, :show, :new, :create, :edit, :update] do
+    resources :reviews, only: [:index, :new, :create]
+    resources :appointments, only: [:index, :new, :create]
   end
   resources :personals, only: [:show, :new, :create, :edit, :update]
   # Defines the root path route ("/")

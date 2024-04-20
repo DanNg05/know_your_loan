@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sml-6">
+      <h1>Welcome to AU BEST BROKER</h1>
+      <% @brokers.each do |broker| %>
+        <div class="">
+          <h3><%= broker.first_name %></h3>
+          <p><%= broker.about %></p>
+          <%= link_to "See profile", broker_path(broker) %>
+          <br>
+          <% if current_user.admin %>
+        <%= link_to "EDIT BROKER INFO", edit_broker_path(broker) %>
+      <% end %>
+        </div>
+      <% end %>
+      <% if current_user.admin %>
+        <%= link_to "CREATE NEW BROKER", new_broker_path %>
+      <% end %>
+    </div>
+  </div>
+</div>
