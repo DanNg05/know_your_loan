@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sml-6">
+      <h2>Your appointments with <%= @broker.first_name %>:</h2>
+      <% @appointments.each do |appointment| %>
+        <li>
+          Date: <%= appointment.date %>
+          <br>
+          Message: <%= appointment.message %>
+        </li>
+      <% end %>
+    </div>
+  </div>
+</div>
