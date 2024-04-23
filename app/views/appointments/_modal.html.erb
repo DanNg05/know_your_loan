@@ -1,0 +1,21 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <h5 class="modal-title" id="exampleModalLabel">BOOK AN APPOINTMENT</h5>
+      </div>
+      <div class="modal-body">
+        <%= form_with model: [@broker, @appointment], html: { class: "appointment-modal" } do |f| %>
+          <%= f.label :date, class:"modal-label" %>
+          <%= f.date_field :date %>
+
+          <%= f.label :message, class:"modal-label" %>
+          <%= f.text_field :message %>
+
+          <%= f.submit class:"modal-btn", value:"CONFIRM YOUR APPOINTMENT" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
