@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :appointments, only: [:index, :new, :create]
   end
   resources :personals, only: [:show, :new, :create, :edit, :update]
+
+  get "/mortgages/input", to: "mortgages#input"
   # Defines the root path route ("/")
   # root "posts#index"
 end
