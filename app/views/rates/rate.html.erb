@@ -1,17 +1,43 @@
-<table class="tg">
-<tbody>
-  <% @rates.each do |rate| %>
-    <tr>
-      <% if rate[:image].empty? %>
-        <td></td>
-      <%else%>
-        <td class="tg-0lax"><img src=<%= rate[:image] %> alt="Girl in a jacket" width="50" height="50"></td>
+<div class="rate-table">
+  <div class="table-container">
+    <table class="tg">
+    <tbody>
+      <!-- Header row -->
+      <tr class="header-row">
+        <td>Lender</td>
+        <td>1 year</td>
+        <td>2 years</td>
+        <td>3 years</td>
+      </tr>
+
+
+      <!-- Data rows -->
+      <% @rates.each_with_index do |rate, index| %>
+        <% unless index == 0 %> <!-- Skip the first row -->
+        <tr>
+          <td class="tg-0lax">
+            <% if rate[:image].empty? %>
+              <!-- If there's no image, leave the cell empty -->
+            <% else %>
+              <div>
+                <img src=<%= rate[:image] %> alt="" class="image-size">
+                <%= rate[:bank_name] %>
+              </div>
+            <% end %>
+          </td>
+          <td class="tg-0lax"><%= rate[:one_year] %></td>
+          <td class="tg-0lax"><%= rate[:two_years] %></td>
+          <td class="tg-0lax"><%= rate[:three_years] %></td>
+        </tr>
+        <% end %>
       <% end %>
-        <td class="tg-0lax"><%= rate[:bank_name] %></td>
-        <td class="tg-0lax"><%= rate[:first_year] %></td>
-        <td class="tg-0lax"><%= rate[:second_year] %></td>
-        <td class="tg-0lax"><%= rate[:third_year] %></td>
-    </tr>
-  <% end %>
-</tbody>
-</table>
+    </tbody>
+    </table>
+  </div>
+
+  <br>
+
+  <div class="bank-selection">
+    <h1>placeholder</h1>
+  </div>
+</div>
