@@ -1,0 +1,33 @@
+.table-container, .bank-selection {
+  margin: 50px; /* Add a 20px margin to the container */
+}
+
+.image-size {
+  width: 125px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+ }
+
+
+ .header-row {
+  background-color: #6856d0;
+  text-align: center;
+ }
+
+
+ .tg {
+  width: 100%;
+  border-collapse: collapse; /* Ensure borders collapse properly */
+ }
+
+ .tg td {
+  padding: 10px; /* Add padding to the cells for spacing */
+  text-align: center;
+  border: 1px solid #ddd; /* Center-align text in cells */
+ }
+
+ .tg img {
+  max-width: 100%; /* Ensure images within cells don't exceed the cell width */
+  height: auto;
+  vertical-align: middle; /* Align images vertically in the middle */
+  margin-right: 2px; /* Add a small margin to separate the image from text */
+ }
