@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_25_103829) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_25_100311) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,6 +57,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_103829) do
   create_table "banks", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "brokers", force: :cascade do |t|
@@ -76,6 +78,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_103829) do
     t.bigint "bank_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "property_value"
+    t.decimal "total_equity"
+    t.float "interest_rate"
+    t.decimal "rental_income"
+    t.decimal "maintainence_fund"
+    t.decimal "other_expenses"
+    t.decimal "loan_amount"
+    t.decimal "monthly_repayment"
+    t.decimal "monthly_cashflow"
     t.index ["bank_id"], name: "index_mortgages_on_bank_id"
     t.index ["user_id"], name: "index_mortgages_on_user_id"
   end
