@@ -7,7 +7,7 @@ class MortgagesController < ApplicationController
     # if @mortgage.valid?
       @mortgage.calculate_mortgage
       if @mortgage.save
-        redirect_to @mortgage, notice: 'Mortgage was successfully created.'
+        redirect_to mortgage_path(@mortgage), notice: 'Mortgage was successfully created.'
       else
         render :new
       end
