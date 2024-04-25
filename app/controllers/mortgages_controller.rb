@@ -1,31 +1,33 @@
 class MortgagesController < ApplicationController
-  def new
-    @mortgage = Mortgage.new
-  end
-
   def create
+    @bank = Bank.find(params[:bank_id])
     @mortgage = Mortgage.new(mortgage_params)
-    if @mortgage.save
-      # Handle successful save, e.g., redirect to a success page
-      redirect_to @mortgage, notice: 'Mortgage was successfully calculated.'
-    else
-      # Handle validation errors, e.g., render the form again with errors
-      render :new
-    end
+    @mortgage.bank = @bank
+    @mortgage.user = current_user
+    # if @mortgage.valid?
+      @mortgage.calculate_mortgage
+      if @mortgage.save
+        redirect_to @mortgage, notice: 'Mortgage was successfully created.'
+      else
+        render :new
+      end
+    # else
+    #   render :new
+    # end
   end
 
-
-  def input
+  def show
+    @mortgage = Mortgage.find(params[:id])
   end
 
-  def result
-
+  def new
+    @bank = Bank.find(params[:bank_id])
+    @mortgage = Mortgage.new
   end
 
   private
 
   def mortgage_params
-    params.require(:mortgage).permit(:property_value, :total_equity, :interest_rate, :loan_amount)
+    params.require(:mortgage).permit(:property_value, :total_equity, :interest_rate, :rental_income, :maintainence_fund, :other_expenses)
   end
-
 end
