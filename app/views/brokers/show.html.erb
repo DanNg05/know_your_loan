@@ -6,6 +6,9 @@
       <h3>MORTGAGE & FINANCE BROKER</h3>
 
       <p>About <%= @broker.first_name %></p>
+      <% if @broker.photo %>
+        <%= cl_image_tag @broker.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
       <p><%= @broker.about %></p>
       <br>
       <p><i class="fa-solid fa-phone"></i> <%= @broker.phone_number %></p>
@@ -22,6 +25,7 @@
         <h2>Reviews about <%= @broker.first_name %>:</h2>
         <% @broker.reviews.each do |review| %>
           <p>
+            <br>
             Content: <%= review.content %>
             <br>
             Rating: <%= review.rating %>

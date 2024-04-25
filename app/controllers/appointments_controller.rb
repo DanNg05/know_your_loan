@@ -18,7 +18,8 @@ class AppointmentsController < ApplicationController
     @broker = Broker.find(params[:broker_id])
     @appointment.broker = @broker
     if @appointment.save
-      redirect_to broker_appointments_path(@broker)
+      redirect_to broker_path(@broker)
+      # head :ok
     else
       render :new
     end
