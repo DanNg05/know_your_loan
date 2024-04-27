@@ -1,23 +1,33 @@
 class BrokersController < ApplicationController
-  before_action  :broker_list, only: [:show, :create, :edit, :update]
+  before_action  :broker_list, only: [:show, :edit, :update]
   def index
     @brokers = Broker.all
+    @markers = @brokers.geocoded.map do |broker|
+      {
+        lat: broker.latitude,
+        lng: broker.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {broker: broker})
+      }
+    end
   end
 
   def show
     authorize @broker
     # raise
     @review = Review.new
+    @appointments = Appointment.where(user_id: current_user.id, broker_id: params[:id])
+    @appointment = Appointment.new
   end
 
   def new
+    # raise
     @broker = Broker.new
     authorize @broker
   end
 
   def create
+    # raise
     @broker = Broker.new(broker_params)
-    authorize @broker
     if @broker.save
       redirect_to broker_path(@broker)
     else
@@ -30,6 +40,7 @@ class BrokersController < ApplicationController
   end
 
   def update
+    # raise
     @broker.update(broker_params)
     if @broker.save
       redirect_to broker_path(@broker)
@@ -40,7 +51,7 @@ class BrokersController < ApplicationController
   private
 
   def broker_params
-    params.require(:broker).permit(:first_name, :last_name, :email, :about, :phone_number, :address)
+    params.require(:broker).permit(:first_name, :last_name, :email, :about, :phone_number, :address, :photo)
   end
 
   def broker_list

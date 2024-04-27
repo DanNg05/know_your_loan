@@ -1,0 +1,7 @@
+<h1>Mortgage Details</h1>
+<p><strong>Property Value:</strong> <%= number_with_precision(@mortgage.property_value, precision: 2) %></p>
+<p><strong>Total Equity:</strong> <%= number_with_precision(@mortgage.total_equity, precision: 2) %></p>
+<p><strong>Interest Rate:</strong> <%= number_with_precision(@mortgage.interest_rate, precision: 2) %>% </p>
+
+<p><strong>Loan Amount:</strong> <%= number_with_precision(@mortgage.loan_amount, precision: 2) %></p>
+<p><strong>Monthly Repayment:</strong> <%= number_with_precision(@mortgage.monthly_repayment, precision: 2) %></p>

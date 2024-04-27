@@ -1,30 +1,47 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sml-6">
+      <%# Broker information %>
       <h2><%= @broker.first_name %> <%= @broker.last_name %></h2>
       <h3>MORTGAGE & FINANCE BROKER</h3>
 
       <p>About <%= @broker.first_name %></p>
+      <% if @broker.photo %>
+        <%= cl_image_tag @broker.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
       <p><%= @broker.about %></p>
       <br>
       <p><i class="fa-solid fa-phone"></i> <%= @broker.phone_number %></p>
       <p><i class="fa-solid fa-envelope"></i> <%= @broker.email %></p>
+
+      <%# Appointment button with Bootstrap modal %>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Book an appointment
+      </button>
+      <%= render "appointments/modal" %>
+
+      <%# Broker review details %>
       <% if @broker.reviews != [] %>
         <h2>Reviews about <%= @broker.first_name %>:</h2>
         <% @broker.reviews.each do |review| %>
           <p>
+            <br>
             Content: <%= review.content %>
             <br>
             Rating: <%= review.rating %>
           </p>
         <% end %>
       <% end %>
-      <div data-controller="review-toggle">
-        <button class="btn btn-primary" data-action="click->review-toggle#fire">Add new review</button>
-        <div class="d-none" data-review-toggle-target="reviewForm">
-          <%= render 'reviews/review_form', broker: @broker, review: @review %>
+
+      <%# Users can write a review about the broker if they have the appointment(s) with them  %>
+      <% if @appointments != [] %>
+        <div data-controller="review-toggle">
+          <button class="btn btn-primary" data-action="click->review-toggle#fire">Add new review</button>
+          <div class="d-none" data-review-toggle-target="reviewForm">
+            <%= render 'reviews/review_form', broker: @broker, review: @review %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
