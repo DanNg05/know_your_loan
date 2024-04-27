@@ -1,0 +1,35 @@
+.mortgage-show {
+  margin: 20px;
+}
+
+.mortgage-show h1{
+  margin: 20px;
+}
+
+.factsheet {
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.factsheet p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.factsheet p strong {
+  float: left; /* Float titles to the left */
+}
+
+.factsheet p .value {
+  float: right; /* Float values to the right */
+}
+
+.result {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -25,4 +25,9 @@ class RatesController < ApplicationController
     @lowest_rate = @rates.min_by { |rate| rate[:one_year].to_f }
    end
  end
+
+ def show
+   @rate = Rate.find(params[:id])
+ end
+
 end

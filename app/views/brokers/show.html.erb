@@ -1,33 +1,38 @@
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row">
     <div class="col-sml-6">
       <%# Broker information %>
-      <h2><%= @broker.first_name %> <%= @broker.last_name %></h2>
-      <h3>MORTGAGE & FINANCE BROKER</h3>
-
-      <p>About <%= @broker.first_name %></p>
-      <p><%= @broker.about %></p>
+      <div class="d-flex justify-content-center align-items-center flex-column">
+        <h2 style="font-weight: bold"><%= @broker.first_name.upcase %> <%= @broker.last_name.upcase %></h2>
+        <h3 style="font-weight: bold">MORTGAGE & FINANCE BROKER</h3>
+        <% if @broker.photo.key %>
+          <%= cl_image_tag @broker.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+        <p><%= @broker.about %></p>
+      </div>
       <br>
       <p><i class="fa-solid fa-phone"></i> <%= @broker.phone_number %></p>
       <p><i class="fa-solid fa-envelope"></i> <%= @broker.email %></p>
 
-      <%# Appointment button with Bootstrap modal %>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Book an appointment
-      </button>
-      <%= render "appointments/modal" %>
+      <div class="d-flex align-items-center justify-content-center flex-column">
+        <%# Appointment button with Bootstrap modal %>
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Book an appointment
+        </button>
+        <%= render "appointments/modal" %>
 
-      <%# Broker review details %>
-      <% if @broker.reviews != [] %>
-        <h2>Reviews about <%= @broker.first_name %>:</h2>
-        <% @broker.reviews.each do |review| %>
-          <p>
-            Content: <%= review.content %>
-            <br>
-            Rating: <%= review.rating %>
-          </p>
+        <%# Broker review details %>
+        <% if @broker.reviews != [] %>
+          <h2>Reviews about <%= @broker.first_name %>:</h2>
+          <% @broker.reviews.each do |review| %>
+            <p>
+              <br>
+              Content: <%= review.content %>
+              <br>
+              Rating: <%= review.rating %>
+            </p>
+          <% end %>
         <% end %>
-      <% end %>
 
       <%# Users can write a review about the broker if they have the appointment(s) with them  %>
       <% if @appointments != [] %>
@@ -38,6 +43,7 @@
           </div>
         </div>
       <% end %>
+      </div>
     </div>
   </div>
 </div>

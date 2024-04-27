@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_25_100311) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_27_062548) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum"
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
 
   create_table "appointments", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -44,29 +72,49 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_100311) do
     t.float "longitude"
   end
 
+  create_table "homebuyers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "property_value"
+    t.decimal "total_deposit"
+    t.float "interest_rate"
+    t.decimal "salary"
+    t.decimal "other_income"
+    t.decimal "loan_amount"
+    t.decimal "monthly_repayment"
+    t.integer "loan_term"
+    t.decimal "living_expenses"
+    t.decimal "car_loan_payment"
+    t.decimal "other_debts"
+    t.decimal "net_disposable_income"
+    t.index ["user_id"], name: "index_homebuyers_on_user_id"
+  end
+
   create_table "mortgages", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "bank_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "property_value"
     t.decimal "total_equity"
     t.float "interest_rate"
     t.decimal "rental_income"
-    t.decimal "maintainence_fund"
+    t.decimal "maintenance_fund"
     t.decimal "other_expenses"
     t.decimal "loan_amount"
     t.decimal "monthly_repayment"
     t.decimal "monthly_cashflow"
-    t.index ["bank_id"], name: "index_mortgages_on_bank_id"
+    t.bigint "rate_id", null: false
+    t.index ["rate_id"], name: "index_mortgages_on_rate_id"
     t.index ["user_id"], name: "index_mortgages_on_user_id"
   end
 
-  create_table "personals", force: :cascade do |t|
-    t.bigint "user_id", null: false
+  create_table "rates", force: :cascade do |t|
+    t.decimal "interest_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_personals_on_user_id"
+    t.bigint "bank_id", null: false
+    t.index ["bank_id"], name: "index_rates_on_bank_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -93,11 +141,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_100311) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "appointments", "brokers"
   add_foreign_key "appointments", "users"
-  add_foreign_key "mortgages", "banks"
+  add_foreign_key "homebuyers", "users"
+  add_foreign_key "mortgages", "rates"
   add_foreign_key "mortgages", "users"
-  add_foreign_key "personals", "users"
+  add_foreign_key "rates", "banks"
   add_foreign_key "reviews", "brokers"
   add_foreign_key "reviews", "users"
 end
