@@ -7,10 +7,10 @@
       <div class="modal-body">
         <%= form_with model: [@broker, @appointment], html: { class: "appointment-modal", "data-appointment-alert-target": "formSubmit" } do |f| %>
           <%= f.label :date, class:"modal-label" %>
-          <%= f.date_field :date %>
+          <%= f.date_field :date, data: {"appointment-alert-target": "date"} %>
 
           <%= f.label :message, class:"modal-label" %>
-          <%= f.text_field :message, required: true %>
+          <%= f.text_field :message, data: {"appointment-alert-target": "message"} %>
 
           <%= f.submit class:"modal-btn", value:"CONFIRM YOUR APPOINTMENT",  data: { action: 'click->appointment-alert#initSweetalert' } %>
         <% end %>
