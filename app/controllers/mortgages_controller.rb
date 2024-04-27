@@ -1,5 +1,6 @@
 class MortgagesController < ApplicationController
   def create
+    # raise
     @bank = Bank.find(params[:bank_id])
     @mortgage = Mortgage.new(mortgage_params)
     @mortgage.bank = @bank
