@@ -1,28 +1,25 @@
 class MortgagesController < ApplicationController
   def create
     # raise
-    @bank = Bank.find(params[:bank_id])
+    @rate = Rate.find(params[:rate_id])
     @mortgage = Mortgage.new(mortgage_params)
-    @mortgage.bank = @bank
+    @mortgage.rate = @rate
     @mortgage.user = current_user
-    # if @mortgage.valid?
       @mortgage.calculate_mortgage
       if @mortgage.save
-        redirect_to mortgage_path(@mortgage), notice: 'Mortgage was successfully created.'
+        redirect_to mortgage_path(@mortgage), notice: 'File was successfully created.'
       else
         render :new
       end
-    # else
-    #   render :new
-    # end
   end
 
   def show
     @mortgage = Mortgage.find(params[:id])
+    @rate = @mortgage.rate
   end
 
   def new
-    @bank = Bank.find(params[:bank_id])
+    @rate = Rate.find(params[:rate_id])
     @mortgage = Mortgage.new
   end
 

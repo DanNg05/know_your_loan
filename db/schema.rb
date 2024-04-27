@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_25_103829) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_27_053557) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,9 +73,27 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_103829) do
     t.float "longitude"
   end
 
+  create_table "homebuyers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "property_value"
+    t.decimal "total_deposit"
+    t.float "interest_rate"
+    t.decimal "salary"
+    t.decimal "other_income"
+    t.decimal "loan_amount"
+    t.decimal "monthly_repayment"
+    t.integer "loan_term"
+    t.decimal "living_expenses"
+    t.decimal "car_loan_payment"
+    t.decimal "other_debts"
+    t.decimal "net_disposable_income"
+    t.index ["user_id"], name: "index_homebuyers_on_user_id"
+  end
+
   create_table "mortgages", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "bank_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "property_value"
@@ -86,15 +105,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_103829) do
     t.decimal "loan_amount"
     t.decimal "monthly_repayment"
     t.decimal "monthly_cashflow"
-    t.index ["bank_id"], name: "index_mortgages_on_bank_id"
+    t.bigint "rate_id", null: false
+    t.index ["rate_id"], name: "index_mortgages_on_rate_id"
     t.index ["user_id"], name: "index_mortgages_on_user_id"
   end
 
-  create_table "personals", force: :cascade do |t|
-    t.bigint "user_id", null: false
+  create_table "rates", force: :cascade do |t|
+    t.decimal "interest_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_personals_on_user_id"
+    t.bigint "bank_id", null: false
+    t.index ["bank_id"], name: "index_rates_on_bank_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -125,9 +146,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_103829) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "appointments", "brokers"
   add_foreign_key "appointments", "users"
-  add_foreign_key "mortgages", "banks"
+  add_foreign_key "homebuyers", "users"
+  add_foreign_key "mortgages", "rates"
   add_foreign_key "mortgages", "users"
-  add_foreign_key "personals", "users"
+  add_foreign_key "rates", "banks"
   add_foreign_key "reviews", "brokers"
   add_foreign_key "reviews", "users"
 end
