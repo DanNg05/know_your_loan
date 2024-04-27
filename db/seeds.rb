@@ -16,26 +16,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 dan_user = User.create(email: "dan@gmail.com", password: "123456", admin: false)
 admin = User.create(email: "admin@gmail.com", password: "123456", admin: true)
 broker_1 = Broker.create(first_name: "Dan", last_name: "Nguyen", email: "bestbrokerAU@gmail.com", phone_number: "0411383838", about: "Dan is well and truly one of our championed brokers at AU BEST BROKER. He’s a huge asset to the AU BEST BROKER family, providing wonderful lending advice to his South Australia community and beyond.", address: "211 Payneham Rd St Peters SA 5069")
