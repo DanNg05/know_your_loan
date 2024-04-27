@@ -1,7 +1,26 @@
-<h1>Mortgage Details</h1>
-<p><strong>Property Value:</strong> <%= number_with_precision(@mortgage.property_value, precision: 2) %></p>
-<p><strong>Total Equity:</strong> <%= number_with_precision(@mortgage.total_equity, precision: 2) %></p>
-<p><strong>Interest Rate:</strong> <%= number_with_precision(@mortgage.interest_rate, precision: 2) %>% </p>
+<div class="mortgage-show">
+  <h1>Investment Factsheet</h1>
+  <div class="factsheet">
+    <p><strong>Property Value:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.property_value, precision: 2)) %></p>
+    <p><strong>Total Equity:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.total_equity, precision: 2) )%></p>
+    <p><strong>Interest Rate:</strong> <%= number_with_precision(@mortgage.interest_rate, precision: 2) %>% </p>
 
-<p><strong>Loan Amount:</strong> <%= number_with_precision(@mortgage.loan_amount, precision: 2) %></p>
-<p><strong>Monthly Repayment:</strong> <%= number_with_precision(@mortgage.monthly_repayment, precision: 2) %></p>
+    <br>
+
+    <p><strong>Monthly Rental Income:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.rental_income, precision: 2)) %></p>
+    <p><strong>Maintenance Fund:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.maintainence_fund, precision: 2) )%></p>
+    <p><strong>Other Expenses:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.other_expenses, precision: 2)) %> </p>
+
+    <br>
+
+    <p><strong>Loan Amount:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.loan_amount, precision: 2)) %></p>
+    <p><strong>Monthly Repayment:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.monthly_repayment, precision: 2)) %></p>
+    <p><strong>Monthly Cashflow:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.monthly_cashflow, precision: 2)) %></p>
+
+
+  </div>
+  <div class="result">
+    <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %>
+    <%= link_to "Save" %>
+  </div>
+</div>

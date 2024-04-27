@@ -1,6 +1,6 @@
 require "test_helper"
 
-class PersonalTest < ActiveSupport::TestCase
+class RateTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

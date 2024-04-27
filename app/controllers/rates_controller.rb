@@ -22,4 +22,9 @@ class RatesController < ApplicationController
      }
    end
  end
+
+ def show
+   @rate = Rate.find(params[:id])
+ end
+
 end

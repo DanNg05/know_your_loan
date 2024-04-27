@@ -1,7 +1,7 @@
 <h1>Investment Property</h1>
 
 <div class="property-info">
-  <%= simple_form_for [@rate, @mortgage] do |f| %>
+  <%= simple_form_for [@rate, @homebuyer] do |f| %>
     <div class="field">
       <%= f.label :property_value %>
       <%= f.number_field :property_value, id: 'property_value' %>
