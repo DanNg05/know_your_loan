@@ -26,6 +26,6 @@ class MortgagesController < ApplicationController
   private
 
   def mortgage_params
-    params.require(:mortgage).permit(:property_value, :total_equity, :interest_rate, :rental_income, :maintainence_fund, :other_expenses)
+    params.require(:mortgage).permit(:property_value, :total_equity, :interest_rate, :rental_income, :maintenance_fund, :other_expenses)
   end
 end

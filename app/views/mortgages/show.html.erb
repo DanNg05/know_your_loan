@@ -8,7 +8,7 @@
     <br>
 
     <p><strong>Monthly Rental Income:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.rental_income, precision: 2)) %></p>
-    <p><strong>Maintenance Fund:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.maintainence_fund, precision: 2) )%></p>
+    <p><strong>Maintenance Fund:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.maintenance_fund, precision: 2) )%></p>
     <p><strong>Other Expenses:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.other_expenses, precision: 2)) %> </p>
 
     <br>
@@ -21,6 +21,8 @@
   </div>
   <div class="result">
     <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %>
-    <%= link_to "Save" %>
+    <% if @mortgage.monthly_cashflow.positive? %>
+      <%= link_to "Save and find a broker" %>
+    <% end %>
   </div>
 </div>
