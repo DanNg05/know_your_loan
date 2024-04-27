@@ -1,9 +1,11 @@
 <div class="container">
    <div class=banner>
       <h1>CURRENT LOWEST RATE</h1>
+     <p><%= @lowest_rate.one_year %></p>
    </div>
-   <div class="home-container"  >
-  <h1>HOME BUYER</h1>
+
+   <div class="home-container">
+   <h1>HOME BUYER</h1>
    <%# <div class=p-container> %>
      <p>compare mortgage rates</p>
      <p>calculate your mortgage repayments</p>
@@ -20,12 +22,15 @@
    <div class=signin-container>
 
       <div class="user-signin-btn" >
-         <h1>sign-in</h1>
+         <p>
+            <button type="button" class="btn btn-primary btn-lg">sign-in</button>
+         </p>
       </div>
       <div class="signin-broker-btn" >
-         <h1>apply as a broker</h1>
+            <p>
+            <button type="button" class="btn btn-default btn-lg">apply as a broker</button>
+            </p>
       </div>
-
    </div>
 
 </div>

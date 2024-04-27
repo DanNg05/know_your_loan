@@ -56,12 +56,11 @@ h1{
    flex-direction: column;
 }
 .signin-container{
-   justify-content: center;
    display: flex;
-   flex-direction: row;
+   justify-content: center;
+   flex-direction: column;
    align-items: center;
    // text-align: center;
-
    justify-content: space-around;
 }
 
@@ -88,13 +87,13 @@ h1{
    transform: scale(1.002);
    transition: all 0.05s ease;
 }
-.signin-broker-btn:hover{
-   background-color: rgb(0, 0, 0);
-   color: rgb(246, 246, 246);
-   // opacity: 30%;
-   transform: scale(1.02);
-   transition: all 0.05s ease;
-}
+// .signin-broker-btn:hover{
+//    background-color: rgb(0, 0, 0);
+//    color: rgb(246, 246, 246);
+//    // opacity: 30%;
+//    transform: scale(1.02);
+//    transition: all 0.05s ease;
+// }
 .banner:hover{
    background-color: rgb(0, 0, 0);
    color: rgb(246, 246, 246);
@@ -111,7 +110,6 @@ h1{
 }
 
 .signin-broker-btn{
-   margin: 20px 20px 20px 20px;
-   padding: 20px 20px 20px 20px;
-
+   // margin: 20px 20px 20px 20px;
+   // padding: 20px 20px 20px 20px;
 }

@@ -8,9 +8,10 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-
-
-
+anz = Bank.create(one_year:5, two_years:3, three_years:2)
+bnz = Bank.create(one_year:4, two_years:5, three_years:1)
+kiwi_bank = Bank.create(one_year:3, two_years:4, three_years:3)
+westpac = Bank.create(one_year:1, two_years:2, three_years:4)
 
 
 
