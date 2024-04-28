@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="chart">
+    <canvas data-controller="chart">
+      <!-- TODO: Display doughnut chart below -->
+    </canvas>
+  </div>
+  <table>
+    <tbody>
+      <tr>
+        <td> Interest Rate</td>
+        <td><%= @mortgage.interest_rate %></td>
+      </tr>
+      <tr>
+        <td>Maintenance Fund</td>
+        <td><%= @mortgage.maintenance_fund %></td>
+      </tr>
+      <tr>
+        <td>Other Expenses</td>
+        <td><%= @mortgage.other_expenses %></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to "BROKER LIST", brokers_path, class:"btn btn-primary" %>
+</div>
