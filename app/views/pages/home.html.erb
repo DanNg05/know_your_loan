@@ -1,14 +1,18 @@
-
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
+    <%=link_to rate_path do%>
 <div class="container">
-   <div class=banner>
-      <h1>CURRENT LOWEST RATE</h1>
-     <p><%= @lowest_rate.one_year %></p>
-   </div>
 
+      <div class=banner>
+         <h1>CURRENT LOWEST RATE</h1>
+         <div class=rate>
+      <h1><%= @lowest_rate.one_year %></h1>
+      </div>
+
+      </div>
+   <%end%>
+
+    <%=link_to new_user_registration_path do%>
    <div class="home-container">
+
    <h1>HOME BUYER</h1>
    <%# <div class=p-container> %>
      <p>compare mortgage rates</p>
@@ -16,26 +20,28 @@
       <p>find your mortgage broker</p>
       <%# </div> %>
    </div>
-
+   <%end%>
+       <%=link_to new_user_registration_path do%>
    <div class="investor-container" >
+
       <h1>INVESTOR</h1>
          <p>compare bank rates</p>
          <p>find the best instrest rate</p>
    </div>
+  <%end%>
 
    <div class=signin-container>
 
-      <div class="user-signin-btn" >
+      <%# <div class="user-signin-btn" > %>
          <p>
             <button type="button" class="btn btn-primary btn-lg">sign-in</button>
          </p>
-      </div>
+      <%# </div> %>
       <div class="signin-broker-btn" >
             <p>
-            <button type="button" class="btn btn-default btn-lg">apply as a broker</button>
+            <button type="button" class="btn btn-default btn-xs">apply as a broker</button>
             </p>
       </div>
    </div>
 
 </div>
-

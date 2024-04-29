@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema[7.1].define(version: 2024_04_25_110347) do
-=======
-ActiveRecord::Schema[7.1].define(version: 2024_04_25_100311) do
-
->>>>>>> d6717b0191d8270a584b238e4a01c9452284ca7d
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,6 +56,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_100311) do
   create_table "banks", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "one_year"
+    t.decimal "two_years"
+    t.decimal "three_years"
     t.string "name"
   end
 
