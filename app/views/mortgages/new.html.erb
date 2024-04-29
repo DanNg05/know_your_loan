@@ -1,7 +1,7 @@
 <h1>Investment Property</h1>
 
 <div class="property-info">
-  <%= simple_form_for [@bank, @mortgage] do |f| %>
+  <%= simple_form_for [@rate, @mortgage] do |f| %>
     <div class="field">
       <%= f.label :property_value %>
       <%= f.number_field :property_value, id: 'property_value' %>
@@ -13,8 +13,8 @@
     </div>
 
     <div class="field">
-      <%= f.label :interest_rate %>
-      <%= f.number_field :interest_rate, id: 'interest_rate', step: 0.01 %>
+      <p> Interest Rate: <%= @rate.interest_value %></p>
+      <%= f.input :interest_rate, :as => :hidden, :input_html => {:value => @rate.interest_value} %>
     </div>
 
     <div class="field">
@@ -23,8 +23,8 @@
     </div>
 
     <div class="field">
-      <%= f.label :maintainence_fund %>
-      <%= f.number_field :maintainence_fund, id: 'maintainence_fund' %>
+      <%= f.label :maintenance_fund %>
+      <%= f.number_field :maintenance_fund, id: 'maintenance_fund' %>
     </div>
 
     <div class="field">
@@ -43,58 +43,47 @@
 <!-- JavaScript to dynamically calculate the loan amount and monthly repayment -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  var calculateCashflowButton = document.querySelector('input[type="submit"][value="Calculate Cashflow"]');
   var propertyValueField = document.getElementById('property_value');
   var totalEquityField = document.getElementById('total_equity');
   var interestRateField = document.getElementById('interest_rate');
   var rentalIncomeField = document.getElementById('rental_income');
-  var maintenanceFundField = document.getElementById('maintainence_fund');
+  var maintenanceFundField = document.getElementById('maintenance_fund');
   var otherExpensesField = document.getElementById('other_expenses');
   var loanAmountField = document.getElementById('mortgage_loan_amount');
   var monthlyRepaymentField = document.getElementById('monthly_repayment_amount');
   var monthlyCashflowField = document.getElementById('monthly_cashflow_amount');
-  var calculateCashflowButton = document.querySelector('input[type="submit"][value="Calculate Cashflow"]');
 
   calculateCashflowButton.addEventListener('click', function(event) {
+    console.log("Calculate Cashflow button clicked");
 
-    function calculateLoanAmount() {
-      var propertyValue = parseFloat(propertyValueField.value);
-      var totalEquity = parseFloat(totalEquityField.value);
-      var loanAmount = propertyValue - totalEquity;
-      var rentalIncome = parseFloat(rentalIncomeField.value);
-      var maintenanceFund = parseFloat(maintenanceFundField.value);
-      var otherExpenses = parseFloat(otherExpensesField.value);
+    // Retrieve input values
+    var propertyValue = parseFloat(propertyValueField.value);
+    var totalEquity = parseFloat(totalEquityField.value);
+    var interestRate = parseFloat(interestRateField.value);
+    var rentalIncome = parseFloat(rentalIncomeField.value);
+    var maintenanceFund = parseFloat(maintenanceFundField.value);
+    var otherExpenses = parseFloat(otherExpensesField.value);
 
-      if (!isNaN(loanAmount) && isFinite(loanAmount)) {
-        loanAmountField.value = loanAmount.toFixed(2);
+    // Calculate loan amount
+    var loanAmount = propertyValue - totalEquity;
+    loanAmountField.value = loanAmount.toFixed(2);
 
-        var interestRate = parseFloat(interestRateField.value);
-        var monthlyInterestRate = interestRate / 100 / 12;
-        var loanTermInMonths = 30 * 12;
-        var monthlyRepayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -loanTermInMonths));
-        var monthlyCashflow = rentalIncome - maintenanceFund - otherExpenses - monthlyRepayment;
+    // Calculate monthly repayment
+    var monthlyInterestRate = interestRate / 100 / 12;
+    var loanTermInMonths = 30 * 12; // Assuming a 30-year loan term
+    var monthlyRepayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -loanTermInMonths));
+    monthlyRepaymentField.value = monthlyRepayment.toFixed(2);
 
-        monthlyRepaymentField.value = monthlyRepayment.toFixed(2);
-        monthlyCashflowField.value = monthlyCashflow.toFixed(2);
-      } else {
-        loanAmountField.value = "";
-        monthlyRepaymentField.value = "";
-        monthlyCashflowField.value = "";
-      }
-    }
-
-    console.log("Cashflow Calculated");
-
-    // Call the function to calculate loan amount
-    calculateLoanAmount();
+    // Calculate monthly cashflow
+    var monthlyCashflow = rentalIncome - maintenanceFund - otherExpenses - monthlyRepayment;
+    monthlyCashflowField.value = monthlyCashflow.toFixed(2);
   });
 });
 
 </script>
 
 <br>
-
-
-
 
 <div class="investment-wise">
 

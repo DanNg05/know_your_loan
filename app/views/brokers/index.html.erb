@@ -1,26 +1,36 @@
-<div class="container">
-  <div class="row justify-content-center">
+<div class="container" data-controller="brokers">
+  <div class="row">
     <div class="col-sml-6">
-      <h1>Welcome to AU BEST BROKER</h1>
-      <% @brokers.each do |broker| %>
-        <div class="">
-          <h3><%= broker.first_name %></h3>
-          <p><%= broker.about %></p>
-          <%= link_to "See profile", broker_path(broker) %>
-          <br>
-          <% if current_user.admin %>
-        <%= link_to "EDIT BROKER INFO", edit_broker_path(broker) %>
-      <% end %>
-        </div>
-      <% end %>
+      <h1 class="text-center">Welcome to AU BEST BROKER</h1>
+      <div class='d-flex justify-content-center mb-3'>
+        <button data-action="click->brokers#changeView" data-brokers-target="btnView">LIST</button>
+      </div>
+      <div class="brokers-list d-none text-center" data-brokers-target="list">
+        <% @brokers.each do |broker| %>
+            <% if broker.photo.key %>
+              <%= cl_image_tag broker.photo.key, height: 300, width: 300, crop: :fill %>
+            <% end %>
+            <h3 class="mt-2"><%= broker.first_name.upcase %></h3>
+            <p><%= broker.about %></p>
+            <%= link_to "See profile", broker_path(broker), class:"btn btn-primary mb-5" %>
+            <br>
+            <% if current_user.admin %>
+              <%= link_to "EDIT BROKER INFO", edit_broker_path(broker) %>
+            <% end %>
+        <% end %>
+      </div>
       <% if current_user.admin %>
         <%= link_to "CREATE NEW BROKER", new_broker_path %>
       <% end %>
       <%# MAPBOX %>
-      <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      <div style="width: 100%; height: 100vh" data-brokers-target="brokersMap">
+        <div style="height: 100%; width: 100%"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        >
+        </div>
+      </div>
     </div>
   </div>
 </div>
