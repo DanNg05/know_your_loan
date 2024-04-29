@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @lowest_rate = @rates[:one_year].order.first
+   # @rates = Rates.all
+   #  @lowest_rate = @rates[:one_year].order.first
   end
-  end
+end

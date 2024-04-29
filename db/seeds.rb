@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+p "creating banks..."
 anz = Bank.create(one_year:5, two_years:3, three_years:2)
 bnz = Bank.create(one_year:4, two_years:5, three_years:1)
 kiwi_bank = Bank.create(one_year:3, two_years:4, three_years:3)
@@ -16,7 +17,7 @@ westpac = Bank.create(one_year:1, two_years:2, three_years:4)
 
 
 
-
+p "creating users..."
 dan_user = User.create(email: "dan@gmail.com", password: "123456", admin: false)
 admin = User.create(email: "admin@gmail.com", password: "123456", admin: true)
 broker_1 = Broker.create(first_name: "Dan", last_name: "Nguyen", email: "bestbrokerAU@gmail.com", phone_number: "0411383838", about: "Dan is well and truly one of our championed brokers at AU BEST BROKER. He’s a huge asset to the AU BEST BROKER family, providing wonderful lending advice to his South Australia community and beyond.", address: "211 Payneham Rd St Peters SA 5069")
