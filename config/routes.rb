@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   root to: "pages#home"
   get "/rates", to: "rates#rate"
@@ -19,11 +20,11 @@ Rails.application.routes.draw do
 
   resources :personals, only: [:show, :new, :create, :edit, :update]
 
-  resources :mortgages, only: [:show, :update]
+  # resources :mortgages, only: [:show, :edit, :update]
   resources :homebuyers, only: [:show, :update]
 
   resources :rates do
-    resources :mortgages, only: [:new, :create]
+    resources :mortgages, only: [:new, :create, :edit, :update]
   end
 
   resources :rates do

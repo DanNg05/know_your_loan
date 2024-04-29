@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-import { Chart } from "./chart.js";
+// import { Chart } from "./chart.js";
 
 
 
@@ -10,7 +10,7 @@ export default class extends Controller {
   }
 }
 
-// TODO: Register all Chartjs controllers
-const controllers = Object.values(Chartjs).filter(
-  chart => chart.id !== undefined
-);
+// // TODO: Register all Chartjs controllers
+// const controllers = Object.values(Chartjs).filter(
+//   chart => chart.id !== undefined
+// );
