@@ -1,6 +1,8 @@
 
 <!-- Hero 1 - Bootstrap Brain Component -->
-<section class="bsb-hero-1 px-3 bsb-overlay bsb-hover-pull" style="background-image: url('<%=image_path("banner_image.jpeg")%>');background-size:100% 100%;">
+<div class="background">
+<section class="bsb-hero-1 px-3 bsb-overlay bsb-hover-pull">
+
   <div class="container">
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
     <div class="row align-items-center g-lg-5 py-5">
@@ -30,7 +32,7 @@
       </div>
     </div>
   </div>
-  </div>
+ </div>
 </section>
 
 
@@ -51,7 +53,7 @@
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
         <div class="container">
           <div class="carousel-caption">
-            <h1><%= @lowest_rate %></h1>
+            <h1><%= @lowest_rate.interest_value %></h1>
           </div>
         </div>
       </div>
@@ -78,8 +80,6 @@
 
 
 <div class="container px-4 py-5">
-    <h2 class="pb-2 border-bottom">Features with title</h2>
-
     <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
       <div class="col d-flex flex-column align-items-start gap-2">
         <h2 class="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2>
@@ -91,9 +91,13 @@
         <div class="row row-cols-1 row-cols-sm-2 g-4">
           <div class="col d-flex flex-column gap-2">
             <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <svg class="bi" width="1em" height="1em">
+              <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+    <dotlottie-player src="https://lottie.host/c9904b46-f48a-4ae2-ac1c-f401e472d8ae/YGw2MyDUCS.json" background="transparent" speed="1" style="width: 300px; height: 100px;" loop autoplay></dotlottie-player>
+
+              <%# <svg class="bi" width="1em" height="1em">
                 <use xlink:href="#collection"></use>
-              </svg>
+              </svg> %>
             </div>
             <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
             <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
@@ -101,9 +105,13 @@
 
           <div class="col d-flex flex-column gap-2">
             <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <svg class="bi" width="1em" height="1em">
+              <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+    <dotlottie-player src="https://lottie.host/daa4c2bc-bd06-4e4b-9a02-6d0d9e102532/OUo2zFachA.json" background="transparent" speed="1" style="width: 300px; height: 100px;" loop autoplay></dotlottie-player>
+
+              <%# <svg class="bi" width="1em" height="1em">
                 <use xlink:href="#gear-fill"></use>
-              </svg>
+              </svg> %>
             </div>
             <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
             <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
@@ -111,9 +119,13 @@
 
           <div class="col d-flex flex-column gap-2">
             <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <svg class="bi" width="1em" height="1em">
+              <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+    <dotlottie-player src="https://lottie.host/01e37067-6b1f-4297-9248-27351f5f9b9a/5qzdDdEOcV.json" background="transparent" speed="1" style="width: 100px;" loop autoplay></dotlottie-player>
+
+              <%# <svg class="bi" width="1em" height="1em">
                 <use xlink:href="#speedometer"></use>
-              </svg>
+              </svg> %>
             </div>
             <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
             <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
@@ -121,9 +133,12 @@
 
           <div class="col d-flex flex-column gap-2">
             <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <svg class="bi" width="1em" height="1em">
+              <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+    <dotlottie-player src="https://lottie.host/2b3a8ae6-3a3a-42d8-93ba-89f6f6ceace8/pjE9vge0HZ.json" background="transparent" speed="1" style="width: 100px; " loop autoplay></dotlottie-player>
+              <%# <svg class="bi" width="1em" height="1em">
                 <use xlink:href="#table"></use>
-              </svg>
+              </svg> %>
             </div>
             <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
             <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
@@ -139,19 +154,22 @@
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
       <div class="col">
         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow zoombox home-container">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">HOME BUYER</h3>
+              <p>compare mortgage rates</p>
+     <p>calculate your mortgage repayments</p>
+      <p>find your mortgage broker</p>
             <ul class="d-flex list-unstyled mt-auto">
               <li class="me-auto">
                 <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
               </li>
               <li class="d-flex align-items-center me-3">
                 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small>Earth</small>
+                <small></small>
               </li>
               <li class="d-flex align-items-center">
                 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small>3d</small>
+                <small></small>
               </li>
             </ul>
           </div>
@@ -160,19 +178,21 @@
 
       <div class="col">
         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h3>
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow zoombox investor-container">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">INVESTOR</h3>
+            <p>compare bank rates</p>
+         <p>find the best instrest rate</p>
             <ul class="d-flex list-unstyled mt-auto">
               <li class="me-auto">
                 <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
               </li>
               <li class="d-flex align-items-center me-3">
                 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small>Pakistan</small>
+                <small></small>
               </li>
               <li class="d-flex align-items-center">
                 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small>4d</small>
+                <small></small>
               </li>
             </ul>
           </div>
@@ -181,19 +201,19 @@
 
       <div class="col">
         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
+          <div  class="d-flex flex-column h-100 p-5 pb-3 text-shadow zoombox broker-container">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">APPLY AS A BROKER</h3>
             <ul class="d-flex list-unstyled mt-auto">
               <li class="me-auto">
                 <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
               </li>
               <li class="d-flex align-items-center me-3">
                 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small>California</small>
+                <small></small>
               </li>
               <li class="d-flex align-items-center">
                 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small>5d</small>
+                <small></small>
               </li>
             </ul>
           </div>
@@ -201,53 +221,4 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container">
-   <div class=banner>
-      <h1>CURRENT LOWEST RATE</h1>
-   </div>
-   <div class="home-container"  >
-  <h1>HOME BUYER</h1>
-   <%# <div class=p-container> %>
-     <p>compare mortgage rates</p>
-     <p>calculate your mortgage repayments</p>
-      <p>find your mortgage broker</p>
-      <%# </div> %>
-   </div>
-
-   <div class="investor-container" >
-      <h1>INVESTOR</h1>
-         <p>compare bank rates</p>
-         <p>find the best instrest rate</p>
-   </div>
-
-   <div class=signin-container>
-
-      <div class="user-signin-btn" >
-         <h1>sign-in</h1>
-      </div>
-      <div class="signin-broker-btn" >
-         <h1>apply as a broker</h1>
-      </div>
-
-   </div>
-
-</div>
+  </div>

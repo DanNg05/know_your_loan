@@ -1,10 +1,18 @@
 // Specific CSS for your home-page
+.background{
+   background-image:url(https://i.postimg.cc/6qd4Kz8P/Adobe-Stock-136888535.jpg);
+   // background-color: aqua;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: scroll;
+   height: 100vh;
+   }
 
 .container{
    display: flex;
    justify-content: center;
    // padding: auto;
-
    padding-left: 25px;
    padding-right: 25px;
    // flex: content;
@@ -24,36 +32,30 @@
 }
 
 .home-container{
-   display: flex;
-   justify-content: center;
-   padding: 25px;
-   margin: 25px;
-   flex: auto;
-   text-align: center;
-   flex-wrap: wrap;
    background-image: url(https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/raw/SOPL21005_780x440_mobile.jpeg);
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
-   flex-direction: column;
 }
+
 h1{
    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.text-shadow{
+   text-shadow: black 0px 0 4px;
+}
+
+.broker-container{
+   background-image: url(https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/cms/1026040678PartTimeMortgageBroker.jpg=ws1280x960);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
 .investor-container{
-   display: flex;
-   justify-content: center;
-   padding: 25px;
-   margin: 25px;
-   flex: auto;
-   text-align: center;
-   flex-wrap: wrap;
    background-image: url(https://www.nerdwallet.com/au/wp-content/uploads/sites/3/2022/11/home-loan-jargon-435x290.jpg);
    background-repeat: no-repeat;
-   background-position: center;
    background-size: cover;
-   flex-direction: column;
 }
 .signin-container{
    justify-content: center;
@@ -61,45 +63,15 @@ h1{
    flex-direction: row;
    align-items: center;
    // text-align: center;
-
    justify-content: space-around;
 }
 
-.home-container:hover{
-   background-color: rgb(175, 158, 158);
-   color: rgb(249, 251, 252);
-   // opacity: 30%;
-   transform: scale(1.002);
-   transition: all 0.05s ease;
-}
 
-.investor-container:hover{
-   background-color: rgb(175, 158, 158);
-   color: rgb(246, 246, 246);
-   // opacity: 30%;
-   transform: scale(1.002);
-   transition: all 0.05s ease;
-}
-
-.user-signin-btn:hover{
-   background-color: rgb(175, 158, 158);
-   color: rgb(246, 246, 246);
-   // opacity: 30%;
-   transform: scale(1.002);
-   transition: all 0.05s ease;
-}
-.signin-broker-btn:hover{
-   background-color: rgb(0, 0, 0);
+.zoombox:hover{
+   background-color: rgb(17, 16, 16);
    color: rgb(246, 246, 246);
    // opacity: 30%;
    transform: scale(1.02);
-   transition: all 0.05s ease;
-}
-.banner:hover{
-   background-color: rgb(0, 0, 0);
-   color: rgb(246, 246, 246);
-   // opacity: 30%;
-   transform: scale(1.002);
    transition: all 0.05s ease;
 }
 
@@ -107,11 +79,9 @@ h1{
 .user-signin-btn{
    margin: 20px 20px 20px 20px;
    padding: 20px 20px 20px 20px;
-
 }
 
 .signin-broker-btn{
    margin: 20px 20px 20px 20px;
    padding: 20px 20px 20px 20px;
-
 }

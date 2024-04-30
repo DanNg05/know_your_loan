@@ -57,6 +57,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_27_062548) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.decimal "one_year"
+    t.decimal "two_years"
+    t.decimal "three_years"
   end
 
   create_table "brokers", force: :cascade do |t|
