@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @rates = Rate.all
-    @lowest_rate = @rates[:one_year].order.first
+    @lowest_rate = @rates.order(:interest_value).first
   end
 
-  end
+end
