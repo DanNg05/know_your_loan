@@ -41,6 +41,6 @@ class MortgagesController < ApplicationController
   end
 
   def mortgage_list
-    @mortgage = Mortgage.find(paramsp[:id])
+    @mortgage = Mortgage.find(params[:id])
   end
 end

@@ -1,28 +1,9 @@
 <div class="container">
-  <%# <div class="chart">
-    <canvas id="myChart" data-controller="chart">
-      <!-- TODO: Display doughnut chart below -->
-    </canvas>
-  </div> %>
+
   <% if @mortgage %>
     <%= pie_chart [["Monthly repayment", @mortgage.monthly_repayment], ["Monthly cashflow",@mortgage.monthly_cashflow], ["Maintenance fund",@mortgage.maintenance_fund], ["Other expenses",@mortgage.other_expenses]], donut: true %>
   <% end %>
-  <%# <table>
-    <tbody>
-      <tr>
-        <td> Interest Rate</td>
-        <td><%= @mortgage.interest_rate</td>
-      </tr>
-      <tr>
-        <td>Maintenance Fund</td>
-        <td><%= @mortgage.maintenance_fund</td> %>
-      <%# </tr> %>
-      <%# <tr> %>
-        <%# <td>Other Expenses</td> %>
-        <%# <td><%= @mortgage.other_expenses</td> %>
-      <%# </tr> %>
-    <%# </tbody> %>
-  <%# </table>  %>
+
   <div data-controller="mortgage-edit" class="d-flex justify-content-center align-items-center flex-column">
     <button class="btn btn-primary mt-3" data-action="click->mortgage-edit#change">EDIT YOUR MORTGAGE</button>
     <div class="d-none" data-mortgage-edit-target="mortgageForm">

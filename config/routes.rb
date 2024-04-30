@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :personals, only: [:show, :new, :create, :edit, :update]
 
-  # resources :mortgages, only: [:show, :edit, :update]
+  resources :mortgages, only: [:show, :edit, :update]
   resources :homebuyers, only: [:show, :update]
 
   resources :rates do
