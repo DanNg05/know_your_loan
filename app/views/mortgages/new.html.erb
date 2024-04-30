@@ -1,8 +1,13 @@
 <h1 class="text-center">INVESTMENT PROPERTY</h1>
 
+
+<div class="property-info">
+  <%= simple_form_for [@rate, @mortgage] do |f| %>
+
 <div class="property-info" data-controller="appointment-alert">
   <%= simple_form_for [@rate, @mortgage], html: {"data-appointment-alert-target": "mortgageForm"} do |f| %>
   <div class="loan-info">
+
     <div class="field">
       <%= f.label :property_value %>
       <%= f.number_field :property_value, id: 'property_value', data: {"appointment-alert-target": "propertyValue"} %>
@@ -19,6 +24,7 @@
       <%= f.input :interest_rate, :as => :hidden, :input_html => {:value => @rate.interest_value} %>
     </div>
   </div>
+
 
   <div class="rental-info">
     <div class="field">
