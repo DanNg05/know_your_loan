@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_27_062548) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_30_103711) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,9 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_27_062548) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.decimal "one_year"
-    t.decimal "two_years"
-    t.decimal "three_years"
+    t.string "image_url"
   end
 
   create_table "brokers", force: :cascade do |t|
@@ -91,6 +90,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_27_062548) do
     t.decimal "car_loan_payment"
     t.decimal "other_debts"
     t.decimal "net_disposable_income"
+    t.decimal "principal_payments_first_year"
+    t.decimal "interest_payments_first_year"
+    t.decimal "total_interest_paid"
+    t.decimal "total_mortgage_repayment"
+    t.decimal "interest_rate_safery"
+    t.bigint "rate_id"
+    t.index ["rate_id"], name: "index_homebuyers_on_rate_id"
     t.index ["user_id"], name: "index_homebuyers_on_user_id"
   end
 
@@ -148,6 +154,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_27_062548) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "appointments", "brokers"
   add_foreign_key "appointments", "users"
+  add_foreign_key "homebuyers", "rates"
   add_foreign_key "homebuyers", "users"
   add_foreign_key "mortgages", "rates"
   add_foreign_key "mortgages", "users"

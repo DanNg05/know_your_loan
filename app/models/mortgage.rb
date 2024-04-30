@@ -16,6 +16,7 @@ class Mortgage < ApplicationRecord
     loan_term_in_months = 30 * 12 # Assuming a 30-year loan term
     self.loan_amount = loan_amount
     self.monthly_repayment = (loan_amount * monthly_interest_rate) / (1 - (1 + monthly_interest_rate) ** -loan_term_in_months)
+
     monthly_cashflow = rental_income - maintenance_fund - other_expenses - monthly_repayment
     self.monthly_cashflow = monthly_cashflow
   end
