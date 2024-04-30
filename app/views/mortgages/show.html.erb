@@ -20,7 +20,11 @@
 
   </div>
   <div class="result">
-    <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %>
+    <% if @mortgage.monthly_cashflow.positive? %>
+    <%= link_to "Recalculate", rate_mortgage_path(@rate) %>
+    <% else %>
+      <p>Your monthly repayment is negative please <%= link_to "Recalculate", rate_mortgage_path(@rate) %></p>
+    <% end %>
     <% if @mortgage.monthly_cashflow.positive? %>
       <%= link_to "Save and find a broker" %>
     <% end %>
@@ -29,8 +33,8 @@
 
 <div class="container">
 
-  <% if @mortgage %>
-    <%= pie_chart [["Monthly repayment", @mortgage.monthly_repayment], ["Monthly cashflow",@mortgage.monthly_cashflow], ["Maintenance fund",@mortgage.maintenance_fund], ["Other expenses",@mortgage.other_expenses]], donut: true %>
+  <% if @mortgage.monthly_cashflow.positive? %>
+    <%= pie_chart [["Monthly repayment", @mortgage.monthly_repayment], ["Monthly cashflow",@mortgage.monthly_cashflow], ["Maintenance fund",@mortgage.maintenance_fund], ["Other expenses",@mortgage.other_expenses]], donut: true, round: 2, thousands: "," %>
   <% end %>
 
   <div data-controller="mortgage-edit" class="d-flex justify-content-center align-items-center flex-column">

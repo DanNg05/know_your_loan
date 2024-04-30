@@ -1,14 +1,25 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sml-6">
-      <h2>Your appointments with <%= @broker.first_name %>:</h2>
-      <% @appointments.each do |appointment| %>
-        <li>
-          Date: <%= appointment.date %>
-          <br>
-          Message: <%= appointment.message %>
-        </li>
-      <% end %>
+      <h2 style="text-align: center; font-weight: bold">YOUR APPOINTMENTS</h2>
+    <table class="app-table">
+      <tbody>
+        <%# Header %>
+        <tr>
+          <td>Broker <i class="fa-solid fa-user"></i></td>
+          <td>Date</td>
+
+        <%# Data rows %>
+        </tr>
+        <% @appointments_list.each do |appointment| %>
+          <% broker = Broker.find(appointment.broker_id) %>
+          <tr>
+            <td><p> <%= broker.first_name %> <%= broker.last_name %></p></td>
+            <td><p><%= appointment.date %><p></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
     </div>
   </div>
 </div>

@@ -3,7 +3,7 @@
     <div class="col-sml-6">
       <h1 class="text-center">Welcome to AU BEST BROKER</h1>
       <div class='d-flex justify-content-center mb-3'>
-        <button data-action="click->brokers#changeView" data-brokers-target="btnView">LIST</button>
+        <button data-action="click->brokers#changeView" data-brokers-target="btnView" class="btn btn-success">LIST</button>
       </div>
       <div class="brokers-list d-none text-center" data-brokers-target="list">
         <% @brokers.each do |broker| %>
