@@ -5,5 +5,4 @@ class PagesController < ApplicationController
     @rates = Rate.all
     @lowest_rate = @rates.order(:interest_value).first
   end
-
 end
