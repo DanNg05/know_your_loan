@@ -2,8 +2,10 @@ class AppointmentsController < ApplicationController
 
 
   def index
+    # raise
     @appointments = Appointment.where(user_id: current_user.id)
-    @broker = Broker.find(params[:broker_id])
+    @appointments_list = @appointments.order(:date)
+    # @broker = Broker.find(params[:broker_id])
   end
 
   def new

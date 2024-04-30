@@ -12,22 +12,24 @@
 
 
       <!-- Data rows -->
-      <% @rates.each_with_index do |rate, index| %>
+      <% @banks.each_with_index do |bank, index| %>
         <% unless index == 0 %> <!-- Skip the first row -->
         <tr>
           <td class="tg-0lax">
-            <% if rate[:image].empty? %>
+            <% if bank.image_url.empty? %>
               <!-- If there's no image, leave the cell empty -->
             <% else %>
-              <div>
-                <img src=<%= rate[:image] %> alt="" class="image-size">
-                <%= rate[:bank_name] %>
-              </div>
+             <%= link_to new_rate_mortgage_path(bank), class:"bank_link" do %>
+                <div>
+                  <img src=<%= bank.image_url %> alt="" class="image-size">
+                <span> <%= bank.name %> </span>
+                </div>
+              <% end %>
             <% end %>
           </td>
-          <td class="tg-0lax interest"><%= rate[:one_year] %></td>
-          <td class="tg-0lax interest"><%= rate[:two_years] %></td>
-          <td class="tg-0lax interest"><%= rate[:three_years] %></td>
+          <td class="tg-0lax interest"><%= bank.rates[0].interest_value %></td>
+          <td class="tg-0lax interest"><%= bank.rates[1].interest_value %></td>
+          <td class="tg-0lax interest"><%= bank.rates[2].interest_value %></td>
         </tr>
         <% end %>
       <% end %>
@@ -37,7 +39,9 @@
 
   <br>
 
+
   <div class="bank-selection">
-    <h1>placeholder</h1>
+    <h2>Choose your bank</h2>
   </div>
-</div>
+  <div class="dropdown">
+<button class="dropbtn">Dropdown</button>

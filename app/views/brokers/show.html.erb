@@ -36,8 +36,17 @@
 
       <%# Users can write a review about the broker if they have the appointment(s) with them  %>
       <% if @appointments != [] %>
-        <div data-controller="review-toggle">
-          <button class="btn btn-primary" data-action="click->review-toggle#fire">Add new review</button>
+        <div data-controller="review-toggle"
+          style="
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            ">
+
+          <button class="btn btn-primary mb-3" data-action="click->review-toggle#fire">Add new review</button>
+
           <div class="d-none" data-review-toggle-target="reviewForm">
             <%= render 'reviews/review_form', broker: @broker, review: @review %>
           </div>

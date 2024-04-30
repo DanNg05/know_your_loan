@@ -25,6 +25,7 @@ class MortgagesController < ApplicationController
   end
 
   def edit
+    @rate = Rate.find(@mortgage.rate_id)
   end
 
   def update

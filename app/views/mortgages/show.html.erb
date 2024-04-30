@@ -36,9 +36,31 @@
 
   </div>
   <div class="result">
-    <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %>
+    <% if @mortgage.monthly_cashflow.positive? %>
+    <%= link_to "Recalculate", rate_mortgage_path(@rate) %>
+    <% else %>
+      <p>Your monthly repayment is negative please <%= link_to "Recalculate", rate_mortgage_path(@rate) %></p>
+    <% end %>
     <% if @mortgage.monthly_cashflow.positive? %>
       <%= link_to "Save and find a broker" %>
     <% end %>
   </div>
 </div>
+
+
+<div class="container">
+
+  <% if @mortgage.monthly_cashflow.positive? %>
+    <%= pie_chart [["Monthly repayment", @mortgage.monthly_repayment], ["Monthly cashflow",@mortgage.monthly_cashflow], ["Maintenance fund",@mortgage.maintenance_fund], ["Other expenses",@mortgage.other_expenses]], donut: true, round: 2, thousands: "," %>
+  <% end %>
+
+  <div data-controller="mortgage-edit" class="d-flex justify-content-center align-items-center flex-column">
+    <button class="btn btn-primary mt-3" data-action="click->mortgage-edit#change">EDIT YOUR MORTGAGE</button>
+    <div class="d-none" data-mortgage-edit-target="mortgageForm">
+      <p class="mt-3">EDIT YOUR MORTGAGE HERE</p>
+    </div>
+  </div>
+  <br>
+  <%= link_to "BROKER LIST", brokers_path, class:"btn btn-primary" %>
+</div>
+

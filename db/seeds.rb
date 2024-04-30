@@ -1,18 +1,24 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+Rate.destroy_all
+Bank.destroy_all
+User.destroy_all
+Broker.destroy_all
+html_content = URI.open('https://www.mortgagerates.co.nz/mortgage-rates').read
+doc = Nokogiri::HTML.parse(html_content)
+doc.search('.rates-table-wrapper .table-row').each_with_index do |element, index|
+  table_cells=element.search('.table-cell')
+  image=element.search('.bank-logo-container img')
+  bank_html = element.search('.product-name')
+  bank_name = bank_html.text.strip
+  one_year = table_cells[1].text.strip
+  two_years = table_cells[2].text.strip
+  three_years = table_cells[3].text.strip
 
 
-
-
-
-
+  bank = Bank.create!(name:bank_name, image_url:image.attr('src').to_s)
+  bank.rates.create!(interest_value:one_year)
+  bank.rates.create!(interest_value:two_years)
+  bank.rates.create!(interest_value:three_years)
+end
 
 
 

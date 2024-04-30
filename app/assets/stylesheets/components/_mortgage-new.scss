@@ -1,0 +1,31 @@
+
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.field-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.loan-info {
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 10px;
+  margin-bottom: 20px;
+
+}
+
+.rental-info {
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 10px;
+
+}

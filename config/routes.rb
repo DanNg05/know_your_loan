@@ -15,9 +15,9 @@ Rails.application.routes.draw do
 
   resources :brokers, only: [:index, :show, :new, :create, :edit, :update] do
     resources :reviews, only: [:index, :new, :create]
-    resources :appointments, only: [:index, :new, :create]
+    resources :appointments, only: [:new, :create]
   end
-
+  resources :appointments, only: [:index]
   resources :personals, only: [:show, :new, :create, :edit, :update]
 
   resources :mortgages, only: [:show, :edit, :update]

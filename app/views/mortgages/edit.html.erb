@@ -1,58 +1,7 @@
-<h1 class="text-center">INVESTMENT PROPERTY</h1>
-
-
-<div class="property-info">
-  <%= simple_form_for [@rate, @mortgage] do |f| %>
-
-<div class="property-info" data-controller="appointment-alert">
-  <%= simple_form_for [@rate, @mortgage], html: {"data-appointment-alert-target": "mortgageForm"} do |f| %>
-  <div class="loan-info">
-
-    <div class="field">
-      <%= f.label :property_value %>
-      <%= f.number_field :property_value, id: 'property_value', data: {"appointment-alert-target": "propertyValue"} %>
-    </div>
-
-    <div class="field">
-      <%= f.label :total_equity %>
-      <%= f.number_field :total_equity, id: 'total_equity', data: {"appointment-alert-target": "totalEquity"} %>
-    </div>
-
-    <div class="field">
-      <p> Interest Rate</p>
-      <p><%= @rate.interest_value %></p>
-      <%= f.input :interest_rate, :as => :hidden, :input_html => {:value => @rate.interest_value} %>
-    </div>
-  </div>
-
-
-  <div class="rental-info">
-    <div class="field">
-      <%= f.label :rental_income %>
-      <%= f.number_field :rental_income, id: 'rental_income', data: {"appointment-alert-target": "rentalIncome"} %>
-    </div>
-
-    <div class="field">
-      <%= f.label :maintenance_fund %>
-      <%= f.number_field :maintenance_fund, id: 'maintenance_fund', data: {"appointment-alert-target": "maintenanceFund"} %>
-    </div>
-
-    <div class="field">
-      <%= f.label :other_expenses %>
-      <%= f.number_field :other_expenses, id: 'other_expenses', data: {"appointment-alert-target": "otherExpenses"} %>
-    </div>
-  </div>
-
-    <div class="field-submit">
-      <%= f.submit "Calculate Cashflow", class:"btn btn-primary", data: { action: 'click->appointment-alert#mortgageFormFire' } %>
-    </div>
-  <% end %>
+<div data-controller="appointment-alert">
+  <h1>Edit your mortgage</h1>
+  <%= render "mortgage_form", mortgage: @mortgage %>
 </div>
-
-
-
-
-<!-- JavaScript to dynamically calculate the loan amount and monthly repayment -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var calculateCashflowButton = document.querySelector('input[type="submit"][value="Calculate Cashflow"]');
@@ -94,5 +43,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 </script>
-
-<br>
