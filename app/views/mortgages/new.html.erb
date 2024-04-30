@@ -2,6 +2,7 @@
 
 <div class="property-info">
   <%= simple_form_for [@rate, @mortgage] do |f| %>
+    <!-- loan info -->
     <div class="field">
       <%= f.label :property_value %>
       <%= f.number_field :property_value, id: 'property_value' %>
@@ -17,6 +18,7 @@
       <%= f.input :interest_rate, :as => :hidden, :input_html => {:value => @rate.interest_value} %>
     </div>
 
+    <!-- rental info -->
     <div class="field">
       <%= f.label :rental_income %>
       <%= f.number_field :rental_income, id: 'rental_income' %>

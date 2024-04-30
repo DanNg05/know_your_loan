@@ -26,7 +26,7 @@ class HomebuyersController < ApplicationController
   private
 
   def homebuyer_params
-    params.require(:homebuyer).permit(:property_value, :total_equity, :interest_rate, :salary, :other_income, :loan_term, :living_expenses, :car_loan_payment, :other_debts, :net_disposable_income)
+    params.require(:homebuyer).permit(:property_value, :total_deposit, :interest_rate, :salary, :other_income, :loan_term, :living_expenses, :car_loan_payment, :other_debts, :net_disposable_income)
   end
 
 end
