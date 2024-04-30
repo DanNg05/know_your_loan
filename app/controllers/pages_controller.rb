@@ -4,4 +4,4 @@ class PagesController < ApplicationController
   def home
     @lowest_rate = Rate.order(:interest_value).first
   end
-  end
+end

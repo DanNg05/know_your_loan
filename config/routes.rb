@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   root to: "pages#home"
   get "/rates", to: "rates#rate"
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
+  get "dashboard", to: "pages#dashboard"
   resources :banks, only: [:index, :show, :update] do
     resources :rates
   end
@@ -18,11 +20,11 @@ Rails.application.routes.draw do
 
   resources :personals, only: [:show, :new, :create, :edit, :update]
 
-  resources :mortgages, only: [:show, :update]
+  resources :mortgages, only: [:show, :edit, :update]
   resources :homebuyers, only: [:show, :update]
 
   resources :rates do
-    resources :mortgages, only: [:new, :create]
+    resources :mortgages, only: [:new, :create, :edit, :update]
   end
 
   resources :rates do
