@@ -1,0 +1,62 @@
+<%= simple_form_for [rate, homebuyer] do |f| %>
+  <!-- loan info -->
+  <div class="loan-info">
+    <div class="field">
+      <%= f.label :property_value %>
+      <%= f.number_field :property_value, id: 'property_value' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :total_deposit %>
+      <%= f.number_field :total_deposit, id: 'total_deposit' %>
+    </div>
+
+    <div class="field field-interest-rate">
+      <div class="interest-title">
+        <p>Interest Rate</p>
+      </div>
+      <div class="interest-value">
+        <p><%= number_to_percentage(@rate.interest_value, precision: 2) %></p>
+      </div>
+      <%= f.input :interest_rate, :as => :hidden, :input_html => {:value => @rate.interest_value} %>
+    </div>
+
+    <div class="field">
+      <%= f.label :loan_term %>
+      <%= f.number_field :loan_term, id: 'loan_term' %>
+    </div>
+  </div>
+  <!-- income info -->
+  <div class="rental-info">
+    <div class="field">
+      <%= f.label :salary %>
+      <%= f.number_field :salary, id: 'salary' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :other_income %>
+      <%= f.number_field :other_income, id: 'other_income' %>
+    </div>
+  </div>
+
+  <!-- expenses info -->
+  <div class="rental-info">
+    <div class="field">
+      <%= f.label :living_expenses %>
+      <%= f.number_field :living_expenses, id: 'living_expenses' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :car_loan_payment %>
+      <%= f.number_field :car_loan_payment, id: 'car_loan_payment' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :other_debts %>
+      <%= f.number_field :other_debts, id: 'other_debts' %>
+    </div>
+  </div>
+
+  <%= f.submit "Calculate Mortgage" %>
+
+<% end %>
