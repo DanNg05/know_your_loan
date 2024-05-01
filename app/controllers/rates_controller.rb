@@ -6,7 +6,7 @@ class RatesController < ApplicationController
   #  html_content = URI.open('https://www.mortgagerates.co.nz/mortgage-rates').read
   #  doc = Nokogiri::HTML.parse(html_content)
   #  doc.search('.rates-table-wrapper .table-row').each_with_index do |element, index|
-  #    # puts "#{index + 1}. #{element.text.strip}"
+  #    puts "#{index + 1}. #{element.text.strip}"
   #    table_cells=element.search('.table-cell')
   #    image=element.search('.bank-logo-container img')
   #    bank_html = element.search('.product-name')
@@ -21,6 +21,5 @@ class RatesController < ApplicationController
   #      two_years: two_years,
   #      image: image.attr('src').to_s,
   #    }
-  #  end
+   end
  end
-end
