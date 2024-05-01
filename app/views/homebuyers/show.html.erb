@@ -1,44 +1,37 @@
-<div class="mortgage-show">
-  <h1>Investment Factsheet</h1>
+<div class="homebuyer-show">
+  <h1>Homebuyer Factsheet</h1>
   <div class="factsheet">
-    <p><strong>Property Value:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.property_value, precision: 2)) %></p>
-    <p><strong>Total Equity:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.total_equity, precision: 2) )%></p>
-    <p><strong>Interest Rate:</strong> <%= number_with_precision(@mortgage.interest_rate, precision: 2) %>% </p>
+    <p><strong>Property Value:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.property_value, precision: 2)) %></p>
+    <p><strong>Total Deposit:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.total_deposit, precision: 2) )%></p>
+    <p><strong>Interest Rate:</strong> <%= number_with_precision(@homebuyer.interest_rate, precision: 2) %>% </p>
 
     <br>
 
-    <p><strong>Monthly Rental Income:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.rental_income, precision: 2)) %></p>
-    <p><strong>Maintenance Fund:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.maintenance_fund, precision: 2) )%></p>
-    <p><strong>Other Expenses:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.other_expenses, precision: 2)) %> </p>
+    <p><strong>Salary Income:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.salary, precision: 2)) %></p>
+    <p><strong>Other Income:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.other_income, precision: 2)) %> </p>
 
     <br>
 
-    <p><strong>Loan Amount:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.loan_amount, precision: 2)) %></p>
-    <p><strong>Monthly Repayment:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.monthly_repayment, precision: 2)) %></p>
-    <p><strong>Monthly Cashflow:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.monthly_cashflow, precision: 2)) %></p>
+    <p><strong>Living Expenses:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.living_expenses, precision: 2)) %></p>
+    <p><strong>Car Loan Payment:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.car_loan_payment, precision: 2)) %></p>
+    <p><strong>Other Debts:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.other_debts, precision: 2)) %> </p>
 
+    <br>
 
+    <p><strong>Total Loan Amount:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.loan_amount, precision: 2)) %></p>
+    <p><strong>Monthly Home Loan Repayment:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.monthly_repayment, precision: 2)) %></p>
+    <p><strong>Net Disposable Income after mortgage:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.net_disposable_income, precision: 2)) %></p>
+
+    <br>
+
+    <p><strong>Total Mortgage Repayment in <%= @homebuyer.loan_term %> years:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.total_mortgage_repayment, precision: 2)) %></p>
+    <p><strong>Total Interest Paid:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.total_interest_paid, precision: 2)) %></p>
   </div>
+
   <div class="result">
-    <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %>
-    <% if @mortgage.monthly_cashflow.positive? %>
+    <%= link_to "Recalculate", new_rate_homebuyer_path(@rate) %>
+    <% if @homebuyer.net_disposable_income.positive? %>
       <%= link_to "Save and find a broker" %>
     <% end %>
   </div>
-</div>
-
-<div class="container">
-
-  <% if @mortgage %>
-    <%= pie_chart [["Monthly repayment", @mortgage.monthly_repayment], ["Monthly cashflow",@mortgage.monthly_cashflow], ["Maintenance fund",@mortgage.maintenance_fund], ["Other expenses",@mortgage.other_expenses]], donut: true %>
-  <% end %>
-
-  <div data-controller="mortgage-edit" class="d-flex justify-content-center align-items-center flex-column">
-    <button class="btn btn-primary mt-3" data-action="click->mortgage-edit#change">EDIT YOUR MORTGAGE</button>
-    <div class="d-none" data-mortgage-edit-target="mortgageForm">
-      <p class="mt-3">EDIT YOUR MORTGAGE HERE</p>
-    </div>
-  </div>
-  <br>
-  <%= link_to "BROKER LIST", brokers_path, class:"btn btn-primary" %>
 </div>

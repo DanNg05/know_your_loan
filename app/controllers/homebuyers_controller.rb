@@ -1,4 +1,20 @@
 class HomebuyersController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:calculate_net_disposable_income]
+
+  def calculate_net_disposable_income
+    # Retrieve parameters from the request
+    salary = params[:salary].to_f
+    other_income = params[:otherIncome].to_f
+    living_expenses = params[:livingExpenses].to_f
+    car_loan_payment = params[:carLoanPayment].to_f
+    other_debts = params[:otherDebts].to_f
+
+    # Calculate net disposable income
+    net_disposable_income = salary + other_income - living_expenses - car_loan_payment - other_debts
+
+    render json: { net_disposable_income: net_disposable_income }
+  end
+  
   def create
     # raise
     @rate = Rate.find(params[:rate_id])

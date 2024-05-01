@@ -14,13 +14,17 @@
       <%= f.number_field :total_equity, id: 'total_equity', data: {"appointment-alert-target": "totalEquity"} %>
     </div>
 
-    <div class="field">
-      <p> Interest Rate</p>
-      <p><%= @rate.interest_value %></p>
+    <div class="field field-interest-rate">
+      <div class="interest-title">
+        <p>Interest Rate</p>
+      </div>
+      <div class="interest-value">
+        <p><%= number_to_percentage(@rate.interest_value, precision: 2) %></p>
+      </div>
       <%= f.input :interest_rate, :as => :hidden, :input_html => {:value => @rate.interest_value} %>
     </div>
-  </div>
 
+  </div>
 
   <div class="rental-info">
     <div class="field">
@@ -44,8 +48,6 @@
     </div>
   <% end %>
 </div>
-
-
 
 
 <!-- JavaScript to dynamically calculate the loan amount and monthly repayment -->
@@ -86,6 +88,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Calculate monthly cashflow
     var monthlyCashflow = rentalIncome - maintenanceFund - otherExpenses - monthlyRepayment;
     monthlyCashflowField.value = monthlyCashflow.toFixed(2);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Retrieve all input fields that need formatting
+  var inputFields = document.querySelectorAll('input[type="number"]');
+
+  // Loop through each input field
+  inputFields.forEach(function(inputField) {
+    // Add event listener to format value when input field is focused out
+    inputField.addEventListener('blur', function() {
+      // Parse the input value to a number
+      var value = parseFloat(inputField.value.replace(/,/g, '')); // Remove commas before parsing
+      // If the value is not NaN, format it with commas and update the input value
+      if (!isNaN(value)) {
+        inputField.value = value.toLocaleString('en-US', { maximumFractionDigits: 2 });
+      }
+    });
+
+    // Add event listener to remove commas when input field is focused
+    inputField.addEventListener('focus', function() {
+      // Remove commas from the input value
+      inputField.value = inputField.value.replace(/,/g, '');
+    });
   });
 });
 

@@ -1,7 +1,13 @@
+
+Mortgage.destroy_all
+Homebuyer.destroy_all
+
 Rate.destroy_all
 Bank.destroy_all
 User.destroy_all
 Broker.destroy_all
+
+
 html_content = URI.open('https://www.mortgagerates.co.nz/mortgage-rates').read
 doc = Nokogiri::HTML.parse(html_content)
 doc.search('.rates-table-wrapper .table-row').each_with_index do |element, index|
@@ -20,8 +26,6 @@ doc.search('.rates-table-wrapper .table-row').each_with_index do |element, index
     bank.rates.create!(interest_value:two_years)
     bank.rates.create!(interest_value:three_years)
 end
-
-
 
 dan_user = User.create(email: "dan@gmail.com", password: "123456", admin: false)
 admin = User.create(email: "admin@gmail.com", password: "123456", admin: true)

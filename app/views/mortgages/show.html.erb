@@ -2,19 +2,67 @@
   <h1>Investment Factsheet</h1>
 
   <div class="container">
-    <% if @mortgage %>
-      <%= pie_chart [["Monthly repayment", @mortgage.monthly_repayment], ["Monthly cashflow",@mortgage.monthly_cashflow], ["Maintenance fund",@mortgage.maintenance_fund], ["Other expenses",@mortgage.other_expenses]], donut: true %>
+    <% if @mortgage.monthly_cashflow.positive? %>
+      <%= pie_chart [["Monthly repayment", @mortgage.monthly_repayment], ["Monthly cashflow",@mortgage.monthly_cashflow], ["Maintenance fund",@mortgage.maintenance_fund], ["Other expenses",@mortgage.other_expenses]], donut: true, round: 2, thousands: "," %>
     <% end %>
 
     <div data-controller="mortgage-edit" class="d-flex justify-content-center align-items-center flex-column">
       <button class="btn btn-primary mt-3" data-action="click->mortgage-edit#change">EDIT YOUR MORTGAGE</button>
       <div class="d-none" data-mortgage-edit-target="mortgageForm">
-        <p class="mt-3">EDIT YOUR MORTGAGE HERE</p>
+        <%# <p class="mt-3">EDIT YOUR MORTGAGE HERE</p> %>
+        <%= simple_form_for [@rate, @mortgage], html: {"data-appointment-alert-target": "mortgageForm"} do |f| %>
+          <div class="loan-info">
+            <!-- Add fields for editing property value, total equity, etc. -->
+            <div class="field">
+              <%= f.label :property_value %>
+              <%= f.number_field :property_value, id: 'property_value', data: {"appointment-alert-target": "propertyValue"} %>
+            </div>
+
+            <div class="field">
+              <%= f.label :total_equity %>
+              <%= f.number_field :total_equity, id: 'total_equity', data: {"appointment-alert-target": "totalEquity"} %>
+            </div>
+
+            <div class="field field-interest-rate">
+              <div class="interest-title">
+                <p>Interest Rate</p>
+              </div>
+              <div class="interest-value">
+                <p><%= number_to_percentage(@rate.interest_value, precision: 2) %></p>
+              </div>
+              <%= f.input :interest_rate, :as => :hidden, :input_html => {:value => @rate.interest_value} %>
+            </div>
+
+          </div>
+
+          <div class="rental-info">
+            <div class="field">
+              <%= f.label :rental_income %>
+              <%= f.number_field :rental_income, id: 'rental_income', data: {"appointment-alert-target": "rentalIncome"} %>
+            </div>
+
+            <div class="field">
+              <%= f.label :maintenance_fund %>
+              <%= f.number_field :maintenance_fund, id: 'maintenance_fund', data: {"appointment-alert-target": "maintenanceFund"} %>
+            </div>
+
+            <div class="field">
+              <%= f.label :other_expenses %>
+              <%= f.number_field :other_expenses, id: 'other_expenses', data: {"appointment-alert-target": "otherExpenses"} %>
+            </div>
+          </div>
+
+          <div class="field-submit">
+            <%= f.submit "Update Mortgage", class:"btn btn-primary", data: { action: 'click->appointment-alert#updateMortgage' } %>
+          </div>
+        <% end %>
       </div>
     </div>
     <br>
     <%= link_to "BROKER LIST", brokers_path, class:"btn btn-primary" %>
   </div>
+
+
 
   <div class="factsheet">
     <p><strong>Property Value:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.property_value, precision: 2)) %></p>
@@ -37,30 +85,12 @@
   </div>
   <div class="result">
     <% if @mortgage.monthly_cashflow.positive? %>
-    <%= link_to "Recalculate", rate_mortgage_path(@rate) %>
+    <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %>
     <% else %>
-      <p>Your monthly repayment is negative please <%= link_to "Recalculate", rate_mortgage_path(@rate) %></p>
+      <p>Your monthly repayment is negative please <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %></p>
     <% end %>
     <% if @mortgage.monthly_cashflow.positive? %>
       <%= link_to "Save and find a broker" %>
     <% end %>
   </div>
 </div>
-
-
-<div class="container">
-
-  <% if @mortgage.monthly_cashflow.positive? %>
-    <%= pie_chart [["Monthly repayment", @mortgage.monthly_repayment], ["Monthly cashflow",@mortgage.monthly_cashflow], ["Maintenance fund",@mortgage.maintenance_fund], ["Other expenses",@mortgage.other_expenses]], donut: true, round: 2, thousands: "," %>
-  <% end %>
-
-  <div data-controller="mortgage-edit" class="d-flex justify-content-center align-items-center flex-column">
-    <button class="btn btn-primary mt-3" data-action="click->mortgage-edit#change">EDIT YOUR MORTGAGE</button>
-    <div class="d-none" data-mortgage-edit-target="mortgageForm">
-      <p class="mt-3">EDIT YOUR MORTGAGE HERE</p>
-    </div>
-  </div>
-  <br>
-  <%= link_to "BROKER LIST", brokers_path, class:"btn btn-primary" %>
-</div>
-
