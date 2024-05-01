@@ -1,9 +1,5 @@
 <h1 class="text-center">INVESTMENT PROPERTY</h1>
 
-
-<div class="property-info">
-  <%= simple_form_for [@rate, @mortgage] do |f| %>
-
 <div class="property-info" data-controller="appointment-alert">
   <%= simple_form_for [@rate, @mortgage], html: {"data-appointment-alert-target": "mortgageForm"} do |f| %>
   <div class="loan-info">
