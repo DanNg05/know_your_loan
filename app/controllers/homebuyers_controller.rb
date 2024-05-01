@@ -14,7 +14,11 @@ class HomebuyersController < ApplicationController
 
     render json: { net_disposable_income: net_disposable_income }
   end
-  
+
+  def index
+    @banks = Bank.first(6)
+  end
+
   def create
     # raise
     @rate = Rate.find(params[:rate_id])

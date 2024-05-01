@@ -1,0 +1,44 @@
+<h1>Choose your rate (mortgage version)</h1>
+<p>Click on the bank you would prefer to work with. A higher interest rate often leads to a greater return on your investment.</p>
+
+<div class="rate-table">
+  <div class="table-container">
+    <table class="tg">
+    <tbody>
+      <!-- Header row -->
+      <tr class="header-row">
+        <td>Lender</td>
+        <td>1 year</td>
+        <td>2 years</td>
+        <td>3 years</td>
+      </tr>
+
+
+      <!-- Data rows -->
+      <% @banks.each_with_index do |bank, index| %>
+        <% unless index == 0 %> <!-- Skip the first row -->
+        <tr>
+          <td class="tg-0lax">
+            <% if bank.image_url.empty? %>
+              <!-- If there's no image, leave the cell empty -->
+            <% else %>
+             <%= link_to new_rate_mortgage_path(bank), class:"bank_link" do %>
+                <div>
+                  <img src=<%= bank.image_url %> alt="" class="image-size">
+                <span> <%= bank.name %> </span>
+                </div>
+              <% end %>
+            <% end %>
+          </td>
+          <td class="tg-0lax interest"><%= link_to "#{bank.rates[0].interest_value}", new_rate_mortgage_path(rate_id: bank.rates[0]) %></td>
+          <td class="tg-0lax interest"><%= link_to "#{bank.rates[1].interest_value}", new_rate_mortgage_path(rate_id: bank.rates[1]) %></td>
+          <td class="tg-0lax interest"><%= link_to "#{bank.rates[2].interest_value}", new_rate_mortgage_path(rate_id: bank.rates[2]) %></td>
+        </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+    </table>
+  </div>
+
+  <br>
+

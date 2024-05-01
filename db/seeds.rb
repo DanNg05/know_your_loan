@@ -36,3 +36,7 @@ broker_3 = Broker.create(first_name: "Cassandra", last_name: "Stoodley", email: 
 # p "Created ANZ Bank"
 # rate_1 = Rate.create!(interest_value: 0.069, bank_id: 1)
 # p "Created rate 1"
+
+
+User.create(email:"homebuyer@gmail.com", password: "123456", is_homebuyer: true, admin: false)
+User.create(email:"mortgage@gmail.com", password: "123456", is_homebuyer: false, admin: false)

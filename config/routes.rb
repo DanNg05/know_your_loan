@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   resources :appointments, only: [:index]
   resources :personals, only: [:show, :new, :create, :edit, :update]
 
-  resources :mortgages, only: [:show, :edit, :update]
-  resources :homebuyers, only: [:show, :update]
+  resources :mortgages, only: [:show, :edit, :update, :index]
+  resources :homebuyers, only: [:show, :edit, :update, :index]
 
   resources :rates do
     resources :mortgages, only: [:new, :create, :edit, :update]
