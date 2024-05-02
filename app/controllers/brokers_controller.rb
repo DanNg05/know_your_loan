@@ -1,5 +1,7 @@
 class BrokersController < ApplicationController
   before_action  :broker_list, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @brokers = Broker.all
     @markers = @brokers.geocoded.map do |broker|
