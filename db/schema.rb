@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.1].define(version: 2024_04_30_103711) do
-=======
 ActiveRecord::Schema[7.1].define(version: 2024_05_01_090701) do
->>>>>>> master
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -149,10 +145,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_01_090701) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false, null: false
-<<<<<<< HEAD
-=======
     t.boolean "is_homebuyer", default: false, null: false
->>>>>>> master
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
