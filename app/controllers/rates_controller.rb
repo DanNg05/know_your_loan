@@ -1,12 +1,19 @@
 require 'open-uri'
 class RatesController < ApplicationController
- def rate
-   @banks = Bank.first(6)
+
+
+  def rate
+    if current_user.is_homebuyer == true
+      redirect_to homebuyers_path
+    else
+      redirect_to mortgages_path
+    end
+      # @banks = Bank.first(6)
   #  @rates = Array.new
   #  html_content = URI.open('https://www.mortgagerates.co.nz/mortgage-rates').read
   #  doc = Nokogiri::HTML.parse(html_content)
   #  doc.search('.rates-table-wrapper .table-row').each_with_index do |element, index|
-  #    # puts "#{index + 1}. #{element.text.strip}"
+  #    puts "#{index + 1}. #{element.text.strip}"
   #    table_cells=element.search('.table-cell')
   #    image=element.search('.bank-logo-container img')
   #    bank_html = element.search('.product-name')
@@ -21,6 +28,9 @@ class RatesController < ApplicationController
   #      two_years: two_years,
   #      image: image.attr('src').to_s,
   #    }
-  #  end
- end
+
+  # if current_user.homebuyer exists
+  # parse homebuyer rates
+  # else parse rates to mortgage path
+  end
 end

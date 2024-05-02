@@ -1,26 +1,31 @@
+
+Mortgage.destroy_all
+Homebuyer.destroy_all
+
 Rate.destroy_all
 Bank.destroy_all
 User.destroy_all
 Broker.destroy_all
+
+
 html_content = URI.open('https://www.mortgagerates.co.nz/mortgage-rates').read
 doc = Nokogiri::HTML.parse(html_content)
 doc.search('.rates-table-wrapper .table-row').each_with_index do |element, index|
-  table_cells=element.search('.table-cell')
-  image=element.search('.bank-logo-container img')
-  bank_html = element.search('.product-name')
-  bank_name = bank_html.text.strip
-  one_year = table_cells[1].text.strip
-  two_years = table_cells[2].text.strip
-  three_years = table_cells[3].text.strip
+  next if index == 0
+    table_cells=element.search('.table-cell')
+    image=element.search('.bank-logo-container img')
+    bank_html = element.search('.table-link .product-name')
+    bank_name = bank_html.text.strip
+    one_year = table_cells[1].text.strip
+    two_years = table_cells[2].text
+    three_years = table_cells[3].text.strip
 
 
-  bank = Bank.create!(name:bank_name, image_url:image.attr('src').to_s)
-  bank.rates.create!(interest_value:one_year)
-  bank.rates.create!(interest_value:two_years)
-  bank.rates.create!(interest_value:three_years)
+    bank = Bank.create!(name:bank_name, image_url:image.attr('src').to_s)
+    bank.rates.create!(interest_value:one_year)
+    bank.rates.create!(interest_value:two_years)
+    bank.rates.create!(interest_value:three_years)
 end
-
-
 
 dan_user = User.create(email: "dan@gmail.com", password: "123456", admin: false)
 admin = User.create(email: "admin@gmail.com", password: "123456", admin: true)
@@ -31,3 +36,7 @@ broker_3 = Broker.create(first_name: "Cassandra", last_name: "Stoodley", email: 
 # p "Created ANZ Bank"
 # rate_1 = Rate.create!(interest_value: 0.069, bank_id: 1)
 # p "Created rate 1"
+
+
+User.create(email:"homebuyer@gmail.com", password: "123456", is_homebuyer: true, admin: false)
+User.create(email:"mortgage@gmail.com", password: "123456", is_homebuyer: false, admin: false)

@@ -1,5 +1,14 @@
 class MortgagesController < ApplicationController
   before_action :mortgage_list, only: [:show, :edit, :update]
+
+  def index
+    @banks = Bank.first(6)
+  end
+
+  def list
+    @mortgage = Mortgage.all
+  end
+
   def create
     # raise
     @rate = Rate.find(params[:rate_id])
