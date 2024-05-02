@@ -58,8 +58,7 @@
         <% end %>
       </div>
     </div>
-    <br>
-    <%= link_to "BROKER LIST", brokers_path, class:"btn btn-primary" %>
+
   </div>
 
 
@@ -85,12 +84,12 @@
   </div>
   <div class="result">
     <% if @mortgage.monthly_cashflow.positive? %>
-    <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %>
+    <%= link_to "Recalculate", new_rate_mortgage_path(@rate), class:"btn btn-primary" %>
     <% else %>
       <p>Your monthly repayment is negative please <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %></p>
     <% end %>
     <% if @mortgage.monthly_cashflow.positive? %>
-      <%= link_to "Save and find a broker" %>
+      <%= link_to "Save and find a broker", brokers_path, class:"btn btn-primary" %>
     <% end %>
   </div>
 </div>

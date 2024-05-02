@@ -1,6 +1,6 @@
 <div class="shared-links d-flex justify-content-center align-items-center flex-column">
   <%- if controller_name != 'sessions' %>
-    <%= link_to "Log in", new_session_path(resource_name), class:"btn btn-primary" %><br />
+    <%= link_to "Log in", rates_path, class:"btn btn-primary" %><br />
   <% end %>
 
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
