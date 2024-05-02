@@ -1,5 +1,6 @@
 
 <!-- Hero 1 - Bootstrap Brain Component -->
+
 <div class="background">
 <section class="bsb-hero-1 px-3 bsb-overlay bsb-hover-pull">
 
@@ -35,13 +36,31 @@
  </div>
 </section>
 
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+
+    <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+    <h1 class="text-body-emphasis">The current lowest mortgage rate is <%= @lowest_rate.interest_value %>%</h1>
+    <p class="col-lg-8 mx-auto fs-5 text-muted">
+      Connect with your broker now to get on top of your mortgage finances.</p>
+    <div class="d-inline-flex gap-2 mb-5">
+      <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+        Sign up Now!
+        <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+      </button>
+      <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+        Login
+      </button>
+    </div>
+  </div>
+</div>
 
 
 <div class="container px-4 py-5">
     <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
       <div class="col d-flex flex-column align-items-start gap-2">
-        <h2 class="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2>
-        <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+        <h2 class="fw-bold text-body-emphasis">How KnowYourLoan helps you navigate the tough world of financing</h2>
+        <p class="text-body-secondary">KnowqYourLoan helps you navigate the tough world of financing, allowing you to navigate towards a broker that is right for you and your goals for your investment property.</p>
         <a href="#" class="btn btn-primary btn-lg">Primary button</a>
       </div>
 
@@ -106,117 +125,84 @@
     </div>
   </div>
 
- <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+
+<section class="container pt-5 mt-xl-3 mt-xxl-5">
+        <div class="row pt-1 pt-sm-3 pt-md-4 pt-lg-5 mt-xl-2">
+          <div class="col-lg-4">
+            <h2 class="h1 pb-1 pb-sm-2 mb-4">A hub for brokers and buyers alike</h2>
+          </div>
+          <div class="col-lg-8 col-xl-7 offset-xl-1">
+            <div class="ps-lg-4 ps-xl-0">
+              <div data-simplebar="init" class=""><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
+                <ul class="nav nav-tabs flex-nowrap mb-2" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link text-nowrap px-4 px-lg-3 px-xl-4 active" href="#designers" data-bs-toggle="tab" role="tab" aria-selected="true">First Home Buyers</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link text-nowrap px-4 px-lg-3 px-xl-4" href="#developers" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">Investors</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link text-nowrap px-4 px-lg-3 px-xl-4" href="#managers" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">Brokers</a>
+                  </li>
+                </ul>
+              </div></div></div></div><div class="simplebar-placeholder" style="width: 746px; height: 63px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; display: none;"></div></div></div>
+              <div class="tab-content py-2 pb-md-0 pt-sm-3 pt-lg-4 mb-4 mb-md-5">
+                <div class="tab-pane fade active show" id="designers" role="tabpanel">
+                  <p class="fs-xl mb-4">The struggle of being a first home buyer can feel like navigating a maze of financial hurdles, juggling dreams with harsh realities, and facing the daunting task of competing in a fiercely competitive housing market, all while yearning for that place to call your own.</p>
+                  <ul class="fs-xl mb-0">
+                    <li class="mb-1">Access to your mortgage repayments and record of amount repayed, all in one place.</li>
+                    <li class="mb-1">An abundant range of brokers which is recommended to you based on your needs and wants.</li>
+                    <li class="mb-1">All brokers go through tough verification processes to ensure you are working with the best. </li>
+                  </ul>
+                </div>
+                <div class="tab-pane fade" id="developers" role="tabpanel">
+                  <p class="fs-xl mb-4">Etiam sed porta massa. In sapien metus, lobortis eu tortor id, maximus commodo enim. Phasellus feugiat mi vitae enim cursus, ut scelerisque augue scelerisque. Pellentesque habitant morbi tristique senectus et netus.</p>
+                  <ul class="fs-xl mb-0">
+                    <li class="mb-1">Donec imperdiet dolor at leo sodales.</li>
+                    <li class="mb-1">Fringilla placerat lobortis viverra aliquam ut nisl nisi.</li>
+                    <li class="mb-1">Lobortis ullamcorper in praesent venenatis non non sed pharetra dipise.</li>
+                    <li class="mb-1">Mollis dui nibh at condimentum.</li>
+                  </ul>
+                </div>
+                <div class="tab-pane fade" id="managers" role="tabpanel">
+                  <p class="fs-xl mb-4">Ipsum sed nascetur dolor accumsan integer phasellus tincidunt. Nulla quisque pellentesque adipiscing placerat integer feugiat facilisi elit mi. Dictum nunc lacinia vel molestie laoreet aliquet ridiculus diam justo viverra.</p>
+                  <ul class="fs-xl mb-0">
+                    <li class="mb-1">At donec auctor quam ut scelerisque dui.</li>
+                    <li class="mb-1">Mollis sed fringilla placerat lobortis viverra aliquam ut nisl nisi.</li>
+                    <li class="mb-1">Odio ullamcorper in praesent venenatis non non sed pharetra dipise.</li>
+                    <li class="mb-1">Lobortis dui nibh at condimentum.</li>
+                  </ul>
+                </div>
+                <div class="tab-pane fade" id="marketers" role="tabpanel">
+                  <p class="fs-xl mb-4">Etiam sed porta massa. In sapien metus, lobortis eu tortor id, maximus commodo enim. Phasellus feugiat mi vitae enim cursus, ut scelerisque augue scelerisque. Pellentesque habitant morbi tristique senectus et netus.</p>
+                  <ul class="fs-xl mb-0">
+                    <li class="mb-1">Donec imperdiet dolor at leo sodales.</li>
+                    <li class="mb-1">Fringilla placerat lobortis viverra aliquam ut nisl nisi.</li>
+                    <li class="mb-1">Lobortis ullamcorper in praesent venenatis non non sed pharetra dipise.</li>
+                    <li class="mb-1">Mollis dui nibh at condimentum.</li>
+                  </ul>
+                </div>
+              </div>
+              <a class="btn btn-lg btn-primary w-100 w-sm-auto" href="#tickets" data-scroll="" data-scroll-offset="120">
+                Buy access pass
+                <i class="ai-arrow-down ms-2 me-n2"></i>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-        <div class="container">
-          <div class="carousel-caption">
-            <h1><%= @lowest_rate.interest_value %>%</h1>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-          </div>
-        </div>
-      </div>
+      </section>
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-body-secondary">© 2024 KnowYourLoan</span>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
 
-  <div class="container px-4 py-5" id="custom-cards">
-    <h2 class="pb-2 border-bottom">Custom cards</h2>
-
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow zoombox home-container">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">HOME BUYER</h3>
-              <p>compare mortgage rates</p>
-     <p>calculate your mortgage repayments</p>
-      <p>find your mortgage broker</p>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small></small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small></small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow zoombox investor-container">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">INVESTOR</h3>
-            <p>compare bank rates</p>
-         <p>find the best instrest rate</p>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small></small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small></small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
-          <div  class="d-flex flex-column h-100 p-5 pb-3 text-shadow zoombox broker-container">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">APPLY AS A BROKER</h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small></small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small></small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+    </ul>
+  </footer>
