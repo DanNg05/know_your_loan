@@ -83,8 +83,3 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-<<<<<<< HEAD
-# gem "sassc-rails"
-=======
-
->>>>>>> master
