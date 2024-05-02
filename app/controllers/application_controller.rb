@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+  protected
+
+  def after_sign_in_path_for(resource)
+    rates_path # Change 'root_path' to the desired path you want to redirect to after login
+  end
+
   private
 
   # def skip_pundit?
