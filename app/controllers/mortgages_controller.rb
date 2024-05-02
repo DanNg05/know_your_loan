@@ -41,7 +41,7 @@ class MortgagesController < ApplicationController
     @mortgage.update(mortgage_params)
     @mortgage.user = current_user
     if @mortgage.save
-      redirect_to dashboard_path
+      redirect_to mortgage_path(@mortgage)
     end
   end
   private
