@@ -26,7 +26,8 @@ class HomebuyersController < ApplicationController
     @homebuyer.rate = @rate
     @homebuyer.user = current_user
       @homebuyer.calculate_homebuyer
-      if @homebuyer.save
+      # raise
+      if @homebuyer.save!
         redirect_to homebuyer_path(@homebuyer), notice: 'File was successfully created.'
       else
         render :new
@@ -36,6 +37,48 @@ class HomebuyersController < ApplicationController
   def show
     @homebuyer = Homebuyer.find(params[:id])
     @rate = @homebuyer.rate
+    # @principal_data = []
+    # @loan_balance = @homebuyer.loan_amount
+    # @homebuyer.principal_payments.each_with_index do |principle, index|
+    #   if index == 0
+    #     data_value = [index, @loan_balance]
+    #   elsif index == @homebuyer.loan_term
+    #     data_value = [index, 0]
+    #   else
+    #     @loan_balance = @loan_balance - principle
+    #     data_value = [index, @loan_balance]
+    #   end
+    #   @principal_data << data_value
+    # end
+    @principal_data = [[0, @homebuyer.loan_amount]]
+    @loan_balance = @homebuyer.loan_amount
+    # raise
+    for i in 1..@homebuyer.loan_term do
+      if i == @homebuyer.loan_term
+        data = [i, 0]
+        @principal_data << data
+      end
+      @loan_balance -= @homebuyer.principal_payments[i-1]
+      data = [i, @loan_balance]
+      @principal_data << data
+    end
+
+    @debt = [[0, @homebuyer.total_mortgage_repayment]]
+    @remaining = @homebuyer.total_mortgage_repayment
+    for i in  1..@homebuyer.loan_term do
+      # raise
+      if i == @homebuyer.loan_term
+        data = [i, 0]
+        @principal_data << data
+      end
+      total_payment_for_current_year = @homebuyer.principal_payments[i-1] + @homebuyer.interest_payments[i-1]
+      @remaining -= total_payment_for_current_year
+      data = [i, @remaining]
+      @debt << data
+      # raise
+    end
+
+    # raise
   end
 
   def new
