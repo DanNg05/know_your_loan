@@ -7,8 +7,8 @@ class MortgagesController < ApplicationController
     # raise
   end
 
-  def list
-    @mortgage = Mortgage.all
+  def listing
+    @mortgages = Mortgage.where(user: current_user)
   end
 
   def create
@@ -46,6 +46,8 @@ class MortgagesController < ApplicationController
       redirect_to mortgage_path(@mortgage)
     end
   end
+
+
   private
 
   def mortgage_params
