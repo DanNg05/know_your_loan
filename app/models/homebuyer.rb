@@ -12,6 +12,7 @@
   belongs_to :user
   belongs_to :rate
 
+
   def calculate_homebuyer
     return unless property_value && total_deposit && interest_rate && loan_term
 
@@ -20,7 +21,7 @@
     loan_term_in_years = loan_term
 
     self.loan_amount = loan_amount
-    self.monthly_repayment = (loan_amount * monthly_interest_rate) / (1 - (1 + monthly_interest_rate) ** -loan_term_in_years * 12)
+    self.monthly_repayment = (loan_amount * monthly_interest_rate) / (1 - (1 + monthly_interest_rate) ** (-loan_term_in_years * 12))
 
     principal_payments = []
     interest_payments = []
@@ -34,23 +35,26 @@
       12.times do
         interest_payment_month = remaining_balance * monthly_interest_rate
         principal_payment_month = monthly_repayment - interest_payment_month
+        principal_payment_month = [principal_payment_month, remaining_balance].min
         remaining_balance -= principal_payment_month
 
         interest_payment_year += interest_payment_month
         principal_payment_year += principal_payment_month
+        principal_payment_year = principal_payment_year.round(0)
       end
 
       principal_payments << principal_payment_year
       interest_payments << interest_payment_year
       total_interest_paid += interest_payment_year
     end
-
+    # principal_payments << 0
+    # interest_payments << 0
     self.principal_payments = principal_payments
     self.interest_payments = interest_payments
     self.total_mortgage_repayment = monthly_repayment * loan_term_in_years * 12
     self.total_interest_paid = total_interest_paid
     self.net_disposable_income = salary + other_income - living_expenses - car_loan_payment - other_debts
-
+    self.save!
     # self.interest_rate_safety = calculate_interest_rate_safety(loan_term_in_months / 12, net_disposable_income, loan_amount)
   end
 

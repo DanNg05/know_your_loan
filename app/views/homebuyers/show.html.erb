@@ -1,14 +1,13 @@
 <div class="container homebuyer-show">
   <h1>Homebuyer Factsheet</h1>
   <div>
-    <% data = [
+        <% data = [
       {
-      name: "Principle payment",
-      data: [["0", 100], ["Year 2", 80], ["Year 3", 70], ["Year 4", 60], ["Year 5", 40]]
-      },
+      name: "Loan Balance",
+      data: @principal_data  },
       {
-      name: "Total payment",
-      data: [["0", 200], ["Year 2", 180], ["Year 3", 170], ["Year 4", 160], ["Year 5", 140]]
+      name: "Total debt",
+      data: @debt
       }
       ] %>
     <%= area_chart data, colors: ["#666", "#b00"], xtitle: "Year", ytitle: "Payment" %>
