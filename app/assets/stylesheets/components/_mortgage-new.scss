@@ -1,0 +1,53 @@
+
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.field-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.loan-info {
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 10px;
+  margin-bottom: 20px;
+
+}
+
+.rental-info {
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 10px;
+
+}
+
+.field-interest-rate {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  align-items: center;
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.interest-title {
+  flex: 1; /* Takes up remaining space */
+}
+
+.interest-value {
+  flex: 0; /* Takes up minimum space */
+  margin-left: 10px; /* Adjust spacing between title and value */
+}
+
+input[type="number"] {
+  text-align: right;
+}

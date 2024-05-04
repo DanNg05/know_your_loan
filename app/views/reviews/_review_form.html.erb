@@ -1,5 +1,5 @@
-<%= simple_form_for [broker, review] do |f| %>
+<%= simple_form_for [broker, review], html: {class: "d-flex justify-content-center align-items-center flex-column"} do |f| %>
   <%= f.input :content, required: true %>
   <%= f.input :rating, required: true %>
-  <%= f.submit %>
+  <%= f.submit class:"btn btn-primary"%>
 <% end %>

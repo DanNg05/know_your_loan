@@ -2,6 +2,5 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :broker
 
-  validates :content, presence: :true
-  validates :rating, presence: :true
+  validates :content, :rating, presence: true
 end

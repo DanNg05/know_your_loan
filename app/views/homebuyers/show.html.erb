@@ -1,0 +1,37 @@
+<div class="homebuyer-show">
+  <h1>Homebuyer Factsheet</h1>
+  <div class="factsheet">
+    <p><strong>Property Value:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.property_value, precision: 2)) %></p>
+    <p><strong>Total Deposit:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.total_deposit, precision: 2) )%></p>
+    <p><strong>Interest Rate:</strong> <%= number_with_precision(@homebuyer.interest_rate, precision: 2) %>% </p>
+
+    <br>
+
+    <p><strong>Salary Income:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.salary, precision: 2)) %></p>
+    <p><strong>Other Income:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.other_income, precision: 2)) %> </p>
+
+    <br>
+
+    <p><strong>Living Expenses:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.living_expenses, precision: 2)) %></p>
+    <p><strong>Car Loan Payment:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.car_loan_payment, precision: 2)) %></p>
+    <p><strong>Other Debts:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.other_debts, precision: 2)) %> </p>
+
+    <br>
+
+    <p><strong>Total Loan Amount:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.loan_amount, precision: 2)) %></p>
+    <p><strong>Monthly Home Loan Repayment:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.monthly_repayment, precision: 2)) %></p>
+    <p><strong>Net Disposable Income after mortgage:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.net_disposable_income, precision: 2)) %></p>
+
+    <br>
+
+    <p><strong>Total Mortgage Repayment in <%= @homebuyer.loan_term %> years:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.total_mortgage_repayment, precision: 2)) %></p>
+    <p><strong>Total Interest Paid:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.total_interest_paid, precision: 2)) %></p>
+  </div>
+
+  <div class="result">
+    <%= link_to "Recalculate", new_rate_homebuyer_path(@rate) %>
+    <% if @homebuyer.net_disposable_income.positive? %>
+      <%= link_to "Save and find a broker" %>
+    <% end %>
+  </div>
+</div>

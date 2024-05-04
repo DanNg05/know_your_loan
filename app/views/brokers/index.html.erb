@@ -3,7 +3,7 @@
     <div class="col-sml-6">
       <h1 class="text-center">Welcome to AU BEST BROKER</h1>
       <div class='d-flex justify-content-center mb-3'>
-        <button data-action="click->brokers#changeView" data-brokers-target="btnView">LIST</button>
+        <button data-action="click->brokers#changeView" data-brokers-target="btnView" class="btn btn-success">LIST</button>
       </div>
       <div class="brokers-list d-none text-center" data-brokers-target="list">
         <% @brokers.each do |broker| %>
@@ -14,13 +14,17 @@
             <p><%= broker.about %></p>
             <%= link_to "See profile", broker_path(broker), class:"btn btn-primary mb-5" %>
             <br>
-            <% if current_user.admin %>
-              <%= link_to "EDIT BROKER INFO", edit_broker_path(broker) %>
+            <% if current_user %>
+              <% if current_user.admin %>
+                <%= link_to "EDIT BROKER INFO", edit_broker_path(broker) %>
+              <% end %>
             <% end %>
         <% end %>
       </div>
-      <% if current_user.admin %>
-        <%= link_to "CREATE NEW BROKER", new_broker_path %>
+      <% if current_user %>
+        <% if current_user.admin %>
+          <%= link_to "CREATE NEW BROKER", new_broker_path %>
+        <% end %>
       <% end %>
       <%# MAPBOX %>
       <div style="width: 100%; height: 100vh" data-brokers-target="brokersMap">

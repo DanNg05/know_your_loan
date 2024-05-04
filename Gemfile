@@ -5,6 +5,11 @@ gem "devise"
 gem "pundit"
 gem "geocoder"
 gem "cloudinary"
+gem "pg_search"
+
+# gem 'chart-js-rails'
+gem "chartkick"
+gem "rails_admin", "3.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
