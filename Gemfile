@@ -5,6 +5,8 @@ gem "devise"
 gem "pundit"
 gem "geocoder"
 gem "cloudinary"
+gem "pg_search"
+
 # gem 'chart-js-rails'
 gem "chartkick"
 gem "rails_admin", "3.0"

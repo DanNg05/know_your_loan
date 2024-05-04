@@ -3,6 +3,8 @@ class MortgagesController < ApplicationController
 
   def index
     @banks = Bank.first(6)
+    @mortgages = Mortgage.where(user_id: current_user.id)
+    # raise
   end
 
   def list

@@ -43,6 +43,10 @@ class HomebuyersController < ApplicationController
     @homebuyer = Homebuyer.new
   end
 
+  def list
+    @homebuyers = Homebuyer.where(user: current_user)
+  end
+
   private
 
   def homebuyer_params

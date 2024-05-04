@@ -22,7 +22,7 @@
             <% if bank.image_url.empty? %>
               <!-- If there's no image, leave the cell empty -->
             <% else %>
-             <%= link_to new_rate_mortgage_path(bank), class:"bank_link" do %>
+            <%= link_to new_rate_mortgage_path(bank), class:"bank_link" do %>
                 <div>
                   <img src=<%= bank.image_url %> alt="" class="image-size">
                 <span> <%= bank.name %> </span>
@@ -39,6 +39,5 @@
     </tbody>
     </table>
   </div>
-
+</div>
   <br>
-

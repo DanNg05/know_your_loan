@@ -14,14 +14,18 @@
             <p><%= broker.about %></p>
             <%= link_to "See profile", broker_path(broker), class:"btn btn-primary mb-5" %>
             <br>
-            <%# <% if current_user.admin %>
-              <%# <%= link_to "EDIT BROKER INFO", edit_broker_path(broker) %>
-            <%# <% end %>
+            <% if current_user %>
+              <% if current_user.admin %>
+                <%= link_to "EDIT BROKER INFO", edit_broker_path(broker) %>
+              <% end %>
+            <% end %>
         <% end %>
       </div>
-      <%# <% if current_user.admin %>
-        <%# <%= link_to "CREATE NEW BROKER", new_broker_path %>
-      <%# <% end %>
+      <% if current_user %>
+        <% if current_user.admin %>
+          <%= link_to "CREATE NEW BROKER", new_broker_path %>
+        <% end %>
+      <% end %>
       <%# MAPBOX %>
       <div style="width: 100%; height: 100vh" data-brokers-target="brokersMap">
         <div style="height: 100%; width: 100%"

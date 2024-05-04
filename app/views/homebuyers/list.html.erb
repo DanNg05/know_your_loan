@@ -1,0 +1,9 @@
+<h1>List of your mortgages</h1>
+<% @homebuyers.each do |h| %>
+  <% rate = Rate.find(h.rate_id) %>
+  <p>From: <%= rate.bank.name %></p>
+  <p>Loan amount: <%= h.loan_amount %></p>
+  <p>Loan term: <%= h.loan_term %></p>
+  <p>Interest rate: <%= h.interest_rate %></p>
+  <p> Monthly repayment: <%= h.monthly_repayment %></p>
+<% end %>
