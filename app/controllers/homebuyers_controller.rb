@@ -50,31 +50,33 @@ class HomebuyersController < ApplicationController
     #   end
     #   @principal_data << data_value
     # end
-    @principal_data = [[0, @homebuyer.loan_amount]]
-    @loan_balance = @homebuyer.loan_amount
+    @loan_balance = @homebuyer.loan_amount.round(0)
+    @principal_data = [[0, @homebuyer.loan_amount.round(0)]]
     # raise
     for i in 1..@homebuyer.loan_term do
       if i == @homebuyer.loan_term
         data = [i, 0]
         @principal_data << data
+      else
+        @loan_balance -= @homebuyer.principal_payments[i-1]
+        data = [i, @loan_balance.round(0)]
+        @principal_data << data
       end
-      @loan_balance -= @homebuyer.principal_payments[i-1]
-      data = [i, @loan_balance]
-      @principal_data << data
     end
 
-    @debt = [[0, @homebuyer.total_mortgage_repayment]]
-    @remaining = @homebuyer.total_mortgage_repayment
+    @debt = [[0, @homebuyer.total_mortgage_repayment.round(0)]]
+    @remaining = @homebuyer.total_mortgage_repayment.round(0)
     for i in  1..@homebuyer.loan_term do
       # raise
       if i == @homebuyer.loan_term
         data = [i, 0]
         @principal_data << data
+      else
+        total_payment_for_current_year = @homebuyer.principal_payments[i-1] + @homebuyer.interest_payments[i-1]
+        @remaining -= total_payment_for_current_year
+        data = [i, @remaining.round(0)]
+        @debt << data
       end
-      total_payment_for_current_year = @homebuyer.principal_payments[i-1] + @homebuyer.interest_payments[i-1]
-      @remaining -= total_payment_for_current_year
-      data = [i, @remaining]
-      @debt << data
       # raise
     end
 
