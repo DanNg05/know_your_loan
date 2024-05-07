@@ -3,7 +3,11 @@ class BrokersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @brokers = Broker.all
+    if params[:query].present?
+      @brokers = Broker.search_by_first_name_and_address(params[:query])
+    else
+      @brokers = Broker.all
+    end
     @markers = @brokers.geocoded.map do |broker|
       {
         lat: broker.latitude,

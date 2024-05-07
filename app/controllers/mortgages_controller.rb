@@ -7,8 +7,8 @@ class MortgagesController < ApplicationController
     # raise
   end
 
-  def list
-    @mortgage = Mortgage.all
+  def listing
+    @mortgages = Mortgage.where(user: current_user)
   end
 
   def create
@@ -36,16 +36,20 @@ class MortgagesController < ApplicationController
   end
 
   def edit
-    @rate = Rate.find(@mortgage.rate_id)
+    # @rate = Rate.find(@mortgage.rate_id)
+    @mortgage = Mortgage.find(params[:id])
   end
 
   def update
+    #raise
     @mortgage.update(mortgage_params)
     @mortgage.user = current_user
-    if @mortgage.save
+    if @mortgage.save!
       redirect_to mortgage_path(@mortgage)
     end
   end
+
+
   private
 
   def mortgage_params

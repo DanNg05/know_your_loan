@@ -9,4 +9,11 @@ class Broker < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :about, :first_name, :last_name, :phone_number, :address, presence: true
 
+  include PgSearch::Model
+
+  pg_search_scope :search_by_first_name_and_address,
+    against: [ :first_name, :address ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
