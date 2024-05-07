@@ -1,5 +1,5 @@
-<%= simple_form_for [broker, review], html: {class: "d-flex justify-content-center align-items-center flex-column"} do |f| %>
-  <%= f.input :content, required: true %>
-  <%= f.input :rating, required: true %>
-  <%= f.submit class:"btn btn-primary"%>
+<%= simple_form_for [broker, review], html: {class: "d-flex justify-content-center align-items-center flex-column", "data-review-toggle-target": "reviewSubmit"} do |f| %>
+  <%= f.input :content, required: false, data: {"review-toggle-target": "content"} %>
+  <%= f.input :rating, required: false, :collection => %w[1 2 3 4 5], data: {"review-toggle-target": "rating"} %>
+  <%= f.submit class:"submit-review-btn"%>
 <% end %>

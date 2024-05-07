@@ -10,11 +10,21 @@
 
 .modal-btn {
   margin-top: 10px;
-  color: white;
-  background-color: black;
-  font-weight: bold;
+  color: red;
+  border: 1px solid red;
 }
 
 .modal-title {
   font-weight: bold;
+}
+
+#exampleModalLabel {
+  color: white;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgb(202, 120, 26), rgb(255, 0, 0));
 }

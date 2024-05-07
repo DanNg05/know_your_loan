@@ -1,22 +1,31 @@
-<div class="container">
+<div style="position: relative; width: 100vw; margin-top: 60px">
+  <div class="half-screen-showpage">
+  </div>
+  <div class="neighborhood-showpage">
+  </div>
+  <div class="context-img-showpage">
+    <h2><%= @broker.first_name %> <%= @broker.last_name %></h2>
+    <p><%= @broker.description %></p>
+  </div>
+</div>
+<div class="container" style="margin-top: 20px">
   <div class="row">
     <div class="col-sml-6">
       <%# Broker information %>
       <div class="d-flex justify-content-center align-items-center flex-column">
-        <h2 style="font-weight: bold"><%= @broker.first_name.upcase %> <%= @broker.last_name.upcase %></h2>
-        <h3 style="font-weight: bold">MORTGAGE & FINANCE BROKER</h3>
+        <h2>About <strong><%= @broker.first_name %></strong></h2>
         <% if @broker.photo.key %>
           <%= cl_image_tag @broker.photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
         <p><%= @broker.about %></p>
       </div>
       <br>
-      <p><i class="fa-solid fa-phone"></i> <%= @broker.phone_number %></p>
-      <p><i class="fa-solid fa-envelope"></i> <%= @broker.email %></p>
+      <p><i class="fa-solid fa-phone" style="color: red"></i> <%= @broker.phone_number %></p>
+      <p><i class="fa-solid fa-envelope" style="color: red"></i> <%= @broker.email %></p>
 
       <div class="d-flex align-items-center justify-content-center flex-column">
         <%# Appointment button with Bootstrap modal %>
-        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="appointment-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Book an appointment
         </button>
         <%= render "appointments/modal" %>
@@ -45,10 +54,17 @@
             flex-direction: column;
             ">
 
-          <button class="btn btn-primary mb-3" data-action="click->review-toggle#fire">Add new review</button>
+          <button class="review-btn-broker" data-action="click->review-toggle#fire"><i class="fa-solid fa-arrow-right"> </i>Add new review</button>
 
           <div class="d-none" data-review-toggle-target="reviewForm">
-            <%= render 'reviews/review_form', broker: @broker, review: @review %>
+            <%= simple_form_for [@broker, @review], html: {class: "d-flex justify-content-center align-items-center flex-column", "data-review-toggle-target": "reviewSubmit"} do |f| %>
+              <%= f.label :content %>
+              <%= f.text_field :content, required: false, data: {"review-toggle-target": "content"} %>
+              <%= f.label :rating %>
+              <%= f.select :rating, options_for_select(['1', '2', '3', '4', '5']), { include_blank: true }, { class: 'form-control' } %>
+              <%= f.number_field :rating, required: false, :collection => %w[1 2 3 4 5], data: {"review-toggle-target": "rating"} %>
+              <%= f.submit class:"submit-review-btn", data: {action: "click->review-toggle#initSweetalert"}%>
+            <% end %>
           </div>
         </div>
       <% end %>

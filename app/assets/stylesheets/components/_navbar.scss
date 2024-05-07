@@ -1,6 +1,37 @@
 // @media (width <= 430px) {
 
 // }
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  margin: 10px;
+}
+
+.nav-icons {
+  position: absolute;
+  left: 10;
+}
+
 .nav-dropdown-item {
   color: black;
+  margin-left: 30px;
+  font-size: 20px;
+
+}
+
+.search-btn {
+  margin-left: 4px;
+  padding: 10px;
+  border: 1px solid red;
+  color: red;
+  border-radius: 15px;
+}
+
+.review_rating {
+  width: 200px;
 }
