@@ -1,0 +1,57 @@
+
+.list-container{
+
+   justify-content: center;
+   text-align: center;
+   padding: auto;
+   margin: auto;
+   // height: 100vh;
+}
+
+
+.list-header-container {
+   display: flex;
+   flex-direction: column;
+   //  width: 100px;
+   align-items: center;
+   justify-content: center;
+   margin: auto;
+}
+
+.list-header-container h1 {
+   font-size: 4em;
+   font-family: serif;
+   font-weight: bold;
+
+   text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.887);
+
+ }
+ .list-header-container p {
+   text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.887);
+ }
+
+.list-background{
+   background-image:url(https://s3.ap-southeast-1.amazonaws.com/dfcc.lk/wp-content/uploads/2019/06/03075249/Housing-Loan-Calculator.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 30vh;
+}
+
+.list-mortgage{
+   justify-content: center;
+   padding: 30px;
+   margin: 30px;
+   border: 20px;
+   // box-shadow:black
+//    border-color: black;
+//    border-style: outset;
+//    border-width: 5px;
+}
+
+.list-card{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+}
