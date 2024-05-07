@@ -58,9 +58,9 @@ h1{
    background-size: cover;
 }
 .signin-container{
-   justify-content: center;
    display: flex;
-   flex-direction: row;
+   justify-content: center;
+   flex-direction: column;
    align-items: center;
    // text-align: center;
    justify-content: space-around;
@@ -86,10 +86,13 @@ h1{
    padding: 20px 20px 20px 20px;
 }
 
+
+a {
+   text-decoration: none;
+   color: rgb(25, 25, 25);
+ }
+
 .container {
   margin-top: 100px;
 }
 
-a {
-  text-decoration: none;
-}
