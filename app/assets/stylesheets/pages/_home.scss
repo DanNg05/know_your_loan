@@ -2,19 +2,26 @@
 .background{
    background-image:url(https://i.postimg.cc/J0xynv6S/Adobe-Stock-645227190.jpg);
    // background-color: aqua;
-   background-size: cover;
+   background-size:cover;
    background-repeat: no-repeat;
    background-position: center;
-   background-attachment: scroll;
-   height: 75vh;
+   background-attachment: fixed;
+   height: 100%;
    }
+
+.background-content{
+
+}
 
 .container{
    display: flex;
    justify-content: center;
    // padding: auto;
    padding-left: 25px;
+   // margin-left: 0px;
+   // margin-right: 0px;
    padding-right: 25px;
+   width: 100%;
    // flex: content;
    flex-direction: column;
    // height: 500px;
@@ -22,13 +29,7 @@
 }
 
 .banner{
-   justify-content: center;
-   text-align: center;
-   display: flex;
-   justify-content: center;
-   padding: 25px;
-   margin: 25px;
-   flex: auto;
+   // background-color: rgba(255, 255, 255, 0.8);
 }
 
 .home-container{

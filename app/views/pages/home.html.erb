@@ -1,10 +1,20 @@
 
 <!-- Hero 1 - Bootstrap Brain Component -->
+<head>
+   <script>
+  document.addEventListener('scroll', function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var speed = 0.5; // Adjust the speed of the effect
+    document.querySelector('.background').style.backgroundPosition = 'center ' + (-scrollTop * speed) + 'px';
+  });
+</script>
+</head>
+<div class="background background-content" >
 
-<div class="background">
 <section class="bsb-hero-1 px-3 bsb-overlay bsb-hover-pull">
 
   <div class="container">
+
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
     <div class="row align-items-center g-lg-5 py-5">
       <div class="col-lg-7 text-center text-lg-start">
@@ -36,27 +46,28 @@
  </div>
 </section>
 
-<div class="container my-5">
+<div class="container my-5 ">
   <div class="p-5 text-center bg-body-tertiary rounded-3">
 
     <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
     <h1 class="text-body-emphasis">The current lowest mortgage rate is <%= @lowest_rate.interest_value %>%</h1>
     <p class="col-lg-8 mx-auto fs-5 text-muted">
       Connect with your broker now to get on top of your mortgage finances.</p>
-    <div class="d-inline-flex gap-2 mb-5">
+    <div class="d-inline-flex gap-2 mb-5" data-controller="pages">
       <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
-        Sign up Now!
+         <%= link_to "sign up now", new_user_registration_path %>
         <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
       </button>
       <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
         Login
       </button>
+      <button data-action="click->pages#greeting">Say Hello</button>
     </div>
   </div>
 </div>
 
 
-<div class="container px-4 py-5">
+<div class="container px-4 py-5 banner">
     <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
       <div class="col d-flex flex-column align-items-start gap-2">
         <h2 class="fw-bold text-body-emphasis">How KnowYourLoan helps you navigate the tough world of financing</h2>
@@ -205,4 +216,5 @@
       <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
       <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
     </ul>
+
   </footer>
