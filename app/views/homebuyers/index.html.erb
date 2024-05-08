@@ -43,6 +43,29 @@
           <td class="tg-0lax interest"><%= link_to "#{bank.rates[1].interest_value}", new_rate_homebuyer_path(rate_id: bank.rates[1]) %></td>
           <td class="tg-0lax interest"><%= link_to "#{bank.rates[2].interest_value}", new_rate_homebuyer_path(rate_id: bank.rates[2]) %></td>
         </tr>
+
+
+        <!-- Data rows -->
+        <% @banks.each_with_index do |bank, index| %>
+          <% unless index == 0 %> <!-- Skip the first row -->
+          <tr>
+            <td class="tg-0lax">
+              <% if bank.image_url.empty? %>
+                <!-- If there's no image, leave the cell empty -->
+              <% else %>
+              <%= link_to new_rate_homebuyer_path(bank), class:"bank_link" do %>
+                  <div>
+                    <img src=<%= bank.image_url %> alt="" class="image-size">
+                  <span> <%= bank.name %> </span>
+                  </div>
+                <% end %>
+              <% end %>
+            </td>
+            <td class="tg-0lax interest"><%= link_to "#{bank.rates[0].interest_value}", new_rate_homebuyer_path(rate_id: bank.rates[0]) %></td>
+            <td class="tg-0lax interest"><%= link_to "#{bank.rates[1].interest_value}", new_rate_homebuyer_path(rate_id: bank.rates[1]) %></td>
+            <td class="tg-0lax interest"><%= link_to "#{bank.rates[2].interest_value}", new_rate_homebuyer_path(rate_id: bank.rates[2]) %></td>
+          </tr>
+          <% end %>
         <% end %>
       <% end %>
     </tbody>

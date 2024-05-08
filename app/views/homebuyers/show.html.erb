@@ -1,5 +1,19 @@
-<div class="homebuyer-show">
+<div class="container homebuyer-show">
   <h1>Homebuyer Factsheet</h1>
+  <div>
+        <% data = [
+      {
+      name: "Loan Balance",
+      data: @principal_data  },
+      {
+      name: "Total debt",
+      data: @debt
+      }
+      ] %>
+    <%= area_chart data, colors: ["#666", "#b00"], xtitle: "Year", ytitle: "Payment" %>
+  </div>
+
+
   <div class="factsheet">
     <p><strong>Property Value:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.property_value, precision: 2)) %></p>
     <p><strong>Total Deposit:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.total_deposit, precision: 2) )%></p>

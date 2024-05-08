@@ -1,5 +1,4 @@
 
-<!-- Hero 1 - Bootstrap Brain Component -->
 <head>
    <script>
   document.addEventListener('scroll', function() {
@@ -8,213 +7,147 @@
     document.querySelector('.background').style.backgroundPosition = 'center ' + (-scrollTop * speed) + 'px';
   });
 </script>
-</head>
-<div class="background background-content" >
+</head><!-- Hero 1 - Bootstrap Brain Component -->
+<div class="container">
+  <div class="background">
+  <section class="bsb-hero-1 px-3 bsb-overlay bsb-hover-pull">
 
-<section class="bsb-hero-1 px-3 bsb-overlay bsb-hover-pull">
-
-  <div class="container">
-
-    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-    <div class="row align-items-center g-lg-5 py-5">
-      <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Vertically centered hero sign-up form</h1>
-        <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
-      </div>
-      <div class="col-md-10 mx-auto col-lg-5">
-        <%# <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+    <div class="">
+      <div class="col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Vertically centered hero sign-up form</h1>
+            <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
           </div>
-          <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-          </div>
-          <div class="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
-          </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-          <hr class="my-4">
-          <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
-        </form> %>
-      </div>
-    </div>
-  </div>
- </div>
-</section>
-
-<div class="container my-5 ">
-  <div class="p-5 text-center bg-body-tertiary rounded-3">
-
-    <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
-    <h1 class="text-body-emphasis">The current lowest mortgage rate is <%= @lowest_rate.interest_value %>%</h1>
-    <p class="col-lg-8 mx-auto fs-5 text-muted">
-      Connect with your broker now to get on top of your mortgage finances.</p>
-    <div class="d-inline-flex gap-2 mb-5" data-controller="pages">
-      <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
-         <%= link_to "sign up now", new_user_registration_path %>
-        <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
-      </button>
-      <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
-        Login
-      </button>
-      <button data-action="click->pages#greeting">Say Hello</button>
-    </div>
-  </div>
-</div>
-
-
-<div class="container px-4 py-5 banner">
-    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-      <div class="col d-flex flex-column align-items-start gap-2">
-        <h2 class="fw-bold text-body-emphasis">How KnowYourLoan helps you navigate the tough world of financing</h2>
-        <p class="text-body-secondary">KnowqYourLoan helps you navigate the tough world of financing, allowing you to navigate towards a broker that is right for you and your goals for your investment property.</p>
-        <a href="#" class="btn btn-primary btn-lg">Primary button</a>
-      </div>
-
-      <div class="col">
-        <div class="row row-cols-1 row-cols-sm-2 g-4">
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-
-    <dotlottie-player src="https://lottie.host/c9904b46-f48a-4ae2-ac1c-f401e472d8ae/YGw2MyDUCS.json" background="transparent" speed="1" style="width: 300px; height: 100px;" loop autoplay></dotlottie-player>
-
-              <%# <svg class="bi" width="1em" height="1em">
-                <use xlink:href="#collection"></use>
-              </svg> %>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-
-    <dotlottie-player src="https://lottie.host/daa4c2bc-bd06-4e4b-9a02-6d0d9e102532/OUo2zFachA.json" background="transparent" speed="1" style="width: 300px; height: 100px;" loop autoplay></dotlottie-player>
-
-              <%# <svg class="bi" width="1em" height="1em">
-                <use xlink:href="#gear-fill"></use>
-              </svg> %>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-
-    <dotlottie-player src="https://lottie.host/01e37067-6b1f-4297-9248-27351f5f9b9a/5qzdDdEOcV.json" background="transparent" speed="1" style="width: 100px;" loop autoplay></dotlottie-player>
-
-              <%# <svg class="bi" width="1em" height="1em">
-                <use xlink:href="#speedometer"></use>
-              </svg> %>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-
-          <div class="col d-flex flex-column gap-2">
-            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-              <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-
-    <dotlottie-player src="https://lottie.host/2b3a8ae6-3a3a-42d8-93ba-89f6f6ceace8/pjE9vge0HZ.json" background="transparent" speed="1" style="width: 100px; " loop autoplay></dotlottie-player>
-              <%# <svg class="bi" width="1em" height="1em">
-                <use xlink:href="#table"></use>
-              </svg> %>
-            </div>
-            <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-            <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-<section class="container pt-5 mt-xl-3 mt-xxl-5">
-        <div class="row pt-1 pt-sm-3 pt-md-4 pt-lg-5 mt-xl-2">
-          <div class="col-lg-4">
-            <h2 class="h1 pb-1 pb-sm-2 mb-4">A hub for brokers and buyers alike</h2>
-          </div>
-          <div class="col-lg-8 col-xl-7 offset-xl-1">
-            <div class="ps-lg-4 ps-xl-0">
-              <div data-simplebar="init" class=""><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
-                <ul class="nav nav-tabs flex-nowrap mb-2" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link text-nowrap px-4 px-lg-3 px-xl-4 active" href="#designers" data-bs-toggle="tab" role="tab" aria-selected="true">First Home Buyers</a>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link text-nowrap px-4 px-lg-3 px-xl-4" href="#developers" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">Investors</a>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link text-nowrap px-4 px-lg-3 px-xl-4" href="#managers" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">Brokers</a>
-                  </li>
-                </ul>
-              </div></div></div></div><div class="simplebar-placeholder" style="width: 746px; height: 63px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; display: none;"></div></div></div>
-              <div class="tab-content py-2 pb-md-0 pt-sm-3 pt-lg-4 mb-4 mb-md-5">
-                <div class="tab-pane fade active show" id="designers" role="tabpanel">
-                  <p class="fs-xl mb-4">The struggle of being a first home buyer can feel like navigating a maze of financial hurdles, juggling dreams with harsh realities, and facing the daunting task of competing in a fiercely competitive housing market, all while yearning for that place to call your own.</p>
-                  <ul class="fs-xl mb-0">
-                    <li class="mb-1">Access to your mortgage repayments and record of amount repayed, all in one place.</li>
-                    <li class="mb-1">An abundant range of brokers which is recommended to you based on your needs and wants.</li>
-                    <li class="mb-1">All brokers go through tough verification processes to ensure you are working with the best. </li>
-                  </ul>
-                </div>
-                <div class="tab-pane fade" id="developers" role="tabpanel">
-                  <p class="fs-xl mb-4">Etiam sed porta massa. In sapien metus, lobortis eu tortor id, maximus commodo enim. Phasellus feugiat mi vitae enim cursus, ut scelerisque augue scelerisque. Pellentesque habitant morbi tristique senectus et netus.</p>
-                  <ul class="fs-xl mb-0">
-                    <li class="mb-1">Donec imperdiet dolor at leo sodales.</li>
-                    <li class="mb-1">Fringilla placerat lobortis viverra aliquam ut nisl nisi.</li>
-                    <li class="mb-1">Lobortis ullamcorper in praesent venenatis non non sed pharetra dipise.</li>
-                    <li class="mb-1">Mollis dui nibh at condimentum.</li>
-                  </ul>
-                </div>
-                <div class="tab-pane fade" id="managers" role="tabpanel">
-                  <p class="fs-xl mb-4">Ipsum sed nascetur dolor accumsan integer phasellus tincidunt. Nulla quisque pellentesque adipiscing placerat integer feugiat facilisi elit mi. Dictum nunc lacinia vel molestie laoreet aliquet ridiculus diam justo viverra.</p>
-                  <ul class="fs-xl mb-0">
-                    <li class="mb-1">At donec auctor quam ut scelerisque dui.</li>
-                    <li class="mb-1">Mollis sed fringilla placerat lobortis viverra aliquam ut nisl nisi.</li>
-                    <li class="mb-1">Odio ullamcorper in praesent venenatis non non sed pharetra dipise.</li>
-                    <li class="mb-1">Lobortis dui nibh at condimentum.</li>
-                  </ul>
-                </div>
-                <div class="tab-pane fade" id="marketers" role="tabpanel">
-                  <p class="fs-xl mb-4">Etiam sed porta massa. In sapien metus, lobortis eu tortor id, maximus commodo enim. Phasellus feugiat mi vitae enim cursus, ut scelerisque augue scelerisque. Pellentesque habitant morbi tristique senectus et netus.</p>
-                  <ul class="fs-xl mb-0">
-                    <li class="mb-1">Donec imperdiet dolor at leo sodales.</li>
-                    <li class="mb-1">Fringilla placerat lobortis viverra aliquam ut nisl nisi.</li>
-                    <li class="mb-1">Lobortis ullamcorper in praesent venenatis non non sed pharetra dipise.</li>
-                    <li class="mb-1">Mollis dui nibh at condimentum.</li>
-                  </ul>
-                </div>
+          <div class="col-md-10 mx-auto col-lg-5">
+            <%# <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
               </div>
-              <a class="btn btn-lg btn-primary w-100 w-sm-auto" href="#tickets" data-scroll="" data-scroll-offset="120">
-                Buy access pass
-                <i class="ai-arrow-down ms-2 me-n2"></i>
-              </a>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+              </div>
+              <div class="checkbox mb-3">
+                <label>
+                  <input type="checkbox" value="remember-me"> Remember me
+                </label>
+              </div>
+              <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+              <hr class="my-4">
+              <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+            </form> %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%# <div class="my-5 "> %>
+    <div class="p-5 text-center bg-body-tertiary rounded-3 signin-banner">
+
+      <%# <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg> %>
+      <h1 class="text-body-emphasis">The current lowest mortgage rate is <%= @lowest_rate.interest_value %>%</h1>
+      <p class="col-lg-8 mx-auto fs-5 text-muted">
+        Connect with your broker now to get on top of your mortgage finances.</p>
+      <div class="d-inline-flex gap-2 mb-5">
+        <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+          Sign up Now!
+          <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
+        </button>
+        <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+          Login
+        </button>
+      </div>
+    </div>
+  <%# </div> %>
+
+
+  <div class="px-4 py-5">
+      <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+        <div class="col d-flex flex-column align-items-start gap-2">
+          <h2 class="fw-bold text-body-emphasis">How KnowYourLoan helps you navigate the tough world of financing</h2>
+          <p class="text-body-secondary">KnowqYourLoan helps you navigate the tough world of financing, allowing you to navigate towards a broker that is right for you and your goals for your investment property.</p>
+          <a href="#" class="btn btn-primary btn-lg">Primary button</a>
+        </div>
+
+        <div class="col">
+          <div class="row row-cols-1 row-cols-sm-2 g-4">
+            <div class="col d-flex flex-column gap-2">
+              <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+      <dotlottie-player src="https://lottie.host/c9904b46-f48a-4ae2-ac1c-f401e472d8ae/YGw2MyDUCS.json" background="transparent" speed="1" style="width: 300px; height: 100px;" loop autoplay></dotlottie-player>
+
+                <%# <svg class="bi" width="1em" height="1em">
+                  <use xlink:href="#collection"></use>
+                </svg> %>
+              </div>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
+              <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+
+            <div class="col d-flex flex-column gap-2">
+              <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+      <dotlottie-player src="https://lottie.host/daa4c2bc-bd06-4e4b-9a02-6d0d9e102532/OUo2zFachA.json" background="transparent" speed="1" style="width: 300px; height: 100px;" loop autoplay></dotlottie-player>
+
+                <%# <svg class="bi" width="1em" height="1em">
+                  <use xlink:href="#gear-fill"></use>
+                </svg> %>
+              </div>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
+              <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+
+            <div class="col d-flex flex-column gap-2">
+              <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+      <dotlottie-player src="https://lottie.host/01e37067-6b1f-4297-9248-27351f5f9b9a/5qzdDdEOcV.json" background="transparent" speed="1" style="width: 100px;" loop autoplay></dotlottie-player>
+
+                <%# <svg class="bi" width="1em" height="1em">
+                  <use xlink:href="#speedometer"></use>
+                </svg> %>
+              </div>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
+              <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+
+            <div class="col d-flex flex-column gap-2">
+              <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+      <dotlottie-player src="https://lottie.host/2b3a8ae6-3a3a-42d8-93ba-89f6f6ceace8/pjE9vge0HZ.json" background="transparent" speed="1" style="width: 100px; " loop autoplay></dotlottie-player>
+                <%# <svg class="bi" width="1em" height="1em">
+                  <use xlink:href="#table"></use>
+                </svg> %>
+              </div>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
+              <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
             </div>
           </div>
         </div>
-      </section>
-
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© 2024 KnowYourLoan</span>
+      </div>
     </div>
 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-    </ul>
 
+
+
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">© 2024 KnowYourLoan</span>
+      </div>
+
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+      </ul>
   </footer>
+</div>

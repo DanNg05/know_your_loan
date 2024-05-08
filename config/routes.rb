@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :mortgages, only: [:show, :edit, :update, :index]
   resources :homebuyers, only: [:show, :edit, :update, :index]
   get "list", to: "homebuyers#list"
+  get "listing", to: "mortgages#listing"
 
   resources :rates do
     resources :mortgages, only: [:new, :create, :edit, :update]

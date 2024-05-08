@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_01_090701) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_04_054607) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -92,12 +92,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_01_090701) do
     t.decimal "car_loan_payment"
     t.decimal "other_debts"
     t.decimal "net_disposable_income"
-    t.decimal "principal_payments_first_year"
-    t.decimal "interest_payments_first_year"
     t.decimal "total_interest_paid"
     t.decimal "total_mortgage_repayment"
-    t.decimal "interest_rate_safery"
+    t.decimal "interest_rate_safety"
     t.bigint "rate_id"
+    t.decimal "principal_payments", array: true
+    t.decimal "interest_payments", array: true
     t.index ["rate_id"], name: "index_homebuyers_on_rate_id"
     t.index ["user_id"], name: "index_homebuyers_on_user_id"
   end
