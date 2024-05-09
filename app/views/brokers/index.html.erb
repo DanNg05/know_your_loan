@@ -26,14 +26,16 @@
             <br>
             <% if current_user %>
               <% if current_user.admin %>
-                <%= link_to "EDIT BROKER INFO", edit_broker_path(broker) %>
+                <%= link_to "EDIT BROKER INFO", edit_broker_path(broker), class:"btn btn-primary m-3" %>
               <% end %>
             <% end %>
         <% end %>
       </div>
       <% if current_user %>
         <% if current_user.admin %>
-          <%= link_to "CREATE NEW BROKER", new_broker_path %>
+        <div class="d-flex justify-content-center align-items-center">
+          <%= link_to "CREATE NEW BROKER", new_broker_path, class:"btn btn-primary mb-3" %>
+        </div>
         <% end %>
       <% end %>
       <%# MAPBOX %>
