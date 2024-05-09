@@ -1,7 +1,6 @@
-<div class="mortgage-show">
+<div class="mortgage-show" style="margin-top: 100px">
   <h1>Investment Factsheet</h1>
-
-  <div class="container">
+  <div class="container" style="margin-top: 0">
     <% if @mortgage.monthly_cashflow.positive? %>
       <%= pie_chart [["Monthly repayment", @mortgage.monthly_repayment], ["Monthly cashflow",@mortgage.monthly_cashflow], ["Maintenance fund",@mortgage.maintenance_fund], ["Other expenses",@mortgage.other_expenses]], donut: true, round: 2, thousands: "," %>
     <% end %>
