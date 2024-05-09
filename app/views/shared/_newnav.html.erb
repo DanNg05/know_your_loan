@@ -39,9 +39,12 @@
               <% end %>
             <% else %>
               <li class="nav-item">
-              <i class="fa-solid nav-icons fa-right-to-bracket"></i><%= link_to "Login", new_user_session_path, class: "nav-link", class:"nav-dropdown-item" %>
+              <i class="fa-solid nav-icons fa-right-to-bracket"></i><%= link_to "Log in", new_user_session_path, class: "nav-link", class:"nav-dropdown-item" %>
               </li>
-              <li>
+              <li class="nav-item">
+              <i class="fa-solid nav-icons fa-right-to-bracket"></i><%= link_to "Sign up", new_user_registration_path, class: "nav-link", class:"nav-dropdown-item" %>
+              </li>
+              <li class="nav-item">
                 <i class="fa-solid nav-icons fa-calculator"></i><%= link_to "Broker list", brokers_path, class:"nav-dropdown-item" %>
               </li>
           <% end %>
