@@ -3,15 +3,14 @@
 <div class="container">
   <div class="background">
   <section class="bsb-hero-1 px-3 bsb-overlay bsb-hover-pull">
-
-    <div class="">
       <div class="col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
-          <div class="col-lg-7 text-center text-lg-start">
-            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Vertically centered hero sign-up form</h1>
-            <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+          <div class="col-lg-7 text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Know Your Loan</h1>
+            <p class="col-lg-10 fs-4">Unlocking Your Mortgage Journey: Empowering Your Mortgage Journey Through Visual Insights.</p>
           </div>
-          <div class="col-md-10 mx-auto col-lg-5">
+
+          <%# <div class="col-md-10 mx-auto col-lg-5"> %>
             <%# <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
               <div class="form-floating mb-3">
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -30,38 +29,46 @@
               <hr class="my-4">
               <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
             </form> %>
-          </div>
+          <%# </div> %>
+
+        </div>
+      </div>
+
+    <div class="daily-rate">
+      <div class="p-2 rounded-3" style="background-color: transparent;">
+        <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="0" height="0"><use xlink:href="#bootstrap"></use></svg>
+        <div class="rate-container" style="display: flex; justify-content: space-between">
+          <h5 class="text-body-emphasis">RATE OF THE DAY</h5>
+          <h1 class="lowest-rate"><%= @lowest_rate.interest_value %>%</h1>
+        </div>
+        <p class="col-lg-8 mx-auto fs-5 text-muted">
+          Check how much you could save.
+        </p>
+        <div class="d-inline-flex gap-2 mb-5">
+          <button class="d-inline-flex align-items-center btn btn-primary btn-m px-4 rounded-pill" type="button">
+            Sign up Now!
+            <svg class="bi ms-2" width="18" height="18"><use xlink:href="#arrow-right-short"></use></svg>
+          </button>
+          <button class="btn btn-outline-secondary btn-m px-4 rounded-pill white-bg" type="button">
+            Login
+          </button>
         </div>
       </div>
     </div>
+
   </section>
 
-  <div class="my-5">
-    <div class="p-5 text-center bg-body-tertiary rounded-3">
 
-      <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
-      <h1 class="text-body-emphasis">The current lowest mortgage rate is <%= @lowest_rate.interest_value %>%</h1>
-      <p class="col-lg-8 mx-auto fs-5 text-muted">
-        Connect with your broker now to get on top of your mortgage finances.</p>
-      <div class="d-inline-flex gap-2 mb-5">
-        <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
-          Sign up Now!
-          <svg class="bi ms-2" width="24" height="24"><use xlink:href="#arrow-right-short"></use></svg>
-        </button>
-        <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
-          Login
-        </button>
-      </div>
-    </div>
-  </div>
+
+
 
 
   <div class="px-4 py-5">
       <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
         <div class="col d-flex flex-column align-items-start gap-2">
-          <h2 class="fw-bold text-body-emphasis">How KnowYourLoan helps you navigate the tough world of financing</h2>
-          <p class="text-body-secondary">KnowqYourLoan helps you navigate the tough world of financing, allowing you to navigate towards a broker that is right for you and your goals for your investment property.</p>
-          <a href="#" class="btn btn-primary btn-lg">Primary button</a>
+          <h2 class="fw-bold text-body-emphasis">Property Finance with KnowYourLoan</h2>
+          <p class="text-body-secondary">Discovering the ideal financing solution for purchasing a property becomes effortless with KnowYourLoan. This platform simplifies the complexities of financing, guiding you towards a broker perfectly suited to your needs and property goals.</p>
+
         </div>
 
         <div class="col">
@@ -76,8 +83,8 @@
                   <use xlink:href="#collection"></use>
                 </svg> %>
               </div>
-              <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-              <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">All-in-One App</h4>
+              <p class="text-body-secondary">Access all essential mortgage details with just a few clicks.</p>
             </div>
 
             <div class="col d-flex flex-column gap-2">
@@ -90,8 +97,8 @@
                   <use xlink:href="#gear-fill"></use>
                 </svg> %>
               </div>
-              <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-              <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Tailored Solutions</h4>
+              <p class="text-body-secondary">Whether you're investing or buying a home, input your figures, and let us handle the intricate calculations.</p>
             </div>
 
             <div class="col d-flex flex-column gap-2">
@@ -104,8 +111,8 @@
                   <use xlink:href="#speedometer"></use>
                 </svg> %>
               </div>
-              <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-              <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Financial Insight</h4>
+              <p class="text-body-secondary">Easily comprehend your cash flow and assess your returns.</p>
             </div>
 
             <div class="col d-flex flex-column gap-2">
@@ -117,15 +124,15 @@
                   <use xlink:href="#table"></use>
                 </svg> %>
               </div>
-              <h4 class="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-              <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
+              <h4 class="fw-semibold mb-0 text-body-emphasis">Up-to-Date Rate</h4>
+              <p class="text-body-secondary">Stay informed with the most current and competitive interest rates available, updated in real-time.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-
+  <a href="#" class="btn btn-link btn-lg">Scroll to the top for sign in</a>
 
 
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -142,4 +149,5 @@
         <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
       </ul>
   </footer>
+  </div>
 </div>
