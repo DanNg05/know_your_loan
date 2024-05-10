@@ -55,7 +55,9 @@
   <div class="result">
     <%= link_to "Recalculate", new_rate_homebuyer_path(@rate) %>
     <% if @homebuyer.net_disposable_income.positive? %>
-      <%= link_to "Save and find a broker" %>
+
+      <%= link_to "Save your calculation", list_path %>
+
     <% end %>
   </div>
   </div>
