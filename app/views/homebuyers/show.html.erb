@@ -1,11 +1,13 @@
-<div class="homebuyer-show">
-      <div class=header-show>
-   <div class="half-screen-show">
+  <div class="homebuyer-show" style="position: relative">
+    <div class="half-screen-show">
+    </div>
+    <div class=header-show>
+    </div>
+      <div class="image-show-hb">
+        <h1>Homebuyer Factsheet</h1>
       </div>
-   <div class="image-show">
-     <h1>Homebuyer Factsheet</h1>
-      </div>
-   </div>
+  </div>
+
 
 <div class=chart-show-container>
   <div class=chart-new>
@@ -52,7 +54,7 @@
     <p><strong>Total Interest Paid:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.total_interest_paid, precision: 2)) %></p>
   </div>
 
-  <div class="result">
+  <div class="result homebuyer-show-btn">
     <%= link_to "Recalculate", new_rate_homebuyer_path(@rate) %>
     <% if @homebuyer.net_disposable_income.positive? %>
 
