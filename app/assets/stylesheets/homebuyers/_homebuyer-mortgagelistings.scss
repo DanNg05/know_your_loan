@@ -1,13 +1,14 @@
 
 .header-list{
-   background-image: linear-gradient(rgba(165, 42, 42, 0.206), rgba(165, 42, 42, 0.3)), url(https://s3.ap-southeast-1.amazonaws.com/dfcc.lk/wp-content/uploads/2019/06/03075249/Housing-Loan-Calculator.jpg);
-   background-position: center;
-   // background-repeat: no-repeat;
-   background-size: 430px 200px;
-   height: 150px;
+  background-image: linear-gradient(rgba(165, 42, 42, 0.206), rgba(165, 42, 42, 0.3)), url(https://s3.ap-southeast-1.amazonaws.com/dfcc.lk/wp-content/uploads/2019/06/03075249/Housing-Loan-Calculator.jpg);
+  background-position: center;
+  // background-repeat: no-repeat;
+  background-size: 430px 200px;
+  height: 150px;
 }
 
 .half-screen-list{
+
    background-color: red;
    width: 300px;
    height: 150px;
@@ -34,32 +35,34 @@
    }
    position: absolute;
    top: 20px;
+
 }
 
 .homebuyer-list{
-   margin-top: 60px;
-   width: 100vw;
-   // background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPaESFW33iFo8kS6Mk-9s_OhgBxeKaWZG3w&s);
+  margin-top: 60px;
+  width: 100vw;
+  // background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPaESFW33iFo8kS6Mk-9s_OhgBxeKaWZG3w&s);
 }
 
 .list-container{
-   justify-content: center;
-   text-align: center;
-   padding: auto;
-   margin: auto;
-   // height: 100vh;
+  justify-content: center;
+  text-align: center;
+  padding: auto;
+  margin: auto;
+  // height: 100vh;
 }
 
 .list-header-container {
-   display: flex;
-   flex-direction: column;
-   //  width: 100px;
-   align-items: center;
-   justify-content: center;
-   margin: auto;
+  display: flex;
+  flex-direction: column;
+  //  width: 100px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 .list-header-container h1 {
+
    font-size: 4em;
    font-family: serif;
    font-weight: bold;
@@ -71,29 +74,37 @@
 }
 
 .list-background{
-   background-image:url(https://s3.ap-southeast-1.amazonaws.com/dfcc.lk/wp-content/uploads/2019/06/03075249/Housing-Loan-Calculator.jpg);
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
-   height: 30vh;
+  background-image:url(https://s3.ap-southeast-1.amazonaws.com/dfcc.lk/wp-content/uploads/2019/06/03075249/Housing-Loan-Calculator.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30vh;
 }
 
 .list-mortgage{
-   justify-content: center;
-   padding: 30px;
-   margin: 30px;
-   border: 20px;
-   // box-shadow:black
+  justify-content: center;
+  padding: 30px;
+  margin: 30px;
+  border: 20px;
+  // box-shadow:black
 //    border-color: black;
 //    border-style: outset;
 //    border-width: 5px;
 }
 
 .list-card{
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+    .card {
+  //  width: 300px;
+  //  height: 200px;
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
    padding: 20px;
+
 }
 
 .list-mortgage {
@@ -111,4 +122,5 @@
 // flex-grow: 1;
    margin-left: 1rem;
    // background-color: rgb(215, 215, 215);
+
 }

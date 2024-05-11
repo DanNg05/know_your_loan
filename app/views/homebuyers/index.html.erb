@@ -1,5 +1,6 @@
 
 
+
   <div class="homebuyer-index" style="position: relative">
     <div class="half-screen-index">
     </div>
@@ -12,7 +13,7 @@
   </div>
 
 
-   </div>
+
   <div class="hb-rate-table">
     <div class="table-container">
       <table class="tg">
@@ -37,8 +38,7 @@
                         <span> <%= bank.name %> </span>
                       </div>
                     <% end %>
-                  <% end %>
-                </td>
+                  <% end %></td>
                 <td class="tg-0lax interest"><%= link_to "#{bank.rates[0].interest_value}%", new_rate_homebuyer_path(rate_id: bank.rates[0]) %></td>
                 <td class="tg-0lax interest"><%= link_to "#{bank.rates[1].interest_value}%", new_rate_homebuyer_path(rate_id: bank.rates[1]) %></td>
                 <td class="tg-0lax interest"><%= link_to "#{bank.rates[2].interest_value}%", new_rate_homebuyer_path(rate_id: bank.rates[2]) %></td>

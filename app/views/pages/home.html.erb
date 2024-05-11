@@ -14,8 +14,7 @@
       <div class="col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
           <div class="col-lg-7 text-lg-start">
-            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Know Your Loan</h1>
-            <p class="col-lg-10 fs-4">Unlocking Your Mortgage Journey: Empowering Your Mortgage Journey Through Visual Insights.</p>
+            <p class="col-lg-10">Unlocking Your Mortgage Journey: Empowering Your Mortgage Journey Through Visual Insights.</p>
           </div>
 
           <%# <div class="col-md-10 mx-auto col-lg-5"> %>
@@ -43,23 +42,30 @@
       </div>
 
     <div class="daily-rate">
-      <div class="p-2 rounded-3" style="background-color: transparent;">
+      <div class="p-2 rounded-3" style="backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.1);">
         <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="0" height="0"><use xlink:href="#bootstrap"></use></svg>
         <div class="rate-container" style="display: flex; justify-content: space-between">
-          <h5 class="text-body-emphasis">RATE OF THE DAY</h5>
-          <h1 class="lowest-rate"><%= @lowest_rate.interest_value %>%</h1>
+          <h5 class="text-lg-start">RATE OF THE DAY</h5>
+          <h1 class="lowest-rate text-lg-start"><%= @lowest_rate.interest_value %>%</h1>
         </div>
-        <p class="col-lg-8 mx-auto fs-5 text-muted">
+
+      <div class="signin-container">
+        <% if !current_user %>
+          <div class="row">
+            <div class="col-6">
+              <%= link_to "Sign up", new_user_registration_path, class:"btn btn-primary rounded-pill" %>
+            </div>
+            <div class="col-6">
+              <%= link_to "Log in", new_user_session_path, class:"btn btn-outline-secondary rounded-pill white-bg" %>
+            </div>
+          </div>
+        <% else %>
+          <%= link_to "Check current rates", rates_path, class:"btn btn-primary" %>
+        <% end %>
+      </div>
+        <p class="text-lg-start">
           Check how much you could save.
         </p>
-        <div class="d-inline-flex gap-2 mb-5">
-          <% if !current_user %>
-            <%= link_to "Sign up now", new_user_registration_path, class:"d-inline-flex align-items-center btn btn-primary btn-m px-4 rounded-pill" %>
-            <%= link_to "Log in", new_user_session_path, class:"btn btn-outline-secondary btn-m px-4 rounded-pill white-bg" %>
-            <% else %>
-            <%= link_to "Check current rates", rates_path, class:"btn btn-primary" %>
-          <% end %>
-        </div>
       </div>
     </div>
 
@@ -139,7 +145,7 @@
       </div>
     </div>
 
-  <a href="#" class="btn btn-link btn-lg">Scroll to the top for sign in</a>
+  <a href="#" class="btn btn-info btn-lg">Partner with KnowYourLoan</a>
 
 
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
