@@ -1,6 +1,6 @@
 <%= simple_form_for [rate, homebuyer] do |f| %>
   <!-- loan info -->
-  <div class="loan-info">
+  <div class="loan-info homebuyer-input">
     <div class="field">
       <%= f.label :property_value %>
       <%= f.number_field :property_value, id: 'property_value' %>
@@ -27,7 +27,7 @@
     </div>
   </div>
   <!-- income info -->
-  <div class="rental-info">
+  <div class="rental-info homebuyer-input">
     <div class="field">
       <%= f.label :salary %>
       <%= f.number_field :salary, id: 'salary' %>
@@ -40,7 +40,7 @@
   </div>
 
   <!-- expenses info -->
-  <div class="rental-info">
+  <div class="rental-info homebuyer-input">
     <div class="field">
       <%= f.label :living_expenses %>
       <%= f.number_field :living_expenses, id: 'living_expenses' %>
