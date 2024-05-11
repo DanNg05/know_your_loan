@@ -16,7 +16,7 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :is_homebuyer, as: :radio_buttons, collection: ['Homebuyer', 'Invester'] %>
+      <%= f.input :is_homebuyer, collection: [['Homebuyer', true], ['Investor', false]] %>
     </div>
 
     <div class="form-actions d-flex justify-content-center">

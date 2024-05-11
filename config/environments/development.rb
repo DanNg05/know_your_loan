@@ -37,17 +37,19 @@ Rails.application.configure do
   config.active_storage.service = :cloudinary
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => 'knowyourloan123@gmail.com',
-    :password => ENV['GMAIL_PASSWORD'],
-    :address => 'smtp.gmail.com',
-    :domain => 'smtp.gmail.com',
-    :port => '587',
+    :user_name => 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
+    :password => ENV["SENDGRID_API_KEY"], # This is the secret sendgrid API key which was issued during API key creation
+    :domain => 'yourdomain.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true
   }
+  # config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
+  config.action_mailer.default_url_options = { host: "localhost:3000", protocol: "http" }
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.

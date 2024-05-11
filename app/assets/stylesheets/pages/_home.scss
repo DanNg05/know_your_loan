@@ -1,21 +1,21 @@
 // Specific CSS for your home-page
 .background{
-   background-image:url(https://i.postimg.cc/J0xynv6S/Adobe-Stock-645227190.jpg);
+  background-image:linear-gradient(rgba(113, 104, 104, 0.6), rgba(113, 104, 104, 0.6)), url(https://i.postimg.cc/J0xynv6S/Adobe-Stock-645227190.jpg);
    // background-color: aqua;
-   background-size:cover;
-
+  background-size:cover;
+  background-repeat: none;
 
 
    // background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   height: 100%;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
    // width: 100%;
-   }
-
-.background-content{
-
 }
+
+// .background-content{
+
+// }
 
 .container{
    display: flex;
@@ -32,10 +32,10 @@
    // text-align: center;
 }
 
-.banner{
-   // background-color: rgba(255, 255, 255, 0.8);
+// .banner{
+//    // background-color: rgba(255, 255, 255, 0.8);
 
-}
+// }
 .signin-banner{
    padding: 25px 25px 25px 25px;
    margin: 25px 25px 25px 25px;
@@ -44,33 +44,16 @@
 
 }
 
-.home-container{
-   background-image: url(https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/raw/SOPL21005_780x440_mobile.jpeg);
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-}
 
 h1{
    font-family: 'Roboto', 'Roboto', 'Roboto', 'Roboto', Geneva, Verdana, sans-serif;
 }
 
 .text-lg-start{
-  color: goldenrod;
+  // color: goldenrod;
+  color: white;
   text-shadow: 2px 2px 2px grey;
 }
-
-// .broker-container{
-//    background-image: url(https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/cms/1026040678PartTimeMortgageBroker.jpg=ws1280x960);
-//    background-repeat: no-repeat;
-//    background-size: cover;
-// }
-
-// .investor-container{
-//    background-image: url(https://www.nerdwallet.com/au/wp-content/uploads/sites/3/2022/11/home-loan-jargon-435x290.jpg);
-//    background-repeat: no-repeat;
-//    background-size: cover;
-// }
 
 .signin-container{
    display: flex;
