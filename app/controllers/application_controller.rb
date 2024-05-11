@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
   include Pundit::Authorization
 
   # Pundit: allow-list approach
@@ -17,6 +18,10 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     rates_path # Change 'root_path' to the desired path you want to redirect to after login
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:is_homebuyer])
   end
 
   private
