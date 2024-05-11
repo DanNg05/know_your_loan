@@ -1,5 +1,20 @@
+
+.header-list{
+   background-image: linear-gradient(rgba(165, 42, 42, 0.206), rgba(165, 42, 42, 0.3)), url(https://s3.ap-southeast-1.amazonaws.com/dfcc.lk/wp-content/uploads/2019/06/03075249/Housing-Loan-Calculator.jpg);
+   background-position: center;
+   // background-repeat: no-repeat;
+   background-size: 430px 200px;
+   height: 150px;
+
+   padding: 20px 20px 20px 20px;
+
+}
+
+.homebuyer-list{
+   position: relative;
+}
 .half-screen-list{
-   background-color: rgba(255, 0, 0, 0.668);
+   background-color: rgb(255, 0, 0);
    width: 300px;
    height: 150px;
    position: absolute;
@@ -8,20 +23,7 @@
    border-radius: 0 5px 200px 0;
 }
 
-
 .image-list{
-   background-image: linear-gradient(rgba(165, 42, 42, 0.206), rgba(165, 42, 42, 0.3)), url(https://s3.ap-southeast-1.amazonaws.com/dfcc.lk/wp-content/uploads/2019/06/03075249/Housing-Loan-Calculator.jpg);
-   background-position: center;
-   // background-repeat: no-repeat;
-   background-size:auto;
-   background-size: 430px 200px;
-   height: 150px;
-   display: flex;
-   flex-direction: column;
-   text-align: center;
-   justify-content: center;
-   padding: 20px 20px 20px 20px;
-   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.474);
    h1 {
       font-family: 'Poetsen One', sans-serif;
       // font-style: italic; /* Italicizes the text */
@@ -30,9 +32,12 @@
       text-shadow: 2px 2px rgba(241, 237, 237, 0.234); /* Adds shadow to text */
       color: #ffffff; /* Dark grey text color */
     }
+   p{
 
-
+      color: #ffffff;
+   }
 }
+
 
 .homebuyer-list{
    margin-top: 60px;
