@@ -1,13 +1,12 @@
-
-  <div class="homebuyer-list" style="position: relative">
-    <div class="half-screen-list">
+<div class="homebuyer-list" style="position: relative">
+  <div class="half-screen-list">
+  </div>
+  <div class=header-list>
+  </div>
+    <div class="image-list">
+      <h1>Review your current mortgages</h1>
+      <p>To get you started, estimate your borrowing power before speaking with a Mortgage Broker.</p>
     </div>
-    <div class=header-list>
-    </div>
-      <div class="image-list">
-        <h1>List of your mortgages</h1>
-        <p>To get you started, estimate your borrowing power before speaking with a Mortgage Broker.</p>
-      </div>
   </div>
 
   <div class="list-card">
@@ -18,11 +17,12 @@
                <% @homebuyers.each do |h| %>
                <% rate = Rate.find(h.rate_id) %>
 
-                  <p>From: <%= rate.bank.name %></p>
-                  <p>Loan amount: <%= h.loan_amount %></p>
-                  <p>Loan term: <%= h.loan_term %></p>
-                  <p>Interest rate: <%= h.interest_rate %></p>
-                  <p> Monthly repayment: <%= h.monthly_repayment %></p>
+               <p>Mortgage with <%= rate.bank.name %></p>
+               <p>Loan amount: <%= h.loan_amount %></p>
+               <p>Loan term: <%= h.loan_term %></p>
+               <p>Interest rate: <%= h.interest_rate %>%</p>
+               <p> Monthly repayment: <%= h.monthly_repayment %></p>
+               <p> Net Disposable Income: <%= h.net_disposable_income %></p>
 
                   <% end %>
          </div>
@@ -35,5 +35,6 @@
       </div>
 
       </div>
-   <%= link_to "Find your broker", brokers_path %>
-   </div>
+  <%= link_to "Find your broker", brokers_path, class:"btn btn-info"  %>
+</div>
+

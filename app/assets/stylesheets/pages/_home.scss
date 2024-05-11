@@ -55,30 +55,29 @@ h1{
    font-family: 'Roboto', 'Roboto', 'Roboto', 'Roboto', Geneva, Verdana, sans-serif;
 }
 
-.text-shadow{
-   text-shadow: black 0px 0 4px;
+.text-lg-start{
+  color: goldenrod;
+  text-shadow: 2px 2px 2px grey;
 }
 
-.broker-container{
-   background-image: url(https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/cms/1026040678PartTimeMortgageBroker.jpg=ws1280x960);
-   background-repeat: no-repeat;
-   background-size: cover;
-}
+// .broker-container{
+//    background-image: url(https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/cms/1026040678PartTimeMortgageBroker.jpg=ws1280x960);
+//    background-repeat: no-repeat;
+//    background-size: cover;
+// }
 
-.investor-container{
-   background-image: url(https://www.nerdwallet.com/au/wp-content/uploads/sites/3/2022/11/home-loan-jargon-435x290.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-}
+// .investor-container{
+//    background-image: url(https://www.nerdwallet.com/au/wp-content/uploads/sites/3/2022/11/home-loan-jargon-435x290.jpg);
+//    background-repeat: no-repeat;
+//    background-size: cover;
+// }
+
 .signin-container{
    display: flex;
-   justify-content: center;
+   justify-content: space-between;
    flex-direction: column;
-   align-items: center;
    // text-align: center;
-   justify-content: space-around;
 }
-
 
 .zoombox:hover{
    background-color: rgb(17, 16, 16);
@@ -89,15 +88,15 @@ h1{
 }
 
 
-.user-signin-btn{
-   margin: 20px 20px 20px 20px;
-   padding: 20px 20px 20px 20px;
-}
+// .user-signin-btn{
+//    margin: 20px 20px 20px 20px;
+//    padding: 20px 20px 20px 20px;
+// }
 
-.signin-broker-btn{
-   margin: 20px 20px 20px 20px;
-   padding: 20px 20px 20px 20px;
-}
+// .signin-broker-btn{
+//    margin: 20px 20px 20px 20px;
+//    padding: 20px 20px 20px 20px;
+// }
 
 
 a {
