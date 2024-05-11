@@ -4,15 +4,15 @@
     <% if @mortgage.monthly_cashflow.positive? %>
       <%= pie_chart [["Monthly repayment", @mortgage.monthly_repayment], ["Monthly cashflow",@mortgage.monthly_cashflow], ["Maintenance fund",@mortgage.maintenance_fund], ["Other expenses",@mortgage.other_expenses]], donut: true, round: 2, thousands: "," %>
     <% end %>
-  <div data-controller="appointment-alert">
-    <div data-controller="mortgage" class="d-flex justify-content-center align-items-center flex-column">
-      <button class="btn btn-primary mt-3" data-action="click->mortgage#change" data-target="mortgageForm">EDIT YOUR MORTGAGE</button>
-      <div class="d-none" data-mortgage-target="mortgageForm">
-        <%= render "mortgage_edit_form", mortgage: @mortgage %>
+    <%# <div data-controller="appointment-alert">
+      <div data-controller="mortgage" class="d-flex justify-content-center align-items-center flex-column">
+        <button class="btn btn-primary mt-3" data-action="click->mortgage#change" data-target="mortgageForm">EDIT YOUR MORTGAGE</button>
+        <div class="d-none" data-mortgage-target="mortgageForm">
+          <%= render "mortgage_edit_form", mortgage: @mortgage %>
 
+        <%# </div>
       </div>
-    </div>
-  </div>
+    </div>  %>
   </div>
 
 
@@ -31,19 +31,19 @@
     <br>
 
     <p><strong>Loan Amount:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.loan_amount, precision: 2)) %></p>
-    <p><strong>Monthly Repayment:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.monthly_repayment, precision: 2)) %></p>
+    <p><strong>Monthly Interest:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.monthly_repayment, precision: 2)) %></p>
     <p><strong>Monthly Cashflow:</strong> <%= number_with_delimiter(number_with_precision(@mortgage.monthly_cashflow, precision: 2)) %></p>
 
 
   </div>
   <div class="result">
     <% if @mortgage.monthly_cashflow.positive? %>
-    <%= link_to "Recalculate", new_rate_mortgage_path(@rate), class:"btn btn-primary" %>
+    <%= link_to "Recalculate", new_rate_mortgage_path(@rate), class:"btn btn-secondary" %>
     <% else %>
-      <p>Your monthly repayment is negative please <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %></p>
+      <p>Your monthly cashflow is negative please <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %></p>
     <% end %>
     <% if @mortgage.monthly_cashflow.positive? %>
-      <%= link_to "Save your calculation", listing_path, class:"btn btn-primary" %>
+      <%= link_to "Save your calculation", listing_path, class:"btn btn-info" %>
     <% end %>
   </div>
 </div>

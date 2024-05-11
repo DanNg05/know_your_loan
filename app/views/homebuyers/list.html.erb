@@ -1,7 +1,7 @@
 
 <div class="list-container">
    <div class="list-header-container list-background">
-      <h1>List of your mortgages</h1>
+      <h1>Review your current mortgages</h1>
       <p>To get you started, estimate your borrowing power before speaking with a Mortgage Broker.</p>
    </div>
 
@@ -13,11 +13,12 @@
             <% @homebuyers.each do |h| %>
             <% rate = Rate.find(h.rate_id) %>
 
-               <p>From: <%= rate.bank.name %></p>
+               <p>Mortgage with <%= rate.bank.name %></p>
                <p>Loan amount: <%= h.loan_amount %></p>
                <p>Loan term: <%= h.loan_term %></p>
-               <p>Interest rate: <%= h.interest_rate %></p>
+               <p>Interest rate: <%= h.interest_rate %>%</p>
                <p> Monthly repayment: <%= h.monthly_repayment %></p>
+               <p> Net Disposable Income: <%= h.net_disposable_income %></p>
 
                <% end %>
       </div>
@@ -30,5 +31,5 @@
    </div>
 
    </div>
-  <%= link_to "Find your broker", brokers_path %>
+  <%= link_to "Find your broker", brokers_path, class:"btn btn-info"  %>
 </div>

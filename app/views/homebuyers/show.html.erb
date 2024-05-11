@@ -1,5 +1,5 @@
 <div class="container homebuyer-show">
-  <h1>Homebuyer Factsheet</h1>
+  <h1>Homebuyer Information Sheet</h1>
   <div>
         <% data = [
       {
@@ -10,7 +10,7 @@
       data: @debt
       }
       ] %>
-    <%= area_chart data, colors: ["#666", "#b00"], xtitle: "Year", ytitle: "Payment" %>
+    <%= area_chart data, colors: ["#666", "#b00"], xtitle: "Year", ytitle: "Payment", round: 2, thousands: "," %>
   </div>
 
 
@@ -43,10 +43,10 @@
   </div>
 
   <div class="result">
-    <%= link_to "Recalculate", new_rate_homebuyer_path(@rate) %>
+    <%= link_to "Recalculate", new_rate_homebuyer_path(@rate), class:"btn btn-secondary" %>
     <% if @homebuyer.net_disposable_income.positive? %>
 
-      <%= link_to "Save your calculation", list_path %>
+      <%= link_to "Save your calculation", list_path, class:"btn btn-info" %>
 
     <% end %>
   </div>
