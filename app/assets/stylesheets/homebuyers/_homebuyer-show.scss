@@ -1,0 +1,57 @@
+.half-screen-show{
+   background-color: rgba(255, 0, 0, 0.668);
+   width: 300px;
+   height: 150px;
+   position: absolute;
+   left: 0;
+   opacity: 0.3;
+   border-radius: 0 5px 200px 0;
+}
+
+.image-show{
+   background-image: linear-gradient(rgba(165, 42, 42, 0.206), rgba(165, 42, 42, 03)), url(how-much-can-i-borrow.jpg);
+   background-position: center;
+   // background-repeat: no-repeat;
+   background-size:auto;
+   background-size: 430px 200px;
+   height: 150px;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   justify-content: center;
+   padding: 20px 20px 20px 20px;
+   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.474);
+   h1 {
+
+      font-weight: bold; /* Makes the text bolder */
+      // font-style: italic; /* Italicizes the text */
+      text-transform: uppercase; /* Converts text to uppercase */
+      letter-spacing: 2px; /* Increases space between characters */
+      text-shadow: 2px 2px rgba(255, 255, 255, 0.2); /* Adds shadow to text */
+      color: #ffffff; /* Dark grey text color */
+    }
+}
+
+.homebuyer-show{
+   margin-top: 60px;
+   width: 100vw;
+   // background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPaESFW33iFo8kS6Mk-9s_OhgBxeKaWZG3w&s);
+}
+
+.header-show{
+   // display: flex;
+justify-content: center;
+
+}
+
+.chart-show-container{
+   padding: 10px 10px 10px 10px;
+      //  width: 300px;
+      //  height: 200px;
+       background-color: white;
+       border-radius: 8px;
+       box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+       padding: 20px;
+       margin: 20px;
+       box-sizing: border-box;
+}

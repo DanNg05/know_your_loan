@@ -1,6 +1,14 @@
-<div class="container homebuyer-show">
-  <h1>Homebuyer Information Sheet</h1>
-  <div>
+<div class="homebuyer-show">
+      <div class=header-show>
+   <div class="half-screen-show">
+      </div>
+   <div class="image-show">
+     <h1>Homebuyer Information Sheet</h1>
+      </div>
+   </div>
+
+<div class=chart-show-container>
+  <div class=chart-new>
         <% data = [
       {
       name: "Loan Balance",
@@ -15,6 +23,8 @@
 
 
   <div class="factsheet">
+   <!--number with precision is rounding homebuyer.propertyvalue to 2 decimal places, numberwith delimiter is adding , to
+   that number-->
     <p><strong>Property Value:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.property_value, precision: 2)) %></p>
     <p><strong>Total Deposit:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.total_deposit, precision: 2) )%></p>
     <p><strong>Interest Rate:</strong> <%= number_with_precision(@homebuyer.interest_rate, precision: 2) %>% </p>
@@ -49,5 +59,6 @@
       <%= link_to "Save your calculation", list_path, class:"btn btn-info" %>
 
     <% end %>
+  </div>
   </div>
 </div>

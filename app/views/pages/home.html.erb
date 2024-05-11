@@ -1,5 +1,13 @@
 
-<!-- Hero 1 - Bootstrap Brain Component -->
+<head>
+   <script>
+  document.addEventListener('scroll', function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var speed = 0.5; // Adjust the speed of the effect
+    document.querySelector('.background').style.backgroundPosition = 'center ' + (-scrollTop * speed) + 'px';
+  });
+</script>
+</head><!-- Hero 1 - Bootstrap Brain Component -->
 <div class="container">
   <div class="background">
   <section class="bsb-hero-1 px-3 bsb-overlay bsb-hover-pull">
