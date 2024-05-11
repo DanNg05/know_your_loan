@@ -21,10 +21,10 @@
       <%= f.input :interest_rate, :as => :hidden, :input_html => {:value => @rate.interest_value} %>
     </div>
 
-    <div class="field">
-      <%= f.label :loan_term %>
-      <%= f.number_field :loan_term, id: 'loan_term' %>
-    </div>
+      <div class="field">
+         <%= f.label :loan_term, "Loan Term" %>
+         <%= f.select :loan_term, [10,20,30], { include_blank: true }, { id: 'loan_term', class: 'form-control' } %>
+      </div>
   </div>
   <!-- income info -->
   <div class="rental-info homebuyer-input">
