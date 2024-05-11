@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   resources :homebuyers, only: [:show, :edit, :update, :index]
   get "list", to: "homebuyers#list"
   get "listing", to: "mortgages#listing"
+  get "broker_sign_up", to: "pages#broker_sign_up"
+  post "send_form", to: "pages#send_form"
 
   resources :rates do
     resources :mortgages, only: [:new, :create, :edit, :update]
