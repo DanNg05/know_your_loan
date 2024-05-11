@@ -57,10 +57,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_04_054607) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "image_url"
     t.decimal "one_year"
     t.decimal "two_years"
     t.decimal "three_years"
-    t.string "image_url"
   end
 
   create_table "brokers", force: :cascade do |t|
@@ -147,7 +147,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_04_054607) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin"
+    t.boolean "admin", default: false, null: false
     t.boolean "is_homebuyer", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
