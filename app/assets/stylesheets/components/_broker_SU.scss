@@ -1,0 +1,26 @@
+.broker-SU-title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Permanent Marker", cursive;
+  text-shadow: 4px 4px 0 gray;
+}
+.su-title {
+  background-image: url(brick.jpg);
+  background-size: 430px 200px;
+  background-position: center;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.broker-su-btn {
+  margin-top: 10px;
+  color: red;
+  border: 1px solid red;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 gray;
+}
