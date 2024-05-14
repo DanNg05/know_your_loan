@@ -64,15 +64,17 @@
         <%# Broker review details %>
         <% if @broker.reviews != [] %>
           <h3 class='reviews-title'>Reviews</h2>
-          <% @broker.reviews.each do |review| %>
-            <p class="review-content">
-              <%= review.content %>
-              <br>
-              <% review.rating.times do |star| %>
-                <span>⭐</span>
+            <div class="scrollable">
+              <% @broker.reviews.each do |review| %>
+                <p class="review-content">
+                  <%= review.content %>
+                  <br>
+                  <% review.rating.times do |star| %>
+                    <span>⭐</span>
+                  <% end %>
+                </p>
               <% end %>
-            </p>
-          <% end %>
+            </div>
         <% end %>
       </div>
     </div>
