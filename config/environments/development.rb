@@ -40,10 +40,10 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
-    :password => ENV["SENDGRID_API_KEY"], # This is the secret sendgrid API key which was issued during API key creation
-    :domain => 'yourdomain.com',
-    :address => 'smtp.sendgrid.net',
+    :user_name => 'admin@knowyourloan.site', # This is the string literal 'apikey', NOT the ID of your API key
+    :password => ENV["EMAIL_PASSWORD"], # This is the secret sendgrid API key which was issued during API key creation
+    :domain => 'knowyourloan.site',
+    :address => 'mail.privateemail.com',
     :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true

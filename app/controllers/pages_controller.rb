@@ -11,6 +11,13 @@ class PagesController < ApplicationController
 
 
   def send_form
-    AdminMailer.broker_send('knowyourloan123@gmail.com', 'test', 'subject').deliver_now
+    # raise
+    AdminMailer.broker_send('admin@knowyourloan.site', "#{render "admin_mailer/email_format"}" , 'New Broker Sign Up').deliver_now
+  end
+
+  private
+
+  def form_params
+    params.require()
   end
 end
