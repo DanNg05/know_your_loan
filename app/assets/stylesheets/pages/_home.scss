@@ -1,137 +1,600 @@
-// Specific CSS for your home-page
-.background{
-   background-image:url(https://i.postimg.cc/J0xynv6S/Adobe-Stock-645227190.jpg);
-   // background-color: aqua;
-   background-size:cover;
+// // Specific CSS for your home-page
+// .background{
+//    background-image:url(https://i.postimg.cc/J0xynv6S/Adobe-Stock-645227190.jpg);
+//    // background-color: aqua;
+//    background-size:contain;
 
 
 
-   // background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   height: 100%;
-   // width: 100%;
-   }
+//    background-repeat: no-repeat;
+//    background-position: center;
+//    background-attachment: fixed;
+//    height: 100%;
+//    // width: 100%;
+//    }
 
-.background-content{
+//    .container{
 
+
+/* Add this CSS to control the fade-in and fade-out effects */
+#reveal {
+  opacity: 0; /* Initially hide the element */
+  transition: opacity 0.5s; /* Add a smooth transition effect */
 }
 
-.container{
+.content.fade-in {
+  opacity: 1; /* Fade in the element */
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+
+.hero{
    display: flex;
    justify-content: center;
    // padding: auto;
-   padding-left: 25px;
+  //  padding-left: ;
    // margin-left: 0px;
    // margin-right: 0px;
-   padding-right: 25px;
+  //  padding-right: 25px;
    width: 100%;
+   height: 150%;
    // flex: content;
    flex-direction: column;
+  margin-top:100px ;
    // height: 500px;
    // text-align: center;
 }
 
-.banner{
-   // background-color: rgba(255, 255, 255, 0.8);
+// .container{
+//   display: flex;
+//   justify-content: center;
+//   // padding: auto;
+//  //  padding-left: ;
+//   // margin-left: 0px;
+//   // margin-right: 0px;
+//  //  padding-right: 25px;
+//   width: 100%;
+//   height: 50%;
+//   // flex: content;
+//   flex-direction: column;
+//   // height: 500px;
+//   // text-align: center;
+// }
 
-}
-.signin-banner{
-   padding: 25px 25px 25px 25px;
-   margin: 25px 25px 25px 25px;
-   // margin: 0px;
-   opacity: 80%;
+// .banner{
+//    // background-color: rgba(255, 255, 255, 0.8);
 
-}
+// }
+// .signin-banner{
+//    padding: 25px 25px 25px 25px;
+//    margin: 25px 25px 25px 25px;
+//    // margin: 0px;
+//    opacity: 80%;
 
-.home-container{
-   background-image: url(https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/raw/SOPL21005_780x440_mobile.jpeg);
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-}
+// }
 
-h1{
-   font-family: 'Roboto', 'Roboto', 'Roboto', 'Roboto', Geneva, Verdana, sans-serif;
-}
-
-.text-lg-start{
-  color: goldenrod;
-  text-shadow: 2px 2px 2px grey;
-}
-
-// .broker-container{
-//    background-image: url(https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/cms/1026040678PartTimeMortgageBroker.jpg=ws1280x960);
+// .home-container{
+//    background-image: url(https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/raw/SOPL21005_780x440_mobile.jpeg);
 //    background-repeat: no-repeat;
+//    background-position: center;
 //    background-size: cover;
 // }
 
-// .investor-container{
-//    background-image: url(https://www.nerdwallet.com/au/wp-content/uploads/sites/3/2022/11/home-loan-jargon-435x290.jpg);
-//    background-repeat: no-repeat;
-//    background-size: cover;
+// h1{
+//    font-family: 'Roboto', 'Roboto', 'Roboto', 'Roboto', Geneva, Verdana, sans-serif;
 // }
 
-.signin-container{
-   display: flex;
-   justify-content: space-between;
-   flex-direction: column;
-   // text-align: center;
-}
-
-.zoombox:hover{
-   background-color: rgb(17, 16, 16);
-   color: rgb(246, 246, 246);
-   // opacity: 30%;
-   transform: scale(1.02);
-   transition: all 0.05s ease;
-}
-
-
-// .user-signin-btn{
-//    margin: 20px 20px 20px 20px;
-//    padding: 20px 20px 20px 20px;
+// .text-lg-start{
+//   color: goldenrod;
+//   text-shadow: 2px 2px 2px grey;
 // }
 
-// .signin-broker-btn{
-//    margin: 20px 20px 20px 20px;
-//    padding: 20px 20px 20px 20px;
+// // .broker-container{
+// //    background-image: url(https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/cms/1026040678PartTimeMortgageBroker.jpg=ws1280x960);
+// //    background-repeat: no-repeat;
+// //    background-size: cover;
+// // }
+
+// // .investor-container{
+// //    background-image: url(https://www.nerdwallet.com/au/wp-content/uploads/sites/3/2022/11/home-loan-jargon-435x290.jpg);
+// //    background-repeat: no-repeat;
+// //    background-size: cover;
+// // }
+
+// .signin-container{
+//    display: flex;
+//    justify-content: space-between;
+//    flex-direction: column;
+//    // text-align: center;
+// }
+
+// .zoombox:hover{
+//    background-color: rgb(17, 16, 16);
+//    color: rgb(246, 246, 246);
+//    // opacity: 30%;
+//    transform: scale(1.02);
+//    transition: all 0.05s ease;
 // }
 
 
-a {
-   text-decoration: none;
-   color: rgb(25, 25, 25);
- }
+// // .user-signin-btn{
+// //    margin: 20px 20px 20px 20px;
+// //    padding: 20px 20px 20px 20px;
+// // }
 
-.container {
-  margin-top: 100px;
+// // .signin-broker-btn{
+// //    margin: 20px 20px 20px 20px;
+// //    padding: 20px 20px 20px 20px;
+// // }
+
+
+// a {
+//    text-decoration: none;
+//    color: rgb(25, 25, 25);
+//  }
+
+// .container {
+//   margin-top: 100px;
+// }
+
+// .white-bg {
+//   background-color: white;
+// }
+
+// .bsb-hero-1 {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .daily-rate {
+//   max-width: 350px;
+//   order: 1; /* By default, place it below the main content */
+//   margin-top: 20px; /* Add some space between the main content and daily rate */
+// }
+
+// @media (min-width: 992px) { /* Adjust breakpoint according to your design */
+//   .bsb-hero-1 {
+//     flex-direction: row;
+//     align-items: center; /* Center vertically */
+//     justify-content: space-between; /* Push the daily rate to the right */
+//   }
+
+//   .daily-rate {
+//     order: 2; /* Move it to the right */
+//     margin-top: 0; /* Remove top margin */
+//   }
+// }
+
+// @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+// *{
+//     padding: 0;
+//     margin: 0;
+//     box-sizing: border-box;
+// }
+
+// @font-face {
+//     font-family: w;
+//     src: url(./fonts/WanoQuin-ExtraBold.otf);
+// }
+
+
+// body{
+//     color: #fff;
+//     font-family: 'Lato', sans-serif;
+//     overflow-x: hidden;
+//     background-color: #141414;
+// }
+
+// .navbar{
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     padding: 1rem 3rem;
+//     position: fixed;
+//     top: 0;
+//     width: 100vw;
+//     border-bottom: 1px solid rgba(255, 255, 255, .1);
+//     z-index: 1000;
+// }
+
+// .navbar span{
+//     position: absolute;
+//     bottom: 0;
+//     height: 2px;
+//     width: 50px;
+//     background: linear-gradient(90deg , transparent , #fff);
+//     animation: animate 5s infinite linear;
+// }
+
+
+// @keyframes animate {
+//     0%{
+//         left: 0;
+//         transform: translate(-100%);
+//     }
+//     100%{
+//         left: 100%;
+//         transform: translate(0%);
+//     }
+// }
+
+.logo{
+    text-transform: capitalize;
+    font-size: 30px;
+    cursor: pointer;
+    font-family: w;
 }
 
-.white-bg {
-  background-color: white;
+li{
+    list-style: none;
 }
 
-.bsb-hero-1 {
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu{
+    display: flex;
+    gap: 5rem;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+
+.btn{
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+
+.wrapper {
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* Ensure the wrapper stretches to the full height of the viewport */
 }
 
-.daily-rate {
-  max-width: 350px;
-  order: 1; /* By default, place it below the main content */
-  margin-top: 20px; /* Add some space between the main content and daily rate */
+section{
+    width: 100vw;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.second-section {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #141414; /* Optional styling */
+  color: #fff; /* Optional styling */
+  padding: 7rem 1rem; /* Optional styling */
+}
+.video-section {
+    flex: 1;
 }
 
-@media (min-width: 992px) { /* Adjust breakpoint according to your design */
-  .bsb-hero-1 {
-    flex-direction: row;
-    align-items: center; /* Center vertically */
-    justify-content: space-between; /* Push the daily rate to the right */
-  }
+.img-container{
+    position: absolute;
+    top:0;
+    height: 100vh;
+    width: 100vw;
+}
 
-  .daily-rate {
-    order: 2; /* Move it to the right */
-    margin-top: 0; /* Remove top margin */
-  }
+
+.img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+
+}
+
+
+.section {
+  background-color: #cd2020;
+  padding: 7rem 1rem; /* Adjust padding for better mobile layout */
+}
+
+.boxes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* Adjust the gap between columns */
+}
+
+
+.columns {
+  display: flex;
+  flex-direction: column; /* Change flex-direction to column for better mobile layout */
+  gap: 1.5rem;
+  position: relative;
+  align-items: center; /* Center the columns horizontally */
+  text-align: center; /* Center the text inside columns */
+}
+
+.col img{
+    object-fit: cover;
+}
+
+
+.col-1{
+    display: flex;
+    gap: 1.5rem;
+    flex: 5;
+}
+.box1 .col-1 img:first-child{
+    width: 150px;
+    height: 180px;
+    transform: translateY(-30px);
+}
+
+.box1 .col-1 img:nth-child(2){
+    width: 380px;
+    height: 430px;
+}
+
+.col-3{
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    flex: 4;
+}
+
+.box1 .col-3 img:first-child{
+    width: 320px;
+    height: 170px;
+
+}
+
+.box1 .col-3 img:nth-child(2){
+    width: 150px;
+}
+.box1 .col-3 img:nth-child(3){
+    width: 200px;
+    height: 200px;
+}
+
+.col-2{
+    margin: auto;
+    flex: 1.5;
+}
+
+.col-2 h1{
+    font-family: w;
+    font-size: 100px;
+    text-transform: capitalize;
+    position: absolute;
+    top: 50px;
+    left: 47%;
+    z-index: 100;
+}
+.box1 .col-2 h1{
+    top: 0;
+}
+
+
+.col-2 span{
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing:3px;
+    opacity: .7;
+}
+
+
+.line{
+    height: 1px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, .1);
+    margin: 2rem 0;
+}
+
+.text-box p{
+    font-size: 12px;
+    line-height: 1.9;
+    padding-bottom: 1rem;
+    opacity: .7;
+
+}
+
+.box2 .col-1 img:first-child{
+    width: 200px;
+    height: 250px;
+    transform: translateY(200px);
+}
+
+
+.box2 .col-1 img:nth-child(2){
+    height: 380px;
+    width: 300px;
+}
+.box2 .col-3 img:nth-child(1){
+    height: 300px;
+    width: 220px;
+}
+
+.box2 .col-3 img:nth-child(2){
+    width: 180px;
+    height: 200px;
+    align-self: flex-end;
+}
+.box2 .col-3 img:nth-child(3){
+    width: 380px;
+    height: 200px;
+    transform: translateX(80px);
+}
+
+
+.box3 .col-1{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box3 .col-1 img:nth-child(1){
+    width: 200px;
+    height: 280px;
+    transform: translateX(30px);
+
+
+}
+.box3 .col-1 img:nth-child(2){
+    width: 180px;
+    height: 200px;
+    margin-left: 80px;
+    align-self: center;
+
+}
+.box3 .col-1 img:nth-child(3){
+    width: 280px;
+    height: 180px;
+
+}
+.box3 .col-1 img:nth-child(4){
+    width: 250px;
+    height: 180px;
+    transform: translateY(-30px);
+}
+
+.box3 .col-3 img{
+    width: 400px;
+    height: auto;
+}
+
+footer{
+    background-color: #141414;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+
+.text-content{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.title{
+    font-family: w;
+    width: 450px;
+    position: relative;
+    height: 110px;
+    overflow: hidden;
+}
+
+.bg{
+    font-size: 100px;
+}
+
+.sm{
+    font-size: 35px;
+    height: 40px;
+}
+
+.left{
+    left: -25%;
+}
+
+.right{
+    top: 50px;
+    left: 75%;
+}
+
+.title span{
+    position: absolute;
+}
+
+.n{
+    z-index: -1;
+
+}
+
+.text-content p{
+    transform: translateY(150px);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 12px;
+    font-weight: 300;
+}
+
+.v_container{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* opacity: 0; */
+}
+
+
+.left-side{
+  position: absolute;
+  top: 50px; /* Adjust this value to position the animation */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+  z-index: 1;
+  text-align: center;
+}
+
+
+
+
+.tv{
+    font-family: w;
+    display: flex;
+    text-transform: capitalize;
+}
+
+.bottom{
+    transform: translateY(70px);
+}
+
+
+
+.text-container{
+    max-width: 260px;
+}
+
+.text-container p{
+    padding-bottom: 1rem;
+    line-height: 1.4;
+    opacity: .8;
+}
+
+
+.right-side{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  max-width: 500px;
+  padding: 20px;
+
+}
+
+.right-side p{
+    position: absolute;
+    top: 45%;
+    left: -15%;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.fa-arrow-right-long{
+    transform: translateX(20px);
 }
