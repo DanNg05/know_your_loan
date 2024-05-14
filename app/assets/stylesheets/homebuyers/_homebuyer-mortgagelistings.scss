@@ -1,4 +1,3 @@
-
 .header-list{
   background-image: linear-gradient(rgba(165, 42, 42, 0.206), rgba(165, 42, 42, 0.3)), url(https://s3.ap-southeast-1.amazonaws.com/dfcc.lk/wp-content/uploads/2019/06/03075249/Housing-Loan-Calculator.jpg);
   background-position: center;
@@ -8,34 +7,30 @@
 }
 
 .half-screen-list{
-
-   background-color: red;
-   width: 300px;
-   height: 150px;
-   position: absolute;
-   left: 0;
-   opacity: 0.5;
-   border-radius: 0 5px 200px 0;
+  background-color: red;
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  left: 0;
+  opacity: 0.5;
+  border-radius: 0 5px 200px 0;
 }
 
 .image-list{
-   text-align: center;
-   h1 {
-      font-family: 'Poetsen One', sans-serif;
-      // font-style: italic; /* Italicizes the text */
-      text-transform: uppercase; /* Converts text to uppercase */
-      letter-spacing: 2px; /* Increases space between characters */
-      text-shadow: 2px 2px 2px grey; /* /* Adds shadow to text */
-      color: #ffffff; /* Dark grey text color */
-   }
-
-   p{
-
-      color: #ffffff;
-   }
-   position: absolute;
-   top: 20px;
-
+  text-align: center;
+  h1 {
+    font-family: 'Poetsen One', sans-serif;
+    // font-style: italic; /* Italicizes the text */
+    text-transform: uppercase; /* Converts text to uppercase */
+    letter-spacing: 2px; /* Increases space between characters */
+    text-shadow: 2px 2px 2px grey; /* /* Adds shadow to text */
+    color: #ffffff; /* Dark grey text color */
+  }
+  p{
+    color: #ffffff;
+  }
+  position: absolute;
+  top: 20px;
 }
 
 .homebuyer-list{
@@ -63,14 +58,14 @@
 
 .list-header-container h1 {
 
-   font-size: 4em;
-   font-family: serif;
-   font-weight: bold;
-   text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.887);
+  font-size: 4em;
+  font-family: serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.887);
 }
 
 .list-header-container p {
-   text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.887);
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.887);
 }
 
 .list-background{
@@ -87,9 +82,9 @@
   margin: 30px;
   border: 20px;
   // box-shadow:black
-//    border-color: black;
-//    border-style: outset;
-//    border-width: 5px;
+  //    border-color: black;
+  //    border-style: outset;
+  //    border-width: 5px;
 }
 
 .list-card{
@@ -98,31 +93,30 @@
   justify-content: center;
   padding: 20px;
 }
-    .card {
-  //  width: 300px;
-  //  height: 200px;
-   background-color: white;
-   border-radius: 8px;
-   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
-   padding: 20px;
 
-}
+.card {
+//  width: 300px;
+//  height: 200px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
 
 .list-mortgage {
-   //  width: 300px;
-   //  height: 200px;
-   background-color: white;
-   border-radius: 8px;
-   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
-   padding: 20px;
-   margin: 20px;
-   box-sizing: border-box;
+  //  width: 300px;
+  //  height: 200px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 20px;
+  box-sizing: border-box;
 }
 
 .field > input{
-// flex-grow: 1;
-   margin-left: 1rem;
-   // background-color: rgb(215, 215, 215);
+  // flex-grow: 1;
+  margin-left: 1rem;
+  // background-color: rgb(215, 215, 215);
 
 }
