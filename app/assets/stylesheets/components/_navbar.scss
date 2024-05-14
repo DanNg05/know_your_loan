@@ -12,6 +12,10 @@
   margin: 10px;
 }
 
+.navbar-fixed-top::before {
+  position: sticky;
+}
+
 .nav-icons {
   position: absolute;
   left: 10;
