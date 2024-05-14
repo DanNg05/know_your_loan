@@ -1,44 +1,41 @@
 .header-index{
-   background-image: linear-gradient(rgba(165, 42, 42, 0.206), rgba(165, 42, 42, 0.3)), url(https://s3.ap-southeast-1.amazonaws.com/dfcc.lk/wp-content/uploads/2019/06/03075249/Housing-Loan-Calculator.jpg);
-   background-position: center;
-   // background-repeat: no-repeat;
-   background-size: 430px 200px;
-   height: 150px;
+  background-image: linear-gradient(rgba(165, 42, 42, 0.206), rgba(165, 42, 42, 0.3)), url(https://s3.ap-southeast-1.amazonaws.com/dfcc.lk/wp-content/uploads/2019/06/03075249/Housing-Loan-Calculator.jpg);
+  background-position: center;
+  // background-repeat: no-repeat;
+  background-size: 430px 200px;
+  height: 150px;
 }
 
-
 .half-screen-index{
-   background-color: red;
-   width: 300px;
-   height: 150px;
-   position: absolute;
-   left: 0;
-   opacity: 0.5;
-   border-radius: 0 5px 200px 0;
-
+  background-color: red;
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  left: 0;
+  opacity: 0.5;
+  border-radius: 0 5px 200px 0;
 }
 
 .image-index{
-   text-align: center;
-   h1 {
-      font-family: 'Poetsen One', sans-serif;
-      // font-style: italic; /* Italicizes the text */
-      text-transform: uppercase; /* Converts text to uppercase */
-      letter-spacing: 1px; /* Increases space between characters */
-      text-shadow: 2px 2px 2px grey; /* Adds shadow to text */
-      color: #ffffff; /* Dark grey text color */
-    }
-   p{
+  text-align: center;
+  h1 {
+    font-family: 'Poetsen One', sans-serif;
+    // font-style: italic; /* Italicizes the text */
+    text-transform: uppercase; /* Converts text to uppercase */
+    letter-spacing: 1px; /* Increases space between characters */
+    text-shadow: 2px 2px 2px grey; /* Adds shadow to text */
+    color: #ffffff; /* Dark grey text color */
+  }
 
-      color: #ffffff;
-   }
-   position: absolute;
-   top: 20px;
-
+  p{
+    color: #ffffff;
+  }
+  position: absolute;
+  top: 20px;
 }
 
 .homebuyer-index{
-   margin-top: 60px;
-   width: 100vw;
-   // background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPaESFW33iFo8kS6Mk-9s_OhgBxeKaWZG3w&s);
+  margin-top: 60px;
+  width: 100vw;
+  // background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPaESFW33iFo8kS6Mk-9s_OhgBxeKaWZG3w&s);
 }
