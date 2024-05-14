@@ -1,6 +1,6 @@
 class BrokersController < ApplicationController
   before_action  :broker_list, only: [:show, :edit, :update]
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     if params[:query].present?
@@ -21,7 +21,9 @@ class BrokersController < ApplicationController
     authorize @broker
     # raise
     @review = Review.new
-    @appointments = Appointment.where(user_id: current_user.id, broker_id: params[:id])
+    if current_user
+      @appointments = Appointment.where(user_id: current_user.id, broker_id: params[:id])
+    end
     @appointment = Appointment.new
   end
 

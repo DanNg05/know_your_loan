@@ -1,29 +1,42 @@
-<div class="container" data-controller="brokers">
+<div style="position: relative; width: 100vw; margin-top: 60px">
+  <div class="half-screen">
+  </div>
+  <div class="neighborhood">
+  </div>
+  <div class="context-img">
+      <h3>EXPERT FINANCIAL ADVISOR SERVING NATIONWIDE</h3>
+      <p>Guiding you to discover optimal loan offers and propel you forward</p>
+  </div>
+</div>
+
+<div class="container" data-controller="brokers" style="margin-top:0">
   <div class="row">
     <div class="col-sml-6">
-      <h1 class="text-center">Welcome to AU BEST BROKER</h1>
+
       <div class='d-flex justify-content-center mb-3'>
-        <button data-action="click->brokers#changeView" data-brokers-target="btnView" class="btn btn-success">LIST</button>
+        <button data-action="click->brokers#changeView" data-brokers-target="btnView" class="map-list">LIST</button>
       </div>
-      <div class="brokers-list d-none text-center" data-brokers-target="list">
+      <div class="brokers-list d-none" data-brokers-target="list">
         <% @brokers.each do |broker| %>
-            <% if broker.photo.key %>
-              <%= cl_image_tag broker.photo.key, height: 300, width: 300, crop: :fill %>
+          <% if broker.photo.key %>
+            <%= cl_image_tag broker.photo.key, height: 300, width: 300, crop: :fill %>
+          <% end %>
+          <h3 class="mt-3"><%= broker.first_name %> <%= broker.last_name %></h3>
+          <p><%= broker.about %></p>
+          <i class="fa-solid fa-arrow-right" style="color: red"></i><%= link_to "Pick Me", broker_path(broker), class:"see-profile-index" %>
+          <br>
+          <% if current_user %>
+            <% if current_user.admin %>
+              <%= link_to "EDIT BROKER INFO", edit_broker_path(broker), class:"btn btn-primary m-3" %>
             <% end %>
-            <h3 class="mt-2"><%= broker.first_name.upcase %></h3>
-            <p><%= broker.about %></p>
-            <%= link_to "See profile", broker_path(broker), class:"btn btn-primary mb-5" %>
-            <br>
-            <% if current_user %>
-              <% if current_user.admin %>
-                <%= link_to "EDIT BROKER INFO", edit_broker_path(broker) %>
-              <% end %>
-            <% end %>
+          <% end %>
         <% end %>
       </div>
       <% if current_user %>
         <% if current_user.admin %>
-          <%= link_to "CREATE NEW BROKER", new_broker_path %>
+        <div class="d-flex justify-content-center align-items-center">
+          <%= link_to "CREATE NEW BROKER", new_broker_path, class:"btn btn-primary mb-3" %>
+        </div>
         <% end %>
       <% end %>
       <%# MAPBOX %>

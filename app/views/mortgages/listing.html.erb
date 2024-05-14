@@ -5,12 +5,13 @@
     <p>Mortgage with <%= rate.bank.name %></p>
     <% if mortgage.monthly_cashflow.positive? %>
     <div>
-      <p>Loan amount: <%= mortgage.loan_amount %></p>
-      <p>Monthly repayment: <%= mortgage.monthly_repayment.round(2) %> AUD</p>
-      <p>Monthly cashflow: <%= mortgage.monthly_cashflow.round(2) %> AUD</p>
+      <p>Loan amount: <%= mortgage.loan_amount.round(2) %> NZD</p>
+      <p>Monthly repayment: <%= mortgage.monthly_repayment.round(2) %> NZD</p>
+      <p>Monthly cashflow: <%= mortgage.monthly_cashflow.round(2) %> NZD</p>
     </div>
     <% else %>
       <p>Your monthly cashflow of this mortgage is negative. Please recalculate</p>
     <% end %>
   <% end %>
+  <%= link_to "Find your broker", brokers_path, class:"btn btn-info" %>
 </div>

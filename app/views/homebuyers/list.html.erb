@@ -1,33 +1,37 @@
-
-<div class="list-container">
-   <div class="list-header-container list-background">
-      <h1>List of your mortgages</h1>
+<div class="homebuyer-list" style="position: relative">
+  <div class="half-screen-list">
+  </div>
+  <div class=header-list>
+  </div>
+    <div class="image-list">
+      <h1>Review your current mortgages</h1>
       <p>To get you started, estimate your borrowing power before speaking with a Mortgage Broker.</p>
-   </div>
+    </div>
+  </div>
 
-<div class="list-card">
+  <div class="list-card">
 
-<div class="card" style="width: 18rem;">
+   <div class="card" style="width: 18rem;">
 
-         <div class= list-mortgage ><h2 class="pb-3 border-bottom"></h2>
-            <% @homebuyers.each do |h| %>
-            <% rate = Rate.find(h.rate_id) %>
+               <% @homebuyers.each do |h| %>
+                           <div class= list-mortgage >
+               <% rate = Rate.find(h.rate_id) %>
 
-               <p>From: <%= rate.bank.name %></p>
-               <p>Loan amount: <%= h.loan_amount %></p>
-               <p>Loan term: <%= h.loan_term %></p>
-               <p>Interest rate: <%= h.interest_rate %></p>
-               <p> Monthly repayment: <%= h.monthly_repayment %></p>
+                  <p>From: <%= rate.bank.name %></p>
+                  <p>Loan amount: <%= h.loan_amount %></p>
+                  <p>Loan term: <%= h.loan_term %></p>
+                  <p>Interest rate: <%= h.interest_rate %></p>
+                  <p> Monthly repayment: <%= h.monthly_repayment %></p>
+                  </div>
 
-               <% end %>
+                  <% end %>
+         <%# <h5 class="card-title">Card title</h5>
+         <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+         <a href="#" class="card-link">Card link</a>
+         <a href="#" class="card-link">Another link</a> %>
       </div>
-      <%# <h5 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a> %>
 
-   </div>
-   </div>
-
+      </div>
+  <%= link_to "Find your broker", brokers_path, class:"btn btn-info"  %>
 </div>

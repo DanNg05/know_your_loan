@@ -1,0 +1,114 @@
+.header-show{
+   background-image: linear-gradient(rgba(165, 42, 42, 0.206), rgba(165, 42, 42, 0.3)), url(https://s3.ap-southeast-1.amazonaws.com/dfcc.lk/wp-content/uploads/2019/06/03075249/Housing-Loan-Calculator.jpg);
+   background-position: center;
+   // background-repeat: no-repeat;
+   background-size: 430px 200px;
+   height: 150px;
+}
+
+
+.half-screen-show{
+
+   background-color: red;
+   width: 300px;
+   height: 150px;
+   position: absolute;
+   left: 0;
+   opacity: 0.5;
+   border-radius: 0 5px 200px 0;
+}
+
+.image-show-hb{
+   text-align: center;
+   h1 {
+      font-family: 'Poetsen One', sans-serif;
+      // font-style: italic; /* Italicizes the text */
+      text-transform: uppercase; /* Converts text to uppercase */
+      letter-spacing: 2px; /* Increases space between characters */
+      text-shadow: 2px 2px 2px grey; /* /* Adds shadow to text */
+      color: #ffffff; /* Dark grey text color */
+    }
+   p{
+
+      color: #ffffff;
+   }
+   position: absolute;
+   top: 20px;
+
+
+}
+
+.homebuyer-show{
+  margin-top: 60px;
+  width: 100vw;
+  // background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPaESFW33iFo8kS6Mk-9s_OhgBxeKaWZG3w&s);
+}
+.image-show-hb {
+   top: 40%;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 100%; /* Ensure it spans the full container width */
+   text-align: center; /* Centers text horizontally */
+}
+
+
+
+
+.chart-show-container{
+  padding: 10px 10px 10px 10px;
+     //  width: 300px;
+     //  height: 200px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      margin: 20px;
+      box-sizing: border-box;
+}
+.list-card {
+   background-color: #f8f9fa; /* Light gray background */
+   border-radius: 8px; /* Rounded corners */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card {
+   background-color: #ffffff; /* White background for contrast */
+   border: none;
+}
+
+.list-mortgage h2 {
+   color: #333; /* Dark grey color for headings */
+}
+
+.list-mortgage p {
+   color: #666; /* Medium grey color for text */
+   font-size: 0.9rem; /* Smaller font size for details */
+}
+
+.result a {
+   display: inline-block;
+   font-weight: bold;
+   // padding: 10px 20px;
+   margin: 5px;
+   // background-color: #de6d6d; /* Bootstrap primary color */
+   // color: white;
+   text-align: center;
+   border-radius: 5px;
+   text-decoration: none;
+   transition: background-color 0.3s;
+   padding: 20px;
+   color: red;
+   border: 1px solid red;
+}
+
+.result a:hover {
+
+   background-color: #e03d3d; /* Darker shade for hover */
+   color: white;
+   text-decoration: none;
+}
+
+.homebuyer-show-btn{
+   justify-content: center;
+
+}

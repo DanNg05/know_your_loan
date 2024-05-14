@@ -1,71 +1,66 @@
 // Specific CSS for your home-page
 .background{
-   background-image:url(https://i.postimg.cc/J0xynv6S/Adobe-Stock-645227190.jpg);
+  background-image:linear-gradient(rgba(113, 104, 104, 0.6), rgba(113, 104, 104, 0.6)), url(https://i.postimg.cc/J0xynv6S/Adobe-Stock-645227190.jpg);
    // background-color: aqua;
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: scroll;
-   height: 75vh;
-   }
+  background-size:cover;
+  background-repeat: none;
+
+
+   // background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
+   // width: 100%;
+}
+
+// .background-content{
+
+// }
 
 .container{
    display: flex;
    justify-content: center;
    // padding: auto;
    padding-left: 25px;
+   // margin-left: 0px;
+   // margin-right: 0px;
    padding-right: 25px;
+   width: 100%;
    // flex: content;
    flex-direction: column;
    // height: 500px;
    // text-align: center;
 }
 
-.banner{
-   justify-content: center;
-   text-align: center;
-   display: flex;
-   justify-content: center;
-   padding: 25px;
-   margin: 25px;
-   flex: auto;
+// .banner{
+//    // background-color: rgba(255, 255, 255, 0.8);
+
+// }
+.signin-banner{
+   padding: 25px 25px 25px 25px;
+   margin: 25px 25px 25px 25px;
+   // margin: 0px;
+   opacity: 80%;
+
 }
 
-.home-container{
-   background-image: url(https://d32ijn7u0aqfv4.cloudfront.net/wp/wp-content/uploads/raw/SOPL21005_780x440_mobile.jpeg);
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-}
 
 h1{
    font-family: 'Roboto', 'Roboto', 'Roboto', 'Roboto', Geneva, Verdana, sans-serif;
 }
 
-.text-shadow{
-   text-shadow: black 0px 0 4px;
+.text-lg-start{
+  // color: goldenrod;
+  color: white;
+  text-shadow: 2px 2px 2px grey;
 }
 
-.broker-container{
-   background-image: url(https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/cms/1026040678PartTimeMortgageBroker.jpg=ws1280x960);
-   background-repeat: no-repeat;
-   background-size: cover;
-}
-
-.investor-container{
-   background-image: url(https://www.nerdwallet.com/au/wp-content/uploads/sites/3/2022/11/home-loan-jargon-435x290.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-}
 .signin-container{
    display: flex;
-   justify-content: center;
+   justify-content: space-between;
    flex-direction: column;
-   align-items: center;
    // text-align: center;
-   justify-content: space-around;
 }
-
 
 .zoombox:hover{
    background-color: rgb(17, 16, 16);
@@ -76,15 +71,15 @@ h1{
 }
 
 
-.user-signin-btn{
-   margin: 20px 20px 20px 20px;
-   padding: 20px 20px 20px 20px;
-}
+// .user-signin-btn{
+//    margin: 20px 20px 20px 20px;
+//    padding: 20px 20px 20px 20px;
+// }
 
-.signin-broker-btn{
-   margin: 20px 20px 20px 20px;
-   padding: 20px 20px 20px 20px;
-}
+// .signin-broker-btn{
+//    margin: 20px 20px 20px 20px;
+//    padding: 20px 20px 20px 20px;
+// }
 
 
 a {
@@ -96,3 +91,30 @@ a {
   margin-top: 100px;
 }
 
+.white-bg {
+  background-color: white;
+}
+
+.bsb-hero-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.daily-rate {
+  max-width: 350px;
+  order: 1; /* By default, place it below the main content */
+  margin-top: 20px; /* Add some space between the main content and daily rate */
+}
+
+@media (min-width: 992px) { /* Adjust breakpoint according to your design */
+  .bsb-hero-1 {
+    flex-direction: row;
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Push the daily rate to the right */
+  }
+
+  .daily-rate {
+    order: 2; /* Move it to the right */
+    margin-top: 0; /* Remove top margin */
+  }
+}
