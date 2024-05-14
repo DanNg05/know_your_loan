@@ -30,6 +30,7 @@ class HomebuyersController < ApplicationController
       if @homebuyer.save!
         redirect_to homebuyer_path(@homebuyer), notice: 'File was successfully created.'
       else
+         # alert box possible
         render :new
       end
   end

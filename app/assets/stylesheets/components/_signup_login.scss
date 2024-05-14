@@ -1,24 +1,25 @@
 .single-signup-login {
   padding: 10px 20px;
-  border: 1px solid red;
   border-radius: 10px;
-  color: red;
+  color: yellow;
   margin: 10px;
+  background-color: green;
 }
 
 .login-signup {
   padding: 10px 20px;
   // border: 1px dashed red;
-  background: linear-gradient(90deg, red 50%, transparent 50%),
-                linear-gradient(90deg, red 50%, transparent 50%),
-                linear-gradient(0deg, red 50%, transparent 50%),
-                linear-gradient(0deg, red 50%, transparent 50%);
+  background: linear-gradient(90deg, green 50%, transparent 50%),
+                linear-gradient(90deg, green 50%, transparent 50%),
+                linear-gradient(0deg, green 50%, transparent 50%),
+                linear-gradient(0deg, green 50%, transparent 50%);
     background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
     background-size: 16px 2px, 16px 2px, 2px 16px, 2px 16px;
     background-position: 0% 0%, 100% 100%, 0% 100%, 100% 0px;
-  color: red;
+  color: green;
   margin: 10px;
   animation: dash 5s linear infinite;
+  // background-color: green;
 }
 
 @keyframes dash {

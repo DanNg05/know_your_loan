@@ -1,10 +1,28 @@
-<div class="homebuyer-show">
-  <div class=header-show>
+
+  <div class="homebuyer-show" style="position: relative">
     <div class="half-screen-show">
     </div>
-    <div class="image-show">
-      <h1>Homebuyer Information Sheet</h1>
+    <div class=header-show>
     </div>
+      <div class="image-show-hb">
+        <h1>Homebuyer Factsheet</h1>
+      </div>
+  </div>
+
+
+<div class=chart-show-container>
+  <div class=chart-new>
+        <% data = [
+      {
+      name: "Loan Balance",
+      data: @principal_data  },
+      {
+      name: "Total debt",
+      data: @debt
+      }
+      ] %>
+    <%= area_chart data, colors: ["#666", "#b00"], xtitle: "Year", ytitle: "Payment" %>
+
   </div>
 
   <div class=chart-show-container>
@@ -46,9 +64,11 @@
 
       <br>
 
-      <p><strong>Total Mortgage Repayment in <%= @homebuyer.loan_term %> years:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.total_mortgage_repayment, precision: 2)) %></p>
-      <p><strong>Total Interest Paid:</strong> <%= number_with_delimiter(number_with_precision(@homebuyer.total_interest_paid, precision: 2)) %></p>
-    </div>
+
+  <div class="result homebuyer-show-btn">
+    <%= link_to "Recalculate", new_rate_homebuyer_path(@rate) %>
+    <% if @homebuyer.net_disposable_income.positive? %>
+
 
     <div class="result">
       <%= link_to "Recalculate", new_rate_homebuyer_path(@rate), class:"btn btn-secondary" %>

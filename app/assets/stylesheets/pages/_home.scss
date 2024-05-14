@@ -33,7 +33,27 @@
 }
 
 
-.hero{
+
+// Specific CSS for your home-page
+.background{
+  background-image:linear-gradient(rgba(113, 104, 104, 0.6), rgba(113, 104, 104, 0.6)), url(https://i.postimg.cc/J0xynv6S/Adobe-Stock-645227190.jpg);
+   // background-color: aqua;
+  background-size:cover;
+  background-repeat: none;
+
+
+   // background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
+   // width: 100%;
+}
+
+// .background-content{
+
+// }
+
+.container{
    display: flex;
    justify-content: center;
    // padding: auto;
@@ -68,7 +88,16 @@
 
 // .banner{
 //    // background-color: rgba(255, 255, 255, 0.8);
+// .banner{
+//    // background-color: rgba(255, 255, 255, 0.8);
 
+// }
+.signin-banner{
+   padding: 25px 25px 25px 25px;
+   margin: 25px 25px 25px 25px;
+   // margin: 0px;
+   opacity: 80%;
+}
 // }
 // .signin-banner{
 //    padding: 25px 25px 25px 25px;
@@ -92,6 +121,36 @@
 // .text-lg-start{
 //   color: goldenrod;
 //   text-shadow: 2px 2px 2px grey;
+
+h1{
+   font-family: 'Roboto', 'Roboto', 'Roboto', 'Roboto', Geneva, Verdana, sans-serif;
+}
+
+.text-lg-start{
+  // color: goldenrod;
+  color: white;
+  text-shadow: 2px 2px 2px grey;
+}
+
+.signin-container{
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   // text-align: center;
+}
+
+.zoombox:hover{
+   background-color: rgb(17, 16, 16);
+   color: rgb(246, 246, 246);
+   // opacity: 30%;
+   transform: scale(1.02);
+   transition: all 0.05s ease;
+}
+
+
+// .user-signin-btn{
+//    margin: 20px 20px 20px 20px;
+//    padding: 20px 20px 20px 20px;
 // }
 
 // // .broker-container{
