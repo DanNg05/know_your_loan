@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get "broker_sign_up", to: "pages#broker_sign_up"
   post "send_form", to: "pages#send_form"
 
+  resources :orders, only: [:new, :create]
   resources :rates do
     resources :mortgages, only: [:new, :create, :edit, :update]
   end
