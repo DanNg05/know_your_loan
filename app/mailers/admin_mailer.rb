@@ -26,4 +26,10 @@ class AdminMailer < ApplicationMailer
       # @url = 'http://example.com/login'
       mail(to: ENV["EMAIL_ADDRESS"], subject: 'NEW BROKER SIGN UP')
     end
+
+    def appointment_mailer(appointment, user)
+      @appointment = appointment
+      @current_user = user
+      mail(to: ENV["EMAIL_ADDRESS"], subject: 'NEW APPOINTMENT IS CREATED')
+    end
 end
