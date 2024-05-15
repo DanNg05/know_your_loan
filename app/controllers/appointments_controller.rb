@@ -9,6 +9,7 @@ class AppointmentsController < ApplicationController
   end
 
   def new
+    # raise
     @appointment = Appointment.new
     @broker = Broker.find(params[:broker_id])
   end
@@ -19,7 +20,9 @@ class AppointmentsController < ApplicationController
     @appointment.user = current_user
     @broker = Broker.find(params[:broker_id])
     @appointment.broker = @broker
+    @current_user = current_user
     if @appointment.save
+      AdminMailer.appointment_mailer(@appointment, @current_user).deliver_now
       redirect_to broker_path(@broker)
       # head :ok
     else
