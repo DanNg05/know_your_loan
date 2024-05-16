@@ -1,166 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-   <script>
-  document.addEventListener('scroll', function() {
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var speed = 0.5; // Adjust the speed of the effect
-    document.querySelector('.background').style.backgroundPosition = 'center ' + (-scrollTop * speed) + 'px';
-  });
-</script>
-</head><!-- Hero 1 - Bootstrap Brain Component -->
-<div class="container">
-  <div class="background">
-  <section class="bsb-hero-1 px-3 bsb-overlay bsb-hover-pull">
-      <div class="col-xl-10 col-xxl-8 px-4 py-5">
-        <div class="row align-items-center g-lg-5 py-5">
-          <div class="col-lg-7 text-lg-start">
-            <p class="col-lg-10">Unlocking Your Mortgage Journey: Empowering Your Mortgage Journey Through Visual Insights.</p>
-          </div>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-          <%# <div class="col-md-10 mx-auto col-lg-5"> %>
-            <%# <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-              </div>
-              <div class="checkbox mb-3">
-                <label>
-                  <input type="checkbox" value="remember-me"> Remember me
-                </label>
-              </div>
-              <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-              <hr class="my-4">
-              <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
-            </form> %>
-          <%# </div> %>
-
-        </div>
-      </div>
-
-    <div class="daily-rate">
-      <div class="p-2 rounded-3" style="backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.1);">
-        <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="0" height="0"><use xlink:href="#bootstrap"></use></svg>
-        <div class="rate-container" style="display: flex; justify-content: space-between">
-          <h5 class="text-lg-start">RATE OF THE DAY</h5>
-          <h1 class="lowest-rate text-lg-start"><%= @lowest_rate.interest_value %>%</h1>
-        </div>
-
-      <div class="signin-container">
-        <% if !current_user %>
-          <div class="row">
-            <div class="col-6">
-              <%= link_to "Sign up", new_user_registration_path, class:"btn btn-primary rounded-pill" %>
-            </div>
-            <div class="col-6">
-              <%= link_to "Log in", new_user_session_path, class:"btn btn-outline-secondary rounded-pill white-bg" %>
-            </div>
-          </div>
-        <% else %>
-          <%= link_to "Check current rates", rates_path, class:"btn btn-primary" %>
-        <% end %>
-      </div>
-        <p class="text-lg-start">
-          Check how much you could save.
-        </p>
-      </div>
+<div class="wrapper">
+  <section class="video-section">
+    <div class="video-container">
+      <video src="<%= asset_path('flower.mp4') %>" autoplay loop muted></video>
+      <%# <video src="app/assets/images/flower.mp4" autoplay loop muted></video> %>
     </div>
+
+    <%# <div class="img-container">
+      <img src="https://i.postimg.cc/63wNFXX1/window.png" alt="" class="img">
+    </div> %>
+
+    <%# <div class="text-content">
+      <div class="img_txt">
+        <div class="title sm left">
+          <span>between</span>
+        </div>
+        <div class="title bg left">
+          <span>Reality</span>
+        </div>
+        <div class="title bg right n">
+          <span>&</span>
+        </div>
+        <div class="title bg right">
+          <span>Dream</span>
+        </div>
+      </div>
+    </div> %>
 
   </section>
 
-
-
-
-
-
-  <div class="px-4 py-5">
-      <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-        <div class="col d-flex flex-column align-items-start gap-2">
-          <h2 class="fw-bold text-body-emphasis">Property Finance with KnowYourLoan</h2>
-          <p class="text-body-secondary">Discovering the ideal financing solution for purchasing a property becomes effortless with KnowYourLoan. This platform simplifies the complexities of financing, guiding you towards a broker perfectly suited to your needs and property goals.</p>
-
-        </div>
-
-        <div class="col">
-          <div class="row row-cols-1 row-cols-sm-2 g-4">
-            <div class="col d-flex flex-column gap-2">
-              <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-
-      <dotlottie-player src="https://lottie.host/c9904b46-f48a-4ae2-ac1c-f401e472d8ae/YGw2MyDUCS.json" background="transparent" speed="1" style="width: 300px; height: 100px;" loop autoplay></dotlottie-player>
-
-                <%# <svg class="bi" width="1em" height="1em">
-                  <use xlink:href="#collection"></use>
-                </svg> %>
-              </div>
-              <h4 class="fw-semibold mb-0 text-body-emphasis">All-in-One App</h4>
-              <p class="text-body-secondary">Access all essential mortgage details with just a few clicks.</p>
+  <div class="v_container">
+    <div class="left-side">
+      <div class="hero">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-5 col-lg-6 order-md-2 d-flex justify-content-center align-items-center"> <!-- Center the content in the column -->
+            <!-- Image -->
+            <div class="text-center text-md-start"> <!-- Center the Lottie animation -->
+              <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+                <dotlottie-player src="https://lottie.host/d468c80b-f03b-4376-a62d-49ebf0734105/ewEgTAe1sJ.json" background="transparent" speed="1" style="width: 100%; max-width: 500px; height: auto;" autoplay loop></dotlottie-player>
             </div>
-
-            <div class="col d-flex flex-column gap-2">
-              <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-
-      <dotlottie-player src="https://lottie.host/daa4c2bc-bd06-4e4b-9a02-6d0d9e102532/OUo2zFachA.json" background="transparent" speed="1" style="width: 300px; height: 100px;" loop autoplay></dotlottie-player>
-
-                <%# <svg class="bi" width="1em" height="1em">
-                  <use xlink:href="#gear-fill"></use>
-                </svg> %>
-              </div>
-              <h4 class="fw-semibold mb-0 text-body-emphasis">Tailored Solutions</h4>
-              <p class="text-body-secondary">Whether you're investing or buying a home, input your figures, and let us handle the intricate calculations.</p>
+          </div>
+          <div class="col-12 col-md-7 col-lg-6 order-md-1 aos-init aos-animate" data-aos="fade-up">
+            <!-- Heading -->
+            <h1 class="display-3 text-md-star mt-5">
+              <span class="title-kyl">Know Your Loan</span><br>
+            </h1>
+            <!-- Text -->
+            <div class="d-flex m-2">
+              <p class="text-body-secondary">Discovering the ideal financing solution for purchasing a property becomes effortless with KnowYourLoan. This platform simplifies the complexities of financing, guiding you towards a broker perfectly suit your needs and goals.</p>
             </div>
-
-            <div class="col d-flex flex-column gap-2">
-              <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-
-      <dotlottie-player src="https://lottie.host/01e37067-6b1f-4297-9248-27351f5f9b9a/5qzdDdEOcV.json" background="transparent" speed="1" style="width: 100px;" loop autoplay></dotlottie-player>
-
-                <%# <svg class="bi" width="1em" height="1em">
-                  <use xlink:href="#speedometer"></use>
-                </svg> %>
-              </div>
-              <h4 class="fw-semibold mb-0 text-body-emphasis">Financial Insight</h4>
-              <p class="text-body-secondary">Easily comprehend your cash flow and assess your returns.</p>
-            </div>
-
-            <div class="col d-flex flex-column gap-2">
-              <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-
-      <dotlottie-player src="https://lottie.host/2b3a8ae6-3a3a-42d8-93ba-89f6f6ceace8/pjE9vge0HZ.json" background="transparent" speed="1" style="width: 100px; " loop autoplay></dotlottie-player>
-                <%# <svg class="bi" width="1em" height="1em">
-                  <use xlink:href="#table"></use>
-                </svg> %>
-              </div>
-              <h4 class="fw-semibold mb-0 text-body-emphasis">Up-to-Date Rate</h4>
-              <p class="text-body-secondary">Stay informed with the most current and competitive interest rates available, updated in real-time.</p>
+            <!-- Buttons -->
+            <div class="signin-container">
+              <% if !current_user %>
+                <div class="row">
+                  <div class="col-6">
+                    <%= link_to "Sign up", new_user_registration_path, class:"btn btn-primary rounded-pill" %>
+                  </div>
+                  <div class="col-6">
+                    <%= link_to "Log in", new_user_session_path, class:"btn btn-outline-secondary rounded-pill white-bg" %>
+                  </div>
+                </div>
+              <% else %>
+                <%= link_to "Check current rates", rates_path, class:"btn btn-primary" %>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-  <a href="#" class="btn btn-info btn-lg">Partner with KnowYourLoan</a>
-
-
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-          <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-        </a>
-        <span class="mb-3 mb-md-0 text-body-secondary">© 2024 KnowYourLoan</span>
-      </div>
-
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-        <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-      </ul>
-  </footer>
   </div>
 </div>
+
+<div class="px-4 py-5 ">
+  <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+    <div class="col">
+      <div class="row row-cols-1 row-cols-sm-2 g-4">
+        <div class="col d-flex flex-column gap-2">
+          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+            <dotlottie-player src="https://lottie.host/c9904b46-f48a-4ae2-ac1c-f401e472d8ae/YGw2MyDUCS.json" background="transparent" speed="1" style="width: 300px; height: 100px;" loop autoplay></dotlottie-player>
+
+            <%# <svg class="bi" width="1em" height="1em">
+            <use xlink:href="#collection"></use>
+            </svg> %>
+          </div>
+          <h4 class="fw-semibold mb-0 text-body-emphasis">All-in-One App</h4>
+          <p class="text-body-secondary">Access all essential mortgage details with just a few clicks.</p>
+        </div>
+
+        <div class="col d-flex flex-column gap-2">
+          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+            <dotlottie-player src="https://lottie.host/daa4c2bc-bd06-4e4b-9a02-6d0d9e102532/OUo2zFachA.json" background="transparent" speed="1" style="width: 300px; height: 100px;" loop autoplay></dotlottie-player>
+
+            <%# <svg class="bi" width="1em" height="1em">
+              <use xlink:href="#gear-fill"></use>
+            </svg> %>
+          </div>
+          <h4 class="fw-semibold mb-0 text-body-emphasis">Tailored Solutions</h4>
+          <p class="text-body-secondary">Whether you're investing or buying a home, input your figures, and let us handle the intricate calculations.</p>
+        </div>
+
+        <div class="col d-flex flex-column gap-2">
+          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+            <dotlottie-player src="https://lottie.host/01e37067-6b1f-4297-9248-27351f5f9b9a/5qzdDdEOcV.json" background="transparent" speed="1" style="width: 100px;" loop autoplay></dotlottie-player>
+
+            <%# <svg class="bi" width="1em" height="1em">
+              <use xlink:href="#speedometer"></use>
+            </svg> %>
+          </div>
+          <h4 class="fw-semibold mb-0 text-body-emphasis">Financial Insight</h4>
+          <p class="text-body-secondary">Easily comprehend your cash flow and assess your returns.</p>
+        </div>
+
+        <div class="col d-flex flex-column gap-2">
+          <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+            <dotlottie-player src="https://lottie.host/2b3a8ae6-3a3a-42d8-93ba-89f6f6ceace8/pjE9vge0HZ.json" background="transparent" speed="1" style="width: 100px; " loop autoplay></dotlottie-player>
+
+            <%# <svg class="bi" width="1em" height="1em">
+              <use xlink:href="#table"></use>
+            </svg> %>
+          </div>
+          <h4 class="fw-semibold mb-0 text-body-emphasis">Up-to-Date Rate</h4>
+          <p class="text-body-secondary">Stay informed with the most current and competitive interest rates available, updated in real-time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <%= link_to "Partner with KnowYourLoan", new_order_path, class:"btn btn-primary" %>
+</div>
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <div class="col-md-4 d-flex align-items-center">
+    <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+      <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+    </a>
+    <span class="mb-3 mb-md-0 text-body-secondary">© 2024 KnowYourLoan</span>
+  </div>
+
+  <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+    <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+    <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+  </ul>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+
+</html>

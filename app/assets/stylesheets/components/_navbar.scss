@@ -3,13 +3,17 @@
 // }
 
 .nav-item {
-  position: relative;
+  position: sticky;
   display: flex;
   align-items: center;
   padding: 10px 15px;
   border-radius: 10px;
   border: 1px solid grey;
   margin: 10px;
+}
+
+.navbar-fixed-top::before {
+  position: sticky;
 }
 
 .nav-icons {
@@ -43,4 +47,5 @@
   font-style: normal;
   margin-left: 28px;
   text-shadow: 3px 3px 0 grey;
+  color: black;
 }

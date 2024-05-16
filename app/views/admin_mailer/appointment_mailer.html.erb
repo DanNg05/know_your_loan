@@ -1,0 +1,17 @@
+<p>********** <strong>NEW APPOINTMENT IS CREATED</strong> **********</p>
+<p>************************************************</p>
+<br>
+<br>
+<p>------------------------------------------------</p>
+<p>First name : <%= @current_user.first_name %></p>
+<p>Last name : <%= @current_user.last_name %></p>
+<p>Email: <%= @current_user.email %></p>
+<p>Phone number: <%= @current_user.phone_number %></p>
+<p>Appointment date: <%= @appointment.date %></p>
+<p>Message: <%= @appointment.message %></p>
+  <% if @current_user.is_homebuyer %>
+    <p>User type: First homebuyer</p>
+  <% else %>
+    <p>User type: Investor</p>
+  <% end %>
+<p>------------------------------------------------</p>
