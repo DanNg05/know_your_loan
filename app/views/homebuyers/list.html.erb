@@ -10,28 +10,24 @@
   </div>
 
   <div class="list-card">
+    <div class="card" style="width: 18rem;">
+      <% @homebuyers.each do |h| %>
 
-   <div class="card" style="width: 18rem;">
+      <div class= list-mortgage >
+      <% rate = Rate.find(h.rate_id) %>
 
-               <% @homebuyers.each do |h| %>
-                           <div class= list-mortgage >
-               <% rate = Rate.find(h.rate_id) %>
-
-                  <p>From: <%= rate.bank.name %></p>
-                  <p>Loan amount: <%= h.loan_amount %></p>
-                  <p>Loan term: <%= h.loan_term %></p>
-                  <p>Interest rate: <%= h.interest_rate %></p>
-                  <p> Monthly repayment: <%= h.monthly_repayment %></p>
-                  </div>
-
-                  <% end %>
-         <%# <h5 class="card-title">Card title</h5>
-         <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-         <a href="#" class="card-link">Card link</a>
-         <a href="#" class="card-link">Another link</a> %>
+        <p>Mortgage with <%= rate.bank.name %></p>
+        <p>Loan amount: <%= h.loan_amount %></p>
+        <p>Loan term: <%= h.loan_term %></p>
+        <p>Interest rate: <%= h.interest_rate %>%</p>
+        <p>Monthly repayment: <%= h.monthly_repayment %></p>
+        <p>Net Disposable Income: <%= h.net_disposable_income %></p>
       </div>
 
-      </div>
+      <% end %>
+
+    </div>
+
+  </div>
   <%= link_to "Find your broker", brokers_path, class:"btn btn-info"  %>
 </div>

@@ -90,7 +90,7 @@ gsap.utils.toArray('.col').forEach(image=>{
     x:0
   },{
     opacity:1,
-    x:50, //To do:change this
+    x:-5, //To do:change this
     scrollTrigger:{
       trigger:image,
       start:"-400%", //To do:change this
