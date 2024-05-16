@@ -56,6 +56,7 @@ class BrokersController < ApplicationController
       render :new
     end
   end
+  
   private
 
   def broker_params
