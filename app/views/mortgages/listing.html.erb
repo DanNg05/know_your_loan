@@ -10,20 +10,39 @@
 
 
   <div class="mortgage-card">
-  <% @mortgages.each do |mortgage| %>
-    <% rate = Rate.find(mortgage.rate_id) %>
-    <div class="list-mortgage">
-    <p>Mortgage with <%= rate.bank.name %></p>
-    <% if mortgage.monthly_cashflow.positive? %>
-      <p>Loan amount: <%= mortgage.loan_amount.round(2) %> NZD</p>
-      <p>Monthly repayment: <%= mortgage.monthly_repayment.round(2) %> NZD</p>
-      <p>Monthly cashflow: <%= mortgage.monthly_cashflow.round(2) %> NZD</p>
-    </div>
-    <% else %>
-      <p>Your monthly cashflow of this mortgage is negative. Please recalculate</p>
-      </div>
-    <% end %>
-  <% end %>
- <%= link_to "Find your broker", brokers_path, class:"btn btn-info broker-btn" %>
+        <% @mortgages.each do |mortgage| %>
+          <% rate = Rate.find(mortgage.rate_id) %>
+          <div>
+            <table class="listing-table">
+              <tbody>
+                <tr>
+                  <td>Mortgage with</td>
+                  <td><%= rate.bank.name %></td>
+                </tr>
+                  <% if mortgage.monthly_cashflow.positive? %>
+                <tr>
+                    <td>Loan amount</td>
+                    <td><%= mortgage.loan_amount.round(2) %> NZD</td>
+                </tr>
+                <tr>
+                    <td>Monthly repayment</td>
+                    <td><%= mortgage.monthly_repayment.round(2) %> NZD</td>
+                </tr>
+                <tr>
+                    <td>Monthly cashflow</td>
+                    <td><%= mortgage.monthly_cashflow.round(2) %> NZD</td>
+                </tr>
+                  </div>
+                  <% else %>
+                <tr><td colspan="2">Your monthly cashflow of this mortgage is negative. Please recalculate</td></tr>
+
+                  <% end %>
+                  </tbody>
+            </table>
+        <% end %>
+  </div>
+  <div class='d-flex justify-content-center'>
+    <%= link_to "Find your broker", brokers_path, class:"btn btn-info broker-btn" %>
+  </div>
  </div>
 </div>
