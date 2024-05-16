@@ -23,7 +23,7 @@
                     <% if mortgage.monthly_cashflow.positive? %>
                   <tr>
                       <td>Loan amount</td>
-                      <td><%= mortgage.loan_amount.round(2) %> NZD</td>
+                      <td><%= number_with_delimiter(mortgage.loan_amount.round(2)) %> NZD</td>
                   </tr>
                   <tr>
                       <td>Monthly repayment</td>
@@ -31,7 +31,7 @@
                   </tr>
                   <tr>
                       <td>Monthly cashflow</td>
-                      <td><%= mortgage.monthly_cashflow.round(2) %> NZD</td>
+                      <td><%= link_to number_with_delimiter(mortgage.monthly_cashflow.round(2)), mortgage_path(mortgage), class:"monthly-cashflow-listing" %> NZD</td>
                   </tr>
                     </div>
                     <% end %>
