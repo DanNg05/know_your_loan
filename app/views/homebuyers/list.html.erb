@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                   <td>Monthly repayment</td>
-                  <td><%= link_to number_with_delimiter(h.monthly_repayment.round(2)), homebuyer_path(h) %> NZD</td>
+                  <td><%= link_to number_with_delimiter(h.monthly_repayment.round(2)), homebuyer_path(h), class:"monthly-repayment-listing" %> NZD</td>
                 </tr>
               </tbody>
             </table>
