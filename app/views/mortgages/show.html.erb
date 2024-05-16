@@ -1,5 +1,14 @@
-<div class="mortgage-show" style="margin-top: 100px">
-  <h1>Investment Factsheet</h1>
+  <div class="mortgage-show" style="position: relative">
+    <div class="half-screen-show">
+    </div>
+    <div class=mortgage-header-show>
+    </div>
+      <div class="image-show-mortgage">
+        <h1>investment Factsheet</h1>
+      </div>
+  </div>
+
+  <div class=chart-show-container>
   <div class="container" style="margin-top: 0">
     <% if @mortgage.monthly_cashflow.positive? %>
       <%= pie_chart [["Monthly repayment", @mortgage.monthly_repayment], ["Monthly cashflow",@mortgage.monthly_cashflow], ["Maintenance fund",@mortgage.maintenance_fund], ["Other expenses",@mortgage.other_expenses]], donut: true, round: 2, thousands: "," %>
@@ -36,14 +45,15 @@
 
 
   </div>
-  <div class="result">
+  <div class="result mortgage-show-btn">
     <% if @mortgage.monthly_cashflow.positive? %>
     <%= link_to "Recalculate", new_rate_mortgage_path(@rate), class:"btn btn-secondary" %>
     <% else %>
-      <p>Your monthly cashflow is negative please <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %></p>
+      <p>Your monthly cashflow is negative please</p>
+      <%= link_to "Recalculate", new_rate_mortgage_path(@rate) %>
     <% end %>
     <% if @mortgage.monthly_cashflow.positive? %>
-      <%= link_to "Save your calculation", listing_path, class:"btn btn-info" %>
+      <%= link_to "Save your calculation", listing_path, class:"btn btn-info field-submit-show" %>
     <% end %>
   </div>
 </div>

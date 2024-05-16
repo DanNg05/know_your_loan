@@ -19,7 +19,11 @@
 }
 
 .image-list{
+   display: flex;
+   flex-direction: column;
    text-align: center;
+   align-items: center;
+   justify-content: center;
    h1 {
       font-family: 'Poetsen One', sans-serif;
       // font-style: italic; /* Italicizes the text */
@@ -86,6 +90,7 @@
   padding: 30px;
   margin: 30px;
   border: 20px;
+  width: 20rem;
   // box-shadow:black
 //    border-color: black;
 //    border-style: outset;
@@ -102,7 +107,7 @@
   //  height: 200px;
    background-color: white;
    border-radius: 8px;
-   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+   // box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
    padding: 20px;
 
 }
@@ -113,7 +118,7 @@
    //  height: 200px;
    background-color: white;
    border-radius: 8px;
-   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
    padding: 20px;
    margin: 20px;
    box-sizing: border-box;
@@ -124,4 +129,12 @@
    margin-left: 1rem;
    // background-color: rgb(215, 215, 215);
 
+}
+
+.broker-btn {
+   position: fixed;
+   bottom: 16px;
+   width: 16rem;
+   background-color: maroon;
+   color: white;
 }
