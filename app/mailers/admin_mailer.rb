@@ -30,6 +30,6 @@ class AdminMailer < ApplicationMailer
     def appointment_mailer(appointment, user)
       @appointment = appointment
       @current_user = user
-      mail(to: ENV["EMAIL_ADDRESS"], subject: 'NEW APPOINTMENT IS CREATED')
+      mail(to: ENV["BROKER_ADDRESS"], subject: 'NEW APPOINTMENT IS CREATED')
     end
 end
