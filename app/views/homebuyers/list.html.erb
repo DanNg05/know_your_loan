@@ -11,7 +11,7 @@
 
   <div class="list-card">
 
-   <div class="card" style="width: 18rem;">
+   <div class="card" style="">
 
                <% @homebuyers.each do |h| %>
                            <div class= list-mortgage >
@@ -31,7 +31,7 @@
          <a href="#" class="card-link">Card link</a>
          <a href="#" class="card-link">Another link</a> %>
       </div>
-
+<%= link_to "Find your broker", brokers_path, class:"btn btn-info broker-btn"  %>
       </div>
-  <%= link_to "Find your broker", brokers_path, class:"btn btn-info"  %>
+
 </div>

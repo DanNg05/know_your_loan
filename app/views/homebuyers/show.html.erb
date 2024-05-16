@@ -1,31 +1,32 @@
 
-  <div class="homebuyer-show" style="position: relative">
-    <div class="half-screen-show">
-    </div>
-    <div class=header-show>
-    </div>
-      <div class="image-show-hb">
-        <h1>Homebuyer Factsheet</h1>
-      </div>
-  </div>
+<div class="homebuyer-show" style="position: relative">
+   <div class="half-screen-show">
+   </div>
+   <div class=header-show>
+   </div>
+   <div class="image-show-hb">
+      <h1>Homebuyer Factsheet</h1>
+   </div>
+</div>
 
 
-<div class=chart-show-container>
-  <div class=chart-new>
-        <% data = [
-      {
-      name: "Loan Balance",
-      data: @principal_data  },
-      {
-      name: "Total debt",
-      data: @debt
-      }
-      ] %>
-    <%= area_chart data, colors: ["#666", "#b00"], xtitle: "Year", ytitle: "Payment" %>
 
-  </div>
+<%# <div class=chart-new>
+      <% data = [
+   {
+   name: "Loan Balance",
+   data: @principal_data  },
+   {
+   name: "Total debt",
+   data: @debt
+   }
+   ] %>
+   <%# <%= area_chart data, colors: ["#666", "#b00"], xtitle: "Year", ytitle: "Payment" %>
+
+<%# </div> %>
 
   <div class=chart-show-container>
+
     <div class=chart-new>
           <% data = [
         {
@@ -66,17 +67,19 @@
 
 
   <div class="result homebuyer-show-btn">
-    <%= link_to "Recalculate", new_rate_homebuyer_path(@rate) %>
     <% if @homebuyer.net_disposable_income.positive? %>
+       <% else %>
+      <p>Net disposable income is negative please recalculate</p>
+      <%= link_to "Recalculate", new_rate_homebuyer_path(@rate) %>
+    <% end %>
 
-
-    <div class="result">
+    <%# <div class="result">
       <%= link_to "Recalculate", new_rate_homebuyer_path(@rate), class:"btn btn-secondary" %>
-      <% if @homebuyer.net_disposable_income.positive? %>
+      <%# <% if @homebuyer.net_disposable_income.positive? %>
 
         <%= link_to "Save your calculation", list_path, class:"btn btn-info" %>
 
-      <% end %>
+      <%# <% end %>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-.header-show{
+.mortgage-header-show{
    background-image: linear-gradient(rgba(165, 42, 42, 0.206), rgba(165, 42, 42, 0.3)), url(https://s3.ap-southeast-1.amazonaws.com/dfcc.lk/wp-content/uploads/2019/06/03075249/Housing-Loan-Calculator.jpg);
    background-position: center;
    // background-repeat: no-repeat;
@@ -18,7 +18,7 @@
    border-radius: 0 5px 200px 0;
 }
 
-.image-show-hb{
+.image-show-mortgage{
    text-align: center;
    h1 {
       font-family: 'Poetsen One', sans-serif;
@@ -27,7 +27,8 @@
       letter-spacing: 2px; /* Increases space between characters */
       text-shadow: 2px 2px 2px grey; /* /* Adds shadow to text */
       color: #ffffff; /* Dark grey text color */
-    }
+   }
+
    p{
 
       color: #ffffff;
@@ -35,16 +36,15 @@
    position: absolute;
    top: 20px;
 
-
 }
 
-.homebuyer-show{
+.mortgage-show{
   margin-top: 60px;
   width: 100vw;
   // background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPaESFW33iFo8kS6Mk-9s_OhgBxeKaWZG3w&s);
 }
-.image-show-hb {
-   top: 40%;
+.image-show-mortgage {
+   top: 30%;
    left: 50%;
    transform: translateX(-50%);
    width: 100%; /* Ensure it spans the full container width */
@@ -54,37 +54,7 @@
 
 
 
-.chart-show-container{
-  padding: 10px 10px 10px 10px;
-     //  width: 300px;
-     //  height: 200px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
-      padding: 20px;
-      margin: 20px;
-      box-sizing: border-box;
-}
-.list-card {
-   background-color: #f8f9fa; /* Light gray background */
-   border-radius: 8px; /* Rounded corners */
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
 
-.card {
-   background-color: #ffffff; /* White background for contrast */
-   border: none;
-}
-
-.list-mortgage h2 {
-   color: #333; /* Dark grey color for headings */
-}
-
-.list-mortgage p {
-   color: maroon; /* Medium grey color for text */
-   font-size: 0.9rem; /* Smaller font size for details */
-
-}
 
 .result a {
    display: inline-block;
@@ -98,10 +68,11 @@
    text-decoration: none;
    transition: background-color 0.3s;
    padding: 20px;
-   color: white;
+   color: #ffffff;
    background-color: maroon;
    border: 1px solid maroon;
 }
+
 
 .result a:hover {
 
@@ -110,8 +81,12 @@
    text-decoration: none;
 }
 
-.homebuyer-show-btn{
+.mortgage-show-btn{
    justify-content: center;
    flex-direction: column;
+   text-align: center;
+}
+.result p{
+   color: maroon;
 
 }
