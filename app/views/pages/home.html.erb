@@ -14,15 +14,12 @@
 <div class="wrapper">
   <section class="video-section">
     <div class="video-container">
-      <video src="<%= asset_path('flower.mp4') %>" autoplay loop muted></video>
-      <%# <video src="app/assets/images/flower.mp4" autoplay loop muted></video> %>
+      <video src="<%= asset_path('flower.mp4') %>"  autoplay loop muted></video>
     </div>
-
-    <%# <div class="img-container">
-      <img src="https://i.postimg.cc/63wNFXX1/window.png" alt="" class="img">
-    </div> %>
-
-    <%# <div class="text-content">
+    <div class="img-container">
+      <%= image_tag "window.png", class: "img" %>
+    </div>
+    <div class="text-content">
       <div class="img_txt">
         <div class="title sm left">
           <span>between</span>
@@ -30,17 +27,15 @@
         <div class="title bg left">
           <span>Reality</span>
         </div>
-        <div class="title bg right n">
+        <div class="title bg right n" style="z-index: 2;">
           <span>&</span>
         </div>
         <div class="title bg right">
           <span>Dream</span>
         </div>
       </div>
-    </div> %>
-
+    </div>
   </section>
-
   <div class="v_container">
     <div class="left-side">
       <div class="hero">
@@ -48,19 +43,18 @@
           <div class="col-12 col-md-5 col-lg-6 order-md-2 d-flex justify-content-center align-items-center"> <!-- Center the content in the column -->
             <!-- Image -->
             <div class="text-center text-md-start"> <!-- Center the Lottie animation -->
-              <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-                <dotlottie-player src="https://lottie.host/d468c80b-f03b-4376-a62d-49ebf0734105/ewEgTAe1sJ.json" background="transparent" speed="1" style="width: 100%; max-width: 500px; height: auto;" autoplay loop></dotlottie-player>
+              <dotlottie-player src="https://lottie.host/d468c80b-f03b-4376-a62d-49ebf0734105/ewEgTAe1sJ.json" background="transparent" speed="1" style="width: 100%; max-width: 500px; height: auto;" autoplay loop></dotlottie-player>
             </div>
           </div>
           <div class="col-12 col-md-7 col-lg-6 order-md-1 aos-init aos-animate" data-aos="fade-up">
             <!-- Heading -->
-            <h1 class="display-3 text-md-star mt-5">
+            <h1 class="display-3 text-center text-md-start">
               <span class="title-kyl">Know Your Loan</span><br>
             </h1>
             <!-- Text -->
-            <div class="d-flex m-2">
-              <p class="text-body-secondary">Discovering the ideal financing solution for purchasing a property becomes effortless with KnowYourLoan. This platform simplifies the complexities of financing, guiding you towards a broker perfectly suit your needs and goals.</p>
-            </div>
+            <p class="lead text-center text-md-start text-body-primary mb-6 mb-lg-8">
+              Unlocking Your Mortgage Journey: Empowering Your Mortgage Journey Through Visual Insights.
+            </p>
             <!-- Buttons -->
             <div class="signin-container">
               <% if !current_user %>
@@ -82,7 +76,6 @@
     </div>
   </div>
 </div>
-
 <div class="px-4 py-5 ">
   <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
     <div class="col">
@@ -141,11 +134,9 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="d-flex justify-content-center">
   <%= link_to "Partner with KnowYourLoan", new_order_path, class:"btn btn-primary" %>
 </div>
+
 
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
   <div class="col-md-4 d-flex align-items-center">

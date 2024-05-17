@@ -1,6 +1,11 @@
 // @media (width <= 430px) {
 
 // }
+.navbar {
+  position: sticky !important;
+  top: 0;
+  padding-right: 10px;
+}
 
 .nav-item {
   position: sticky;

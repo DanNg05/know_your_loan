@@ -13,7 +13,7 @@ import "Chart.bundle"
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.defaults({
-  toggleActions:"play none none reverse"
+  toggleActions:"play pause none reverse"
 })
 
 
@@ -66,9 +66,9 @@ tl.from('.left-side div',{
   stagger:{
     amount:.4
   },
-  delay:.5
+  delay:1
 }).from('.right-side',{opacity:0,duration:2},.5)
-.to('.wrapper' ,{x:-window.innerWidth})
+.to('.wrapper' ,{x:-window.innerHeight})
 
 
 
@@ -87,13 +87,13 @@ ScrollTrigger.create({
 gsap.utils.toArray('.col').forEach(image=>{
   gsap.fromTo(image,{
     opacity:.3,
-    x:0
+    x:"-8%"
   },{
     opacity:1,
-    x:50, //To do:change this
+    x:0,
     scrollTrigger:{
       trigger:image,
-      start:"-400%", //To do:change this
+      start:"top 80%",
       stagger:{
         amount:.4
       }
