@@ -66,10 +66,10 @@
               <% if !current_user %>
                 <div class="row">
                   <div class="col-6">
-                    <%= link_to "Sign up", new_user_registration_path, class:"btn btn-primary rounded-pill" %>
+                    <%= link_to "Sign up", new_user_registration_path, class:"homepage-btn" %>
                   </div>
                   <div class="col-6">
-                    <%= link_to "Log in", new_user_session_path, class:"btn btn-outline-secondary rounded-pill white-bg" %>
+                    <%= link_to "Log in", new_user_session_path, class:"homepage-btn" %>
                   </div>
                 </div>
               <% else %>
