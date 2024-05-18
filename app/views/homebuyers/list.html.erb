@@ -26,7 +26,7 @@
                 </tr>
                 <tr>
                   <td>Loan amount</td>
-                  <td><%= number_with_delimiter(h.loan_amount) %> NZD</td>
+                  <td><%= number_with_delimiter(h.loan_amount.round(2)) %> NZD</td>
                 </tr>
                 <tr>
                   <td>Loan term</td>
@@ -39,6 +39,10 @@
                 <tr>
                   <td>Monthly repayment</td>
                   <td><%= link_to number_with_delimiter(h.monthly_repayment.round(2)), homebuyer_path(h), class:"monthly-repayment-listing" %> NZD</td>
+                </tr>
+                <tr>
+                  <td>Total interest paid</td>
+                  <td><%= number_with_delimiter(h.total_interest_paid.round(2)) %> NZD</td>
                 </tr>
               </tbody>
             </table>
