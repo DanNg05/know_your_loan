@@ -52,6 +52,7 @@
               <span class="title-kyl">Know Your Loan</span><br>
             </h1>
             <!-- Text -->
+            <p class="lead text-center text-md-start text-body-primary mb-6 mb-lg-8">Today lowest rate: <%= @lowest_rate.interest_value %>%</p>
             <p class="lead text-center text-md-start text-body-primary mb-6 mb-lg-8">
               Unlocking Your Mortgage Journey: Empowering Your Mortgage Journey Through Visual Insights.
             </p>
@@ -135,7 +136,7 @@
     </div>
   </div>
   <div class="d-flex justify-content-center">
-    <%= link_to "Partner with KnowYourLoan", new_order_path, class:"btn btn-primary" %>
+    <%= link_to "Partner with KnowYourLoan", new_order_path, class:"btn btn-info broker-btn" %>
   </div>
 </div>
 
