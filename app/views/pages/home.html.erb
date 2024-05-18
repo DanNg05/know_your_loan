@@ -22,16 +22,16 @@
     <div class="text-content">
       <div class="img_txt">
         <div class="title sm left">
-          <span>between</span>
+          <span>In your hand</span>
         </div>
         <div class="title bg left">
-          <span>Reality</span>
+          <span>Your</span>
         </div>
         <div class="title bg right n" style="z-index: 2;">
-          <span>&</span>
+          <span>Future</span>
         </div>
         <div class="title bg right">
-          <span>Dream</span>
+          <span></span>
         </div>
       </div>
     </div>
@@ -52,10 +52,12 @@
               <span class="title-kyl">Know Your Loan</span><br>
             </h1>
             <!-- Text -->
-            <p class="lead text-center text-md-start text-body-primary mb-6 mb-lg-8">Today lowest rate: <%= @lowest_rate.interest_value %>%</p>
-            <p class="lead text-center text-md-start text-body-primary mb-6 mb-lg-8">
-              Unlocking Your Mortgage Journey: Empowering Your Mortgage Journey Through Visual Insights.
-            </p>
+            <div>
+              <p class="lead text-center text-md-start text-body-primary mb-6 mb-lg-8" style="background-color: rgba(255, 255, 255, 0.3);">Today lowest rate: <%= @lowest_rate.interest_value %>%</p>
+            </div>
+              <p class="lead text-center text-md-start text-body-primary mb-6 mb-lg-8">
+                Unlocking Your Mortgage Journey: Empowering Your Mortgage Journey Through Visual Insights.
+              </p>
             <!-- Buttons -->
             <div class="signin-container">
               <% if !current_user %>
