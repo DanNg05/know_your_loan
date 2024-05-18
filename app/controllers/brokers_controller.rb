@@ -59,7 +59,7 @@ class BrokersController < ApplicationController
   private
 
   def broker_params
-    params.require(:broker).permit(:first_name, :last_name, :email, :about, :phone_number, :address, :photo)
+    params.require(:broker).permit(:first_name, :last_name, :email, :about, :phone_number, :address, :photo, :description)
   end
 
   def broker_list
