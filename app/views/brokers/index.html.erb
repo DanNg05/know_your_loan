@@ -1,4 +1,4 @@
-<div style="position: relative; width: 100vw; margin-top: 60px">
+<div style="position: relative; width: 100vw">
   <div class="half-screen">
   </div>
   <div class="neighborhood">
@@ -18,9 +18,11 @@
       </div>
       <div class="brokers-list d-none" data-brokers-target="list">
         <% @brokers.each do |broker| %>
-          <% if broker.photo.key %>
-            <%= cl_image_tag broker.photo.key, height: 300, width: 300, crop: :fill %>
-          <% end %>
+          <div class="d-flex justify-content-center">
+            <% if broker.photo.key %>
+              <%= cl_image_tag broker.photo.key, height: 300, width: 300, crop: :fill %>
+            <% end %>
+          </div>
           <h3 class="mt-3"><%= broker.first_name %> <%= broker.last_name %></h3>
           <p><%= broker.about %></p>
           <i class="fa-solid fa-arrow-right" style="color: red"></i><%= link_to "Pick Me", broker_path(broker), class:"see-profile-index" %>
